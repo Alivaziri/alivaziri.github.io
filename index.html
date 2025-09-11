@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Vaziri — Optimization · ML for Dynamics · Control</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Ali Vaziri — Research in optimal control, Bayesian inference for dynamical systems, and GPU-accelerated scientific computing." />
+  <link rel="canonical" href="https://alivaziri.github.io/" />
+
+  <!-- Open Graph / Twitter  -->
+  <meta property="og:title" content="Ali Vaziri" />
+  <meta property="og:description" content="Optimization · ML Modeling · Scientific Computing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="./assets/favicon.ico" />
+
+  <!-- Minimal, fast, self‑contained styles (no external deps) -->
+  <style>
+    :root{--bg:#0b1020;--card:#0f172a;--ink:#e5e7eb;--muted:#a3aed0;--link:#8ab4ff;--accent:#4f46e5;--border:#1f2a44;--pill:#334155;--shadow:0 1px 2px rgba(0,0,0,.25);--maxw:980px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,"Noto Sans",sans-serif;line-height:1.6}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(120deg,#0b1020 0%,#111a36 70%);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+    .top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .avatar{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:#111b3a url('./assets/avatar.jpg') center/cover no-repeat}
+    h1{margin:0;font-size:1.2rem;font-weight:800;letter-spacing:.2px}
+    .tagline{font-size:.9rem;color:var(--muted)}
+    nav{display:flex;flex-wrap:wrap;gap:14px}
+    nav a{font-weight:600;color:#d5ddff}
+    .toggle{appearance:none;border:1px solid var(--border);background:transparent;color:var(--ink);padding:6px 10px;border-radius:10px;cursor:pointer}
+
+    main{padding:28px 18px}
+    section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin:0 auto 18px;max-width:var(--maxw);box-shadow:var(--shadow)}
+    section h2{margin:0 0 10px;font-size:1.1rem;color:#d5ddff}
+    .meta{color:var(--muted);font-size:.92rem}
+    .pill{display:inline-block;background:var(--pill);color:#cbd5e1;border:1px solid var(--border);border-radius:999px;padding:2px 10px;margin:4px 6px 0 0;font-size:.85rem;white-space:nowrap}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .card{background:#0c132b;border:1px solid var(--border);border-radius:12px;padding:14px}
+    .tight li{margin-bottom:6px}
+
+    .pub{display:grid;grid-template-columns:100px 1fr;gap:12px;padding:12px;border:1px solid var(--border);border-radius:12px;margin:10px 0;background:#0c132b}
+    .pub .thumb{width:100px;height:72px;border-radius:8px;background:#111b3a url('./assets/placeholder.png') center/cover no-repeat;border:1px solid var(--border)}
+    .links a{margin-right:10px}
+
+    details{border:1px dashed var(--border);border-radius:12px;padding:10px}
+    summary{cursor:pointer;font-weight:700;color:#d5ddff}
+
+    footer{padding:24px 18px;color:var(--muted);text-align:center}
+
+    /* Light mode */
+    @media (prefers-color-scheme: light){
+      :root{--bg:#f6f7fb;--card:#ffffff;--ink:#111827;--muted:#6b7280;--link:#0b5fff;--accent:#0b5fff;--border:#e5e7eb;--pill:#eef2ff;--shadow:0 1px 2px rgba(0,0,0,.05)}
+      .pub{background:#fff}
+      .card{background:#fff}
+      header{background:linear-gradient(120deg,#041a5e 0%, #0b5fff 80%)}
+      nav a{color:#f1f7ff}
+    }
+    @media (max-width:860px){ .grid{grid-template-columns:1fr} .pub{grid-template-columns:1fr} .pub .thumb{width:100%;height:150px} }
+  </style>
+
+  <!-- Tiny dark-mode toggle (keeps page self-contained) -->
+  <script>
+    // Optional: manual toggle to override prefers-color-scheme
+    function toggleMode(){
+      const cl = document.documentElement.classList;
+      cl.toggle('force-light');
+      cl.toggle('force-dark');
+    }
+  </script>
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ali Vaziri",
+    "affiliation": {"@type":"Organization","name":"University of Kansas"},
+    "jobTitle": "Graduate Research Assistant",
+    "email": "mailto:alivaziri@ku.edu",
+    "url": "https://alivaziri.github.io/",
+    "sameAs": [
+      "https://github.com/Alivaziri",
+      "https://scholar.google.com/citations?user=qBxWx8AAAAAJ",
+      "https://www.linkedin.com/in/ali-vaziri-63338512a"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="avatar" aria-hidden="true"></div>
+      <div>
+        <h1>Ali Vaziri</h1>
+        <div class="tagline">Optimization · ML for Dynamics · Scientific Computing — Lawrence, KS</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle" onclick="toggleMode()" title="Toggle theme">Toggle</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am a graduate researcher at the University of Kansas working on optimal control and Bayesian inference for
+      machine-learned dynamical systems, with an emphasis on GPU-accelerated, real-time decision making. I build
+      inference-in-the-loop controllers, heavy-tailed motion planners, and physics-aware neural ODE models—validated in
+      robotics and energy systems.
+    </p>
+    <div>
+      <span class="pill">Optimal Control</span>
+      <span class="pill">Bayesian Inference</span>
+      <span class="pill">Neural ODEs</span>
+      <span class="pill">GPU · PyTorch</span>
+      <span class="pill">MPC / LQR</span>
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>News</h2>
+    <ul class="tight">
+      <li><strong>Aug 2025</strong> — ACC 2025 paper on heavy‑tailed Bayesian motion planning accepted. <span class="meta">(Link below)</span></li>
+      <li><strong>Jul 2025</strong> — T‑RO paper on inferential MPC for neural state‑space models online first.</li>
+      <li><strong>Jun 2025</strong> — Preprint: continuous‑time optimal control of Neural ODEs via Bayesian inference.</li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>Selected Publications</h2>
+
+    <article class="pub">
+      <div class="thumb" style="background-image:url('./assets/pubs/acc25.png')"></div>
+      <div>
+        <strong>Bayesian Inferential Motion Planning Using Heavy‑Tailed Distributions</strong><br/>
+        <span class="meta">Ali Vaziri, et al. — <em>American Control Conference (ACC)</em>, 2025</span><br/>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">Paper</a>
+          <a href="#" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="thumb" style="background-image:url('./assets/pubs/tro25.png')"></div>
+      <div>
+        <strong>Model Predictive Inferential Control of Neural State‑Space Models for AV Motion Planning</strong><br/>
+        <span class="meta">Iman Askari, <strong>Ali Vaziri</strong>, et al. — <em>IEEE Transactions on Robotics</em>, 2025</span><br/>
+        <div class="links">
+          <a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="thumb" style="background-image:url('./assets/pubs/neurips25.png')"></div>
+      <div>
+        <strong>Continuous‑Time Optimal Control of Neural ODEs via Bayesian Inference</strong><br/>
+        <span class="meta"><strong>Ali Vaziri</strong>, et al. — under review, <em>NeurIPS</em>, 2025</span><br/>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">Preprint</a>
+        </div>
+      </div>
+    </article>
+
+    <details>
+      <summary>Show full list</summary>
+      <ul>
+        <li><strong>Optimal Inferential Control of Convolutional Neural Networks</strong> — ACC 2025. <a href="https://arxiv.org/abs/2410.09663" target="_blank" rel="noopener">Paper</a></li>
+        <li><strong>Physics‑Constrained Neural ODEs for HVAC</strong> — Applied Thermal Engineering, 2025 (under review).</li>
+      </ul>
+    </details>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Soft‑Robot Control</strong> <span class="meta">(2025)</span>
+        <ul class="tight">
+          <li>Neural controllers with real‑time GPU inference; precise manipulation demos.</li>
+          <li>Benchmarks vs. LQR/MPC; ablations on inference‑in‑the‑loop stability.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Bayesian Motion Planning for AVs</strong> <span class="meta">(2024–2025)</span>
+        <ul class="tight">
+          <li>Heavy‑tailed planners robust to rare‑event uncertainty and model misspecification.</li>
+          <li>Student‑t smoothers; tube‑based safety margins; GPU batched rollouts.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Building Energy Modeling (MERL)</strong> <span class="meta">(2024)</span>
+        <ul class="tight">
+          <li>Physics‑aware sequence models integrated with control; improved long‑horizon accuracy.</li>
+          <li>Internal PyTorch toolkit for simulation and MPC; 5–6× speedups.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <ul class="tight">
+      <li>Graduate/Undergrad guest lectures: Optimal Control with Neural Models (2024–2025).</li>
+      <li>TA, Controls & System Identification (KU, 2024–2025).</li>
+    </ul>
+  </section>
+
+  <section id="service">
+    <h2>Service</h2>
+    <ul class="tight">
+      <li>Reviewer: ACC, ICRA, T‑RO (ad‑hoc).</li>
+      <li>Organizer: KU ML‑for‑Dynamics reading group.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Links</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Email</strong><br/>
+        <a href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a>
+      </div>
+      <div class="card">
+        <strong>GitHub</strong><br/>
+        <a href="https://github.com/Alivaziri" target="_blank" rel="noopener">github.com/Alivaziri</a>
+      </div>
+      <div class="card">
+        <strong>Google Scholar</strong><br/>
+        <a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ" target="_blank" rel="noopener">Scholar profile</a>
+      </div>
+      <div class="card">
+        <strong>CV</strong><br/>
+        <a href="./CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Ali Vaziri • Built with plain HTML/CSS • <a href="https://github.com/Alivaziri/alivaziri.github.io" target="_blank" rel="noopener">Site source</a>
+</footer>
+
+<script>document.getElementById('year').textContent=(new Date).getFullYear();</script>
+</body>
+</html>
