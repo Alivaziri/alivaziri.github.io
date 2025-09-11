@@ -22,7 +22,7 @@
     img{max-width:100%;display:block}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
 
-    /* New background styles */
+    /* New background styles for top and bottom */
     body::before, body::after {
       content: '';
       position: fixed;
@@ -35,67 +35,73 @@
     }
     body::before {
       top: 0;
-      background-image: url('./assets/bg.png'); /* Top background image */
+      background-image: url('./assets/bg.png');
     }
     body::after {
       bottom: 0;
-      background-image: url('./assets/bg.png'); /* Bottom background image */
+      background-image: url('./assets/bg.png');
     }
 
-    /* Header */
+    /* Revised Header and Avatar Styles */
+    .hero-section {
+      display: flex;
+      align-items: flex-start;
+      padding: 30px;
+      gap: 28px;
+      background: rgba(11,16,32,.75);
+      backdrop-filter: saturate(1.2) blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      border: 4px solid var(--border);
+      background-image: url('./assets/avatar.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-links {
+      margin-top: 10px;
+    }
+    .hero-links .pill {
+      margin-right: 6px;
+    }
+
+    /* Original Styles */
     header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.75);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--border)}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
     .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;gap:12px;align-items:center}
-    
-    /* New avatar styles */
-    .avatar{
-      width: 120px; /* Big avatar size */
-      height: 120px;
-      border-radius: 999px;
-      border: 4px solid var(--border); /* Thicker border */
-      background: #111b3a url('./assets/avatar.jpg') center/cover no-repeat;
-    }
+    .avatar{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:#111b3a url('./assets/avatar.jpg') center/cover no-repeat}
     .title{display:flex;flex-direction:column}
     .title h1{margin:0;font-size:1.15rem;font-weight:800;letter-spacing:.2px}
     .subtitle{margin:2px 0 0;color:var(--muted);font-size:.9rem}
-
     nav{display:flex;gap:14px;flex-wrap:wrap}
     nav a{color:#dbe6ff;font-weight:600}
     .theme{display:flex;gap:6px}
     .theme button{background:transparent;color:var(--fg);border:1px solid var(--border);padding:6px 10px;border-radius:10px;cursor:pointer}
-
     main{padding:28px 18px}
     section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
     section h2{margin:0 0 10px;font-size:1.05rem;color:#dbe6ff}
     .muted{color:var(--muted)}
     .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#0c132b;color:#cbd5e1;margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
-
-    /* Grid + cards */
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .card{background:#0c132b;border:1px solid var(--border);border-radius:12px;padding:14px}
-
-    /* News */
     .news li{margin-bottom:8px}
-
-    /* Publication list */
     .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#0c132b;margin:10px 0}
     .thumb{width:110px;height:74px;border-radius:8px;background:#111b3a url('./assets/bg.png') center/cover no-repeat;border:1px solid var(--border)}
     .links a{margin-right:10px}
-
     footer{padding:30px 18px;color:var(--muted);text-align:center}
-
-    /* Light mode */
     .light{--bg:#f6f7fb;--fg:#111827;--muted:#6b7280;--link:#0b5fff;--border:#e5e7eb;--card:#ffffff;--accent:#0b5fff;--shadow:0 1px 2px rgba(0,0,0,.06)}
     .light header{background:linear-gradient(120deg,#041a5e 0%, #0b5fff 85%)}
     .light nav a{color:#eef4ff}
     .light .card,.light .pub{background:#fff}
-
     @media (max-width:860px){.grid{grid-template-columns:1fr}.pub{grid-template-columns:1fr}.thumb{width:100%;height:150px}}
-
-    /* Make header and hero sections static to make the avatar visible */
-    header { position: static; border: none; }
-    #hero { background: none; }
   </style>
 
   <script>
@@ -115,31 +121,31 @@
   </script>
 </head>
 <body>
-  <header style="height: 250px; display: flex; align-items: center; justify-content: center;">
-    <div class="wrap mast" style="position: absolute; top: 18px; left: 18px; justify-content: flex-start; gap: 28px;">
+  <header>
+    <div class="wrap mast">
       <div class="brand">
         <div class="avatar" aria-hidden="true"></div>
-        <div class="title" style="align-self: flex-end;">
+        <div class="title">
           <h1>Ali Vaziri</h1>
           <div class="subtitle">Ph.D. student · Optimal control • ML for dynamics • Scientific computing</div>
         </div>
       </div>
-    </div>
-    <nav style="position: absolute; top: 28px; right: 18px; align-items: center;">
-      <a href="#about">ABOUT</a>
-      <a href="#news">NEWS</a>
-      <a href="#pubs">PUBLICATIONS</a>
-      <a href="#contact">CONTACT</a>
-      <div class="theme" role="group" aria-label="Theme">
-        <button onclick="setTheme('light')" title="Light">Light</button>
-        <button onclick="setTheme('dark')" title="Dark">Dark</button>
-        <button onclick="setTheme('auto')" title="Auto">Auto</button>
+      <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#news">NEWS</a>
+        <a href="#pubs">PUBLICATIONS</a>
+        <a href="#contact">CONTACT</a>
+        <div class="theme" role="group" aria-label="Theme">
+          <button onclick="setTheme('light')" title="Light">Light</button>
+          <button onclick="setTheme('dark')" title="Dark">Dark</button>
+          <button onclick="setTheme('auto')" title="Auto">Auto</button>
       </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="hero" style="text-align:center;">
+    <section id="hero" style="text-align:center;background:linear-gradient(120deg,rgba(79,70,229,.12),rgba(15,23,42,.2));">
       <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
       <p class="muted" style="margin:0">University of Kansas · Mechanical Engineering</p>
       <p class="muted" style="margin:.2rem 0 0">Optimization · Bayesian Inference · GPU‑accelerated Control</p>
