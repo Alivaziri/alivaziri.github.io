@@ -1,212 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ali Vaziri</title>
-  <meta name="description" content="Ali Vaziri — Optimal control, ML for dynamical systems, and GPU-accelerated scientific computing." />
-  <link rel="canonical" href="https://alivaziri.github.io/" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Vaziri</title>
+  <meta name="description" content="Ali Vaziri — Optimal control, ML for dynamical systems, and GPU-accelerated scientific computing." />
+  <link rel="canonical" href="https://alivaziri.github.io/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ali Vaziri" />
-  <meta property="og:description" content="Optimal control • ML for dynamical systems • Scientific computing" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/bg.png" />
+    <meta property="og:title" content="Ali Vaziri" />
+  <meta property="og:description" content="Optimal control • ML for dynamical systems • Scientific computing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/bg.png" />
 
-  <style>
-    :root{
-      --bg: #0b1020; --fg:#e5e7eb; --muted:#9aa3b2; --link:#8ab4ff; --border:#1f2a44; --card:#0f172a; --accent:#7aa2f7;
-      --max: 980px; --radius: 14px; --shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
-    img{max-width:100%;display:block}
-    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+  <style>
+    :root{
+      --bg: #0b1020; --fg:#e5e7eb; --muted:#9aa3b2; --link:#8ab4ff; --border:#1f2a44; --card:#0f172a; --accent:#7aa2f7;
+      --max: 980px; --radius: 14px; --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
+    img{max-width:100%;display:block}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
 
-    /* Header */
-    header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.75);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--border)}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .avatar{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:#111b3a url('./assets/avatar.jpg') center/cover no-repeat}
-    .title{display:flex;flex-direction:column}
-    .title h1{margin:0;font-size:1.15rem;font-weight:800;letter-spacing:.2px}
-    .subtitle{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+    /* New background styles */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+    body::before {
+      top: 0;
+      background-image: url('./assets/bg.png'); /* Top background image */
+    }
+    body::after {
+      bottom: 0;
+      background-image: url('./assets/bg.png'); /* Bottom background image */
+    }
 
-    nav{display:flex;gap:14px;flex-wrap:wrap}
-    nav a{color:#dbe6ff;font-weight:600}
-    .theme{display:flex;gap:6px}
-    .theme button{background:transparent;color:var(--fg);border:1px solid var(--border);padding:6px 10px;border-radius:10px;cursor:pointer}
+    /* Header */
+    header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.75);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--border)}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    
+    /* New avatar styles */
+    .avatar{
+      width: 120px; /* Big avatar size */
+      height: 120px;
+      border-radius: 999px;
+      border: 4px solid var(--border); /* Thicker border */
+      background: #111b3a url('./assets/avatar.jpg') center/cover no-repeat;
+    }
+    .title{display:flex;flex-direction:column}
+    .title h1{margin:0;font-size:1.15rem;font-weight:800;letter-spacing:.2px}
+    .subtitle{margin:2px 0 0;color:var(--muted);font-size:.9rem}
 
-    main{padding:28px 18px}
-    section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    section h2{margin:0 0 10px;font-size:1.05rem;color:#dbe6ff}
-    .muted{color:var(--muted)}
-    .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#0c132b;color:#cbd5e1;margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{color:#dbe6ff;font-weight:600}
+    .theme{display:flex;gap:6px}
+    .theme button{background:transparent;color:var(--fg);border:1px solid var(--border);padding:6px 10px;border-radius:10px;cursor:pointer}
 
-    /* Grid + cards */
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .card{background:#0c132b;border:1px solid var(--border);border-radius:12px;padding:14px}
+    main{padding:28px 18px}
+    section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    section h2{margin:0 0 10px;font-size:1.05rem;color:#dbe6ff}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#0c132b;color:#cbd5e1;margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
 
-    /* News */
-    .news li{margin-bottom:8px}
+    /* Grid + cards */
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .card{background:#0c132b;border:1px solid var(--border);border-radius:12px;padding:14px}
 
-    /* Publication list */
-    .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#0c132b;margin:10px 0}
-    .thumb{width:110px;height:74px;border-radius:8px;background:#111b3a url('./assets/bg.png') center/cover no-repeat;border:1px solid var(--border)}
-    .links a{margin-right:10px}
+    /* News */
+    .news li{margin-bottom:8px}
 
-    footer{padding:30px 18px;color:var(--muted);text-align:center}
+    /* Publication list */
+    .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#0c132b;margin:10px 0}
+    .thumb{width:110px;height:74px;border-radius:8px;background:#111b3a url('./assets/bg.png') center/cover no-repeat;border:1px solid var(--border)}
+    .links a{margin-right:10px}
 
-    /* Light mode */
-    .light{--bg:#f6f7fb;--fg:#111827;--muted:#6b7280;--link:#0b5fff;--border:#e5e7eb;--card:#ffffff;--accent:#0b5fff;--shadow:0 1px 2px rgba(0,0,0,.06)}
-    .light header{background:linear-gradient(120deg,#041a5e 0%, #0b5fff 85%)}
-    .light nav a{color:#eef4ff}
-    .light .card,.light .pub{background:#fff}
+    footer{padding:30px 18px;color:var(--muted);text-align:center}
 
-    @media (max-width:860px){.grid{grid-template-columns:1fr}.pub{grid-template-columns:1fr}.thumb{width:100%;height:150px}}
-  </style>
+    /* Light mode */
+    .light{--bg:#f6f7fb;--fg:#111827;--muted:#6b7280;--link:#0b5fff;--border:#e5e7eb;--card:#ffffff;--accent:#0b5fff;--shadow:0 1px 2px rgba(0,0,0,.06)}
+    .light header{background:linear-gradient(120deg,#041a5e 0%, #0b5fff 85%)}
+    .light nav a{color:#eef4ff}
+    .light .card,.light .pub{background:#fff}
 
-  <script>
-    // Simple theme controller: Light / Dark / Auto (prefers-color-scheme)
-    const applyTheme = (mode)=>{
-      const doc = document.documentElement;
-      doc.classList.remove('light'); // default dark
-      if(mode==='light') doc.classList.add('light');
-      if(mode==='auto'){ // auto = follow system
-        const mq = window.matchMedia('(prefers-color-scheme: light)');
-        mq.addEventListener('change',()=>applyTheme(localStorage.getItem('theme')||'auto'));
-        if(mq.matches) doc.classList.add('light');
-      }
-    }
-    const setTheme=(m)=>{localStorage.setItem('theme',m);applyTheme(m)}
-    document.addEventListener('DOMContentLoaded',()=>applyTheme(localStorage.getItem('theme')||'auto'))
-  </script>
+    @media (max-width:860px){.grid{grid-template-columns:1fr}.pub{grid-template-columns:1fr}.thumb{width:100%;height:150px}}
+
+    /* Make header and hero sections static to make the avatar visible */
+    header { position: static; border: none; }
+    #hero { background: none; }
+  </style>
+
+  <script>
+    // Simple theme controller: Light / Dark / Auto (prefers-color-scheme)
+    const applyTheme = (mode)=>{
+      const doc = document.documentElement;
+      doc.classList.remove('light'); // default dark
+      if(mode==='light') doc.classList.add('light');
+      if(mode==='auto'){ // auto = follow system
+        const mq = window.matchMedia('(prefers-color-scheme: light)');
+        mq.addEventListener('change',()=>applyTheme(localStorage.getItem('theme')||'auto'));
+        if(mq.matches) doc.classList.add('light');
+      }
+    }
+    const setTheme=(m)=>{localStorage.setItem('theme',m);applyTheme(m)}
+    document.addEventListener('DOMContentLoaded',()=>applyTheme(localStorage.getItem('theme')||'auto'))
+  </script>
 </head>
 <body>
-  <header>
-    <div class="wrap mast">
-      <div class="brand">
-        <div class="avatar" aria-hidden="true"></div>
-        <div class="title">
-          <h1>Ali Vaziri</h1>
-          <div class="subtitle">Ph.D. student · Optimal control • ML for dynamics • Scientific computing</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#about">ABOUT</a>
-        <a href="#news">NEWS</a>
-        <a href="#pubs">PUBLICATIONS</a>
-        <a href="#contact">CONTACT</a>
-        <div class="theme" role="group" aria-label="Theme">
-          <button onclick="setTheme('light')" title="Light">Light</button>
-          <button onclick="setTheme('dark')" title="Dark">Dark</button>
-          <button onclick="setTheme('auto')" title="Auto">Auto</button>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <header style="height: 250px; display: flex; align-items: center; justify-content: center;">
+    <div class="wrap mast" style="position: absolute; top: 18px; left: 18px; justify-content: flex-start; gap: 28px;">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="title" style="align-self: flex-end;">
+          <h1>Ali Vaziri</h1>
+          <div class="subtitle">Ph.D. student · Optimal control • ML for dynamics • Scientific computing</div>
+        </div>
+      </div>
+    </div>
+    <nav style="position: absolute; top: 28px; right: 18px; align-items: center;">
+      <a href="#about">ABOUT</a>
+      <a href="#news">NEWS</a>
+      <a href="#pubs">PUBLICATIONS</a>
+      <a href="#contact">CONTACT</a>
+      <div class="theme" role="group" aria-label="Theme">
+        <button onclick="setTheme('light')" title="Light">Light</button>
+        <button onclick="setTheme('dark')" title="Dark">Dark</button>
+        <button onclick="setTheme('auto')" title="Auto">Auto</button>
+      </div>
+    </nav>
+  </header>
 
-  <main>
-    <section id="hero" style="text-align:center;background:linear-gradient(120deg,rgba(79,70,229,.12),rgba(15,23,42,.2));">
-      <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
-      <p class="muted" style="margin:0">University of Kansas · Mechanical Engineering</p>
-      <p class="muted" style="margin:.2rem 0 0">Optimization · Bayesian Inference · GPU‑accelerated Control</p>
-      <div style="margin-top:10px">
-        <a class="pill" href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://github.com/Alivaziri">GitHub</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Google Scholar</a>
-        <a class="pill" target="_blank" rel="noopener" href="./CV.pdf">CV</a>
-      </div>
-    </section>
+  <main>
+    <section id="hero" style="text-align:center;">
+      <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
+      <p class="muted" style="margin:0">University of Kansas · Mechanical Engineering</p>
+      <p class="muted" style="margin:.2rem 0 0">Optimization · Bayesian Inference · GPU‑accelerated Control</p>
+      <div style="margin-top:10px">
+        <a class="pill" href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://github.com/Alivaziri">GitHub</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Google Scholar</a>
+        <a class="pill" target="_blank" rel="noopener" href="./CV.pdf">CV</a>
+      </div>
+    </section>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am a Ph.D. student at the University of Kansas advised by Prof. Huazhen Fang. My research studies
-        optimal control and Bayesian inference for machine‑learned dynamical systems (e.g., Neural ODEs) with an emphasis
-        on real‑time deployment via GPU acceleration. I am interested in inference‑in‑the‑loop control, heavy‑tailed motion
-        planning, and physics‑aware system identification, with applications in robotics and energy systems.
-      </p>
-      <div>
-        <span class="pill">Optimal Control</span>
-        <span class="pill">Bayesian Inference</span>
-        <span class="pill">Neural ODEs</span>
-        <span class="pill">GPU · PyTorch</span>
-        <span class="pill">MPC / LQR</span>
-      </div>
-    </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a Ph.D. student at the University of Kansas advised by Prof. Huazhen Fang. My research studies
+        optimal control and Bayesian inference for machine‑learned dynamical systems (e.g., Neural ODEs) with an emphasis
+        on real‑time deployment via GPU acceleration. I am interested in inference‑in‑the‑loop control, heavy‑tailed motion
+        planning, and physics‑aware system identification, with applications in robotics and energy systems.
+      </p>
+      <div>
+        <span class="pill">Optimal Control</span>
+        <span class="pill">Bayesian Inference</span>
+        <span class="pill">Neural ODEs</span>
+        <span class="pill">GPU · PyTorch</span>
+        <span class="pill">MPC / LQR</span>
+      </div>
+    </section>
 
-    <section id="news">
-      <h2>NEWS</h2>
-      <ul class="news">
-        <li><strong>Aug 2025.</strong> ACC 2025 paper on heavy‑tailed Bayesian motion planning accepted. <a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">(paper)</a></li>
-        <li><strong>Jul 2025.</strong> T‑RO article on inferential MPC for neural state‑space models online first.</li>
-        <li><strong>Jun 2025.</strong> Preprint: continuous‑time optimal control of Neural ODEs via Bayesian inference.</li>
-      </ul>
-    </section>
+    <section id="news">
+      <h2>NEWS</h2>
+      <ul class="news">
+        <li><strong>Aug 2025.</strong> ACC 2025 paper on heavy‑tailed Bayesian motion planning accepted. <a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">(paper)</a></li>
+        <li><strong>Jul 2025.</strong> T‑RO article on inferential MPC for neural state‑space models online first.</li>
+        <li><strong>Jun 2025.</strong> Preprint: continuous‑time optimal control of Neural ODEs via Bayesian inference.</li>
+      </ul>
+    </section>
 
-    <section id="pubs">
-      <h2>Publication List</h2>
-      <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/acc25.png')"></div>
-        <div>
-          <strong>Bayesian Inferential Motion Planning Using Heavy‑Tailed Distributions</strong><br>
-          <span class="muted">Ali Vaziri, et al. — American Control Conference (ACC), 2025</span><br>
-          <div class="links">
-            <a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
+    <section id="pubs">
+      <h2>Publication List</h2>
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/acc25.png')"></div>
+        <div>
+          <strong>Bayesian Inferential Motion Planning Using Heavy‑Tailed Distributions</strong><br>
+          <span class="muted">Ali Vaziri, et al. — American Control Conference (ACC), 2025</span><br>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/tro25.png')"></div>
-        <div>
-          <strong>Model Predictive Inferential Control of Neural State‑Space Models for AV Motion Planning</strong><br>
-          <span class="muted">Iman Askari, <strong>Ali Vaziri</strong>, et al. — IEEE Transactions on Robotics, 2025</span><br>
-          <div class="links">
-            <a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>
-          </div>
-        </div>
-      </article>
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/tro25.png')"></div>
+        <div>
+          <strong>Model Predictive Inferential Control of Neural State‑Space Models for AV Motion Planning</strong><br>
+          <span class="muted">Iman Askari, <strong>Ali Vaziri</strong>, et al. — IEEE Transactions on Robotics, 2025</span><br>
+          <div class="links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
 
-      <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/neurips25.png')"></div>
-        <div>
-          <strong>Continuous‑Time Optimal Control of Neural ODEs via Bayesian Inference</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, NeurIPS 2025</span><br>
-          <div class="links">
-            <a href="#" target="_blank" rel="noopener">Preprint</a>
-          </div>
-        </div>
-      </article>
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/neurips25.png')"></div>
+        <div>
+          <strong>Continuous‑Time Optimal Control of Neural ODEs via Bayesian Inference</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, NeurIPS 2025</span><br>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Preprint</a>
+          </div>
+        </div>
+      </article>
 
-      <details>
-        <summary>Show more</summary>
-        <ul>
-          <li><strong>Optimal Inferential Control of Convolutional Neural Networks</strong> — ACC 2025. <a href="https://arxiv.org/abs/2410.09663" target="_blank" rel="noopener">Paper</a></li>
-          <li><strong>Physics‑Constrained Neural ODEs for HVAC</strong> — Applied Thermal Engineering (under review), 2025.</li>
-        </ul>
-      </details>
-    </section>
+      <details>
+        <summary>Show more</summary>
+        <ul>
+          <li><strong>Optimal Inferential Control of Convolutional Neural Networks</strong> — ACC 2025. <a href="https://arxiv.org/abs/2410.09663" target="_blank" rel="noopener">Paper</a></li>
+          <li><strong>Physics‑Constrained Neural ODEs for HVAC</strong> — Applied Thermal Engineering (under review), 2025.</li>
+        </ul>
+      </details>
+    </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="grid">
-        <div class="card"><strong>Email</strong><br><a href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a></div>
-        <div class="card"><strong>GitHub</strong><br><a target="_blank" rel="noopener" href="https://github.com/Alivaziri">github.com/Alivaziri</a></div>
-        <div class="card"><strong>Google Scholar</strong><br><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Scholar profile</a></div>
-        <div class="card"><strong>CV</strong><br><a target="_blank" rel="noopener" href="./CV.pdf">Download CV (PDF)</a></div>
-      </div>
-    </section>
-  </main>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card"><strong>Email</strong><br><a href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a></div>
+        <div class="card"><strong>GitHub</strong><br><a target="_blank" rel="noopener" href="https://github.com/Alivaziri">github.com/Alivaziri</a></div>
+        <div class="card"><strong>Google Scholar</strong><br><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Scholar profile</a></div>
+        <div class="card"><strong>CV</strong><br><a target="_blank" rel="noopener" href="./CV.pdf">Download CV (PDF)</a></div>
+      </div>
+    </section>
+  </main>
 
-  <footer>
-    <div class="wrap">
-      <div class="muted">© <span id="year"></span> Ali Vaziri · Built with plain HTML/CSS · Inspired by the minimal academic pages powered by static site generators like Hugo (Eureka theme).</div>
-    </div>
-  </footer>
+  <footer>
+    <div class="wrap">
+      <div class="muted">© <span id="year"></span> Ali Vaziri · Built with plain HTML/CSS · Inspired by the minimal academic pages powered by static site generators like Hugo (Eureka theme).</div>
+    </div>
+  </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
