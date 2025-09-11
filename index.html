@@ -20,24 +20,13 @@
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
-
     img{max-width:100%;display:block}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
 
-    /* Top + bottom background images */
-    body::before {
-      content:"";
-      display:block;
-      width:100%; height:220px;
-      background:url('./assets/bg-top.jpg') center/cover no-repeat;
-    }
-    body::after {
-      content:"";
-      display:block;
-      width:100%; height:180px;
-      background:url('./assets/bg-bottom.jpg') center/cover no-repeat;
-      margin-top:40px;
-    }
+    /* Top & bottom background strips (visible elements so they won't get hidden) */
+    .bg-strip{width:100%;background-position:center;background-size:cover;background-repeat:no-repeat}
+    .bg-top{height:220px;background-image:url('./assets/brain-top.jpg')}
+    .bg-bottom{height:180px;background-image:url('./assets/brain-bottom.jpg');margin-top:40px}
 
     /* Header */
     header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.85);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--border)}
@@ -61,6 +50,15 @@
     .muted{color:var(--muted)}
     .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#0c132b;color:#cbd5e1;margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
 
+    /* Grid + cards (used in Contact) */
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .card{background:#0c132b;border:1px solid var(--border);border-radius:12px;padding:14px}
+
+    /* Publications list */
+    .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#0c132b;margin:10px 0}
+    .thumb{width:110px;height:74px;border-radius:8px;background:#111b3a url('./assets/bg.png') center/cover no-repeat;border:1px solid var(--border)}
+    .links a{margin-right:10px}
+
     footer{padding:30px 18px;color:var(--muted);text-align:center}
 
     /* Light mode */
@@ -69,6 +67,7 @@
     .light nav a{color:#eef4ff}
     .light .card,.light .pub{background:#fff}
 
+    @media(max-width:860px){.grid{grid-template-columns:1fr}.pub{grid-template-columns:1fr}.thumb{width:100%;height:150px}}
     @media(max-width:600px){
       .mast{flex-direction:column;align-items:center;text-align:center}
       nav{margin-left:0;justify-content:center}
@@ -94,6 +93,9 @@
 </head>
 <body>
 
+  <!-- TOP BRAIN BACKGROUND -->
+  <div class="bg-strip bg-top" aria-hidden="true"></div>
+
   <header>
     <div class="wrap mast">
       <div class="brand">
@@ -107,6 +109,8 @@
         <a href="#about">ABOUT</a>
         <a href="#news">NEWS</a>
         <a href="#pubs">PUBLICATIONS</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#awards">AWARDS</a>
         <a href="#contact">CONTACT</a>
         <div class="theme" role="group" aria-label="Theme">
           <button onclick="setTheme('light')" title="Light">Light</button>
@@ -135,7 +139,8 @@
       <p>
         I am a Ph.D. student at the University of Kansas advised by Prof. Huazhen Fang. My research studies
         optimal control and Bayesian inference for machine-learned dynamical systems (e.g., Neural ODEs) with an emphasis
-        on real-time deployment via GPU acceleration.
+        on real-time deployment via GPU acceleration. Interests include inference-in-the-loop control, heavy-tailed motion
+        planning, and physics-aware system identification in robotics and energy systems.
       </p>
       <div>
         <span class="pill">Optimal Control</span>
@@ -155,16 +160,112 @@
       </ul>
     </section>
 
+    <!-- PUBLICATIONS (your list added verbatim, styled) -->
     <section id="pubs">
       <h2>Publication List</h2>
+
       <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/acc25.png');width:110px;height:74px;border-radius:8px;background-size:cover;background-position:center;border:1px solid var(--border)"></div>
+        <div class="thumb" style="background-image:url('./assets/pubs/neurips25.png')"></div>
         <div>
-          <strong>Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions</strong><br>
-          <span class="muted">Ali Vaziri, et al. — American Control Conference (ACC), 2025</span><br>
-          <div class="links"><a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">Paper</a></div>
+          <strong>Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, NeurIPS 2025</span>
         </div>
       </article>
+
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/pnas.png')"></div>
+        <div>
+          <strong>Optimal Inferential Control of Machine Learning Models</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, PNAS</span>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/ate.png')"></div>
+        <div>
+          <strong>Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, Applied Thermal Engineering (MERL)</span>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/acc25.png')"></div>
+        <div>
+          <strong>Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — American Control Conference (ACC), 2025</span><br>
+          <div class="links"><a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/acc25-cnn.png')"></div>
+        <div>
+          <strong>Optimal Inferential Control of Convolutional Neural Networks</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — ACC 2025 · Best Student Paper nominee</span><br>
+          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/tro25.png')"></div>
+        <div>
+          <strong>Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning</strong><br>
+          <span class="muted">Iman Askari, <strong>Ali Vaziri</strong>, et al. — IEEE Transactions on Robotics (T-RO), 2025</span><br>
+          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Control & Estimation</strong>
+          <ul style="margin:8px 0 0 18px">
+            <li>Bayesian MPC & Optimal Inferential Control</li>
+            <li>PDE Optimal Control</li>
+            <li>MPC, NMPC, Path-Integral Control (CasADi/IPOPT, fmincon, MPPI)</li>
+            <li>Kalman Filters: KF, EKF, UKF, EnKF (Auto-Diff)</li>
+            <li>Ensemble Kalman Smoothing; Particle Filters, SMC</li>
+            <li>Robust Filtering & Smoothing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>ML & Dynamical Modeling</strong>
+          <ul style="margin:8px 0 0 18px">
+            <li>Physics-Informed ML; Neural ODEs/PDEs</li>
+            <li>CNNs, GRUs, LSTMs, FNNs</li>
+            <li>Dynamic Programming & RL (Q-Learning, Ψ-Learning)</li>
+            <li>Time-Series Modeling</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Optimization & System ID</strong>
+          <ul style="margin:8px 0 0 18px">
+            <li>GPU Computing (CUDA, PyTorch, TensorFlow)</li>
+            <li>Gradient-Free Optimization</li>
+            <li>Ensemble Kalman Inversion (for ML Training)</li>
+            <li>Expectation-Maximization (EM)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards">
+      <h2>Awards, Grants & Honours</h2>
+      <ul style="margin:0 0 0 18px">
+        <li><strong>2025</strong> — “Challenge Seeker” Outstanding Student Award (University of Kansas)</li>
+        <li><strong>2025</strong> — Student Travel Award, ACC 2025</li>
+        <li><strong>2025</strong> — Annual GEA Research Showcase Competition (KU)</li>
+        <li><strong>2025</strong> — I2S Student Research Symposium (ISRS) at KU</li>
+        <li><strong>2024</strong> — Annual GEA Research Showcase Competition (KU)</li>
+        <li><strong>2023</strong> — Wyatt Memorial Scholarship (Top 1% of graduate students)</li>
+        <li><strong>2022</strong> — Best Publication Award at MIC 2022</li>
+        <li><strong>2019</strong> — Excellent Student Award: 3rd Rank among Sharif Marine Eng. students</li>
+        <li><strong>2016</strong> — Top 0.4% in Iran’s nationwide university entrance exam (≈170,000 students)</li>
+      </ul>
     </section>
 
     <section id="contact">
@@ -177,6 +278,9 @@
       </div>
     </section>
   </main>
+
+  <!-- BOTTOM BRAIN BACKGROUND -->
+  <div class="bg-strip bg-bottom" aria-hidden="true"></div>
 
   <footer>
     <div class="wrap">
