@@ -14,9 +14,8 @@
   <meta property="og:image" content="./assets/bg.png" />
 
   <style>
-    :root {
-      --bg: #0b1020; --fg:#e5e7eb; --muted:#9aa3b2; --link:#8ab4ff;
-      --border:#1f2a44; --card:#0f172a; --accent:#7aa2f7;
+    :root{
+      --bg: #0b1020; --fg:#e5e7eb; --muted:#9aa3b2; --link:#8ab4ff; --border:#1f2a44; --card:#0f172a; --accent:#7aa2f7;
       --max: 980px; --radius: 14px; --shadow: 0 10px 30px rgba(0,0,0,.25);
     }
     *{box-sizing:border-box}
@@ -25,47 +24,36 @@
     img{max-width:100%;display:block}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
 
-    /* Top background strip */
+    /* Top + bottom background images */
     body::before {
       content:"";
       display:block;
-      width:100%; height:200px;
-      background:linear-gradient(120deg,#041a5e 0%, #0b5fff 85%);
+      width:100%; height:220px;
+      background:url('./assets/bg-top.jpg') center/cover no-repeat;
     }
-    /* Bottom background strip */
     body::after {
       content:"";
       display:block;
-      width:100%; height:150px;
-      background:linear-gradient(120deg,#0b5fff 0%, #041a5e 85%);
+      width:100%; height:180px;
+      background:url('./assets/bg-bottom.jpg') center/cover no-repeat;
       margin-top:40px;
     }
 
-    /* Header with big avatar */
-    header {
-      position:relative;
-      max-width:var(--max);
-      margin:-160px auto 0; /* pull upward into top strip */
-      display:flex;
-      align-items:center;
-      gap:20px;
-      padding:20px;
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .avatar {
-      width:150px; height:150px;
-      border-radius:999px;
-      border:3px solid var(--border);
-      background:#111b3a url('./assets/avatar.jpg') center/cover no-repeat;
-      flex-shrink:0;
-    }
-    .title h1{margin:0;font-size:1.8rem;font-weight:800}
-    .subtitle{margin:6px 0 0;color:var(--muted);font-size:1rem}
+    /* Header */
+    header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.85);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--border)}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
 
-    nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+    .brand{display:flex;gap:16px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:999px;border:3px solid var(--border);background:#111b3a url('./assets/avatar.jpg') center/cover no-repeat}
+    .title{display:flex;flex-direction:column}
+    .title h1{margin:0;font-size:1.5rem;font-weight:800}
+    .subtitle{margin:4px 0 0;color:var(--muted);font-size:1rem}
+
+    nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
     nav a{color:#dbe6ff;font-weight:600}
+    .theme{display:flex;gap:6px}
+    .theme button{background:transparent;color:var(--fg);border:1px solid var(--border);padding:6px 10px;border-radius:10px;cursor:pointer}
 
     main{padding:28px 18px}
     section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
@@ -75,54 +63,125 @@
 
     footer{padding:30px 18px;color:var(--muted);text-align:center}
 
-    /* Responsive */
+    /* Light mode */
+    .light{--bg:#f6f7fb;--fg:#111827;--muted:#6b7280;--link:#0b5fff;--border:#e5e7eb;--card:#ffffff;--accent:#0b5fff;--shadow:0 1px 2px rgba(0,0,0,.06)}
+    .light header{background:linear-gradient(120deg,#041a5e 0%, #0b5fff 85%)}
+    .light nav a{color:#eef4ff}
+    .light .card,.light .pub{background:#fff}
+
     @media(max-width:600px){
-      header{flex-direction:column;align-items:center;text-align:center}
+      .mast{flex-direction:column;align-items:center;text-align:center}
       nav{margin-left:0;justify-content:center}
+      .avatar{width:90px;height:90px}
     }
   </style>
+
+  <script>
+    // Theme toggle
+    const applyTheme = (mode)=>{
+      const doc = document.documentElement;
+      doc.classList.remove('light'); // default dark
+      if(mode==='light') doc.classList.add('light');
+      if(mode==='auto'){
+        const mq = window.matchMedia('(prefers-color-scheme: light)');
+        mq.addEventListener('change',()=>applyTheme(localStorage.getItem('theme')||'auto'));
+        if(mq.matches) doc.classList.add('light');
+      }
+    }
+    const setTheme=(m)=>{localStorage.setItem('theme',m);applyTheme(m)}
+    document.addEventListener('DOMContentLoaded',()=>applyTheme(localStorage.getItem('theme')||'auto'))
+  </script>
 </head>
 <body>
 
   <header>
-    <div class="avatar" aria-hidden="true"></div>
-    <div class="title">
-      <h1>Ali Vaziri</h1>
-      <div class="subtitle">Ph.D. student · Optimal control • ML for dynamics • Scientific computing</div>
+    <div class="wrap mast">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="title">
+          <h1>Ali Vaziri</h1>
+          <div class="subtitle">Ph.D. student · Optimal control • ML for dynamics • Scientific computing</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#news">NEWS</a>
+        <a href="#pubs">PUBLICATIONS</a>
+        <a href="#contact">CONTACT</a>
+        <div class="theme" role="group" aria-label="Theme">
+          <button onclick="setTheme('light')" title="Light">Light</button>
+          <button onclick="setTheme('dark')" title="Dark">Dark</button>
+          <button onclick="setTheme('auto')" title="Auto">Auto</button>
+        </div>
+      </nav>
     </div>
-    <nav>
-      <a href="#about">ABOUT</a>
-      <a href="#news">NEWS</a>
-      <a href="#pubs">PUBLICATIONS</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
   </header>
 
   <main>
+    <section id="hero" style="text-align:center;background:linear-gradient(120deg,rgba(79,70,229,.12),rgba(15,23,42,.2));">
+      <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
+      <p class="muted" style="margin:0">University of Kansas · Mechanical Engineering</p>
+      <p class="muted" style="margin:.2rem 0 0">Optimization · Bayesian Inference · GPU-accelerated Control</p>
+      <div style="margin-top:10px">
+        <a class="pill" href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://github.com/Alivaziri">GitHub</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Google Scholar</a>
+        <a class="pill" target="_blank" rel="noopener" href="./CV.pdf">CV</a>
+      </div>
+    </section>
+
     <section id="about">
       <h2>About Me</h2>
-      <p>I am a Ph.D. student at the University of Kansas advised by Prof. Huazhen Fang. My research studies
-      optimal control and Bayesian inference for machine-learned dynamical systems with an emphasis on
-      real-time deployment via GPU acceleration.</p>
+      <p>
+        I am a Ph.D. student at the University of Kansas advised by Prof. Huazhen Fang. My research studies
+        optimal control and Bayesian inference for machine-learned dynamical systems (e.g., Neural ODEs) with an emphasis
+        on real-time deployment via GPU acceleration.
+      </p>
+      <div>
+        <span class="pill">Optimal Control</span>
+        <span class="pill">Bayesian Inference</span>
+        <span class="pill">Neural ODEs</span>
+        <span class="pill">GPU · PyTorch</span>
+        <span class="pill">MPC / LQR</span>
+      </div>
     </section>
+
     <section id="news">
-      <h2>News</h2>
-      <ul>
-        <li><strong>Aug 2025:</strong> ACC 2025 paper on heavy-tailed Bayesian motion planning accepted.</li>
+      <h2>NEWS</h2>
+      <ul class="news">
+        <li><strong>Aug 2025.</strong> ACC 2025 paper on heavy-tailed Bayesian motion planning accepted. <a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">(paper)</a></li>
+        <li><strong>Jul 2025.</strong> T-RO article on inferential MPC for neural state-space models online first.</li>
+        <li><strong>Jun 2025.</strong> Preprint: continuous-time optimal control of Neural ODEs via Bayesian inference.</li>
       </ul>
     </section>
+
     <section id="pubs">
-      <h2>Publications</h2>
-      <p>Coming soon...</p>
+      <h2>Publication List</h2>
+      <article class="pub">
+        <div class="thumb" style="background-image:url('./assets/pubs/acc25.png');width:110px;height:74px;border-radius:8px;background-size:cover;background-position:center;border:1px solid var(--border)"></div>
+        <div>
+          <strong>Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions</strong><br>
+          <span class="muted">Ali Vaziri, et al. — American Control Conference (ACC), 2025</span><br>
+          <div class="links"><a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
     </section>
+
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a></p>
+      <div class="grid">
+        <div class="card"><strong>Email</strong><br><a href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a></div>
+        <div class="card"><strong>GitHub</strong><br><a target="_blank" rel="noopener" href="https://github.com/Alivaziri">github.com/Alivaziri</a></div>
+        <div class="card"><strong>Google Scholar</strong><br><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Scholar profile</a></div>
+        <div class="card"><strong>CV</strong><br><a target="_blank" rel="noopener" href="./CV.pdf">Download CV (PDF)</a></div>
+      </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Ali Vaziri · Minimal academic page
+    <div class="wrap">
+      <div class="muted">© <span id="year"></span> Ali Vaziri · Built with plain HTML/CSS</div>
+    </div>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
