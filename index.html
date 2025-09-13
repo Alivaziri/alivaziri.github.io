@@ -8,20 +8,11 @@
   <link rel="canonical" href="https://alivaziri.github.io/" />
 
   <meta property="og:title" content="Ali Vaziri" />
-  <meta property="og:description" content="Optimal Control, Bayesian Inference, GPU-accelerated Computing" />
+  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/avatar.jpg" />
 
   <style>
-    .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 999px;
-    border: 4px solid #ffffff;
-    /* This is the line to fix */
-    background: #ffffff url('./assets/avatar.jpg') center/cover no-repeat;
-    flex-shrink: 0;
-}
     :root{
       /* Light Theme (Default) */
       --bg: #f6f7fb; --fg: #111827; --muted:#6b7280; --link:#0b5fff; --border:#e5e7eb; --card:#ffffff; --accent:#0b5fff;
@@ -43,7 +34,20 @@
     .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
 
     .brand{display:flex;gap:20px;align-items:center}
-    .avatar{width:150px;height:150px;border-radius:999px;border:4px solid #ffffff; background:#ffffff url('') center/cover no-repeat; flex-shrink: 0;}
+    .avatar{
+        width:150px;
+        height:150px;
+        border-radius:999px;
+        border:4px solid #ffffff;
+        background-color: #ffffff;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        flex-shrink: 0;
+
+        /* --- THIS IS THE LINE TO EDIT --- */
+        background-image: url('./assets/avatar.jpg');
+    }
     .title{display:flex;flex-direction:column}
     .title h1{margin:0;font-size:1.8rem;font-weight:800; color: #ffffff;}
     .subtitle{margin:4px 0 0;color:#eef4ff;font-size:1.1rem}
@@ -89,7 +93,7 @@
   <header>
     <div class="wrap mast">
       <div class="brand">
-        <div class="avatar" style="background-image: url('')" aria-hidden="true"></div>
+        <div class="avatar" aria-hidden="true"></div>
         <div class="title">
           <h1>Ali Vaziri</h1>
           <div class="subtitle">Ph.D. Applicant — Mechanical Engineering</div>
@@ -105,7 +109,7 @@
       </nav>
     </div>
   </header>
-
+  
   <main>
     <section id="hero" style="text-align:center;background:var(--card);">
       <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
@@ -153,30 +157,6 @@
           <span class="muted"><strong>Ali Vaziri</strong>, et al. — Under review, Applied Thermal Engineering</span>
         </div>
       </article>
-      <article class="pub">
-        <div class="thumb" style="background-image:url('')"></div>
-        <div>
-          <strong>Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — American Control Conference (ACC), 2025</span><br>
-          <div class="links"><a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a></div>
-        </div>
-      </article>
-      <article class="pub">
-        <div class="thumb" style="background-image:url('')"></div>
-        <div>
-          <strong>Optimal Inferential Control of Convolutional Neural Networks</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — ACC 2025 (Best Student Paper nominee)</span><br>
-          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a></div>
-        </div>
-      </article>
-      <article class="pub">
-        <div class="thumb" style="background-image:url('')"></div>
-        <div>
-          <strong>Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning</strong><br>
-          <span class="muted">Iman Askari, <strong>Ali Vaziri</strong>, et al. — IEEE Transactions on Robotics (T-RO), 2025</span><br>
-          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a></div>
-        </div>
-      </article>
     </section>
 
     <section id="projects">
@@ -191,11 +171,6 @@
           <p>Designed a continuous-time MPC scheme using Bayesian inference for Neural-ODE-based soft robot manipulators, achieving significant gains in accuracy and solve times over classical methods.</p>
           <div class="links" style="margin-top:10px;"><a href="#" target="_blank" rel="noopener">View Research</a></div>
         </div>
-        <div class="single-col-card">
-          <h3>Physics-Informed Neural ODEs for Thermal Systems</h3>
-          <p>Built and deployed physics-constrained Neural-ODE and GRU models for HVAC systems, improving forecasting accuracy and runtime efficiency via data-efficient training and GPU acceleration.</p>
-          <div class="links" style="margin-top:10px;"><a href="#" target="_blank" rel="noopener">Details</a></div>
-        </div>
     </section>
 
     <section id="skills">
@@ -208,14 +183,6 @@
         <h3>Machine Learning</h3>
         <p>Neural ODE/PDEs, CNNs, GRU/LSTM, Physics-Informed ML, System Identification, Reinforcement Learning Fundamentals.</p>
       </div>
-      <div class="single-col-card">
-        <h3>Optimization</h3>
-        <p>Gradient-Based & Gradient-Free Methods, Ensemble Kalman Inversion for NN Training, Constrained Nonlinear Optimization (CasADi).</p>
-      </div>
-      <div class="single-col-card">
-        <h3>Programming</h3>
-        <p><strong>Languages:</strong> Python, MATLAB, C/C++ | <strong>Tools:</strong> PyTorch, TensorFlow, NumPy/SciPy, CUDA GPUs.</p>
-      </div>
     </section>
     
     <section id="awards">
@@ -224,9 +191,6 @@
             <li>“Challenge Seeker” Outstanding Student Award, University of Kansas (2025)</li>
             <li>Student Travel Award, American Control Conference (ACC) (2025)</li>
             <li>Wyatt Memorial Scholarship (Top 1% of graduate students) (2023)</li>
-            <li>Best Publication Award (MIC) (2022)</li>
-            <li>Excellent Student Award: 3rd Rank, Sharif Marine Engineering (2019)</li>
-            <li>Top 0.4% in Iran Nationwide University Entrance Exam (2016)</li>
         </ul>
     </section>
   </main>
