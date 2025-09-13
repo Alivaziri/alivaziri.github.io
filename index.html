@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name</title>
-  <meta name="description" content="Your Name — Your field of study and research interests." />
-  <link rel="canonical" href="https://your-username.github.io/" />
+  <title>Ali Vaziri</title>
+  <meta name="description" content="Ali Vaziri — Optimal Control, Estimation, and Machine Learning." />
+  <link rel="canonical" href="https://alivaziri.github.io/" />
 
-  <meta property="og:title" content="Your Name" />
-  <meta property="og:description" content="Your field • Your interests • Your work" />
+  <meta property="og:title" content="Ali Vaziri" />
+  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/avatar.jpg" />
 
@@ -33,12 +33,11 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
     .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
 
-    .brand{display:flex;gap:16px;align-items:center}
-    /* --- TODO: Add your avatar image URL here --- */
-    .avatar{width:120px;height:120px;border-radius:999px;border:3px solid #ffffff; background:#ffffff url('') center/cover no-repeat}
+    .brand{display:flex;gap:20px;align-items:center}
+    .avatar{width:150px;height:150px;border-radius:999px;border:4px solid #ffffff; background:#ffffff url('') center/cover no-repeat}
     .title{display:flex;flex-direction:column}
-    .title h1{margin:0;font-size:1.5rem;font-weight:800; color: #ffffff;}
-    .subtitle{margin:4px 0 0;color:#eef4ff;font-size:1rem}
+    .title h1{margin:0;font-size:1.8rem;font-weight:800; color: #ffffff;}
+    .subtitle{margin:4px 0 0;color:#eef4ff;font-size:1.1rem}
 
     nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
     nav a{color:#eef4ff;font-weight:600}
@@ -49,15 +48,20 @@
     .muted{color:var(--muted)}
     .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#f0f3fa;color:var(--muted);margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
 
-    /* Grid + cards (used in Contact) */
+    /* Grid layout */
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .card{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:14px}
+    .card h3{margin:0 0 5px; font-size:1rem;}
+    .card p, .card li {margin:0; font-size:0.9rem; color: var(--muted);}
+    .card ul {padding-left: 20px; margin-top: 5px;}
 
     /* Publications list */
     .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#ffffff;margin:10px 0}
-    /* --- TODO: Add your publication thumbnail URL in the HTML style attribute --- */
     .thumb{width:110px;height:74px;border-radius:8px;background:#f0f3fa;border:1px solid var(--border)}
     .links a{margin-right:10px}
+    ul.compact-list { margin: 0; padding-left: 20px; }
+    ul.compact-list li { margin-bottom: 5px; }
+
 
     footer{padding:30px 18px;color:var(--muted);text-align:center}
 
@@ -65,65 +69,62 @@
     @media(max-width:600px){
       .mast{flex-direction:column;align-items:center;text-align:center}
       nav{margin-left:0;justify-content:center}
-      .avatar{width:90px;height:90px}
+      .avatar{width:120px;height:120px}
+      .title h1{font-size: 1.5rem;}
     }
   </style>
 </head>
 <body>
 
-  <div class="bg-strip bg-top" aria-hidden="true"></div>
-
   <header>
     <div class="wrap mast">
       <div class="brand">
-        <div class="avatar" aria-hidden="true"></div>
+        <div class="avatar" style="background-image: url('')" aria-hidden="true"></div>
         <div class="title">
-          <h1>Your Name</h1>
-          <div class="subtitle">Your Title · Your Field • Your Interests</div>
+          <h1>Ali Vaziri</h1>
+          <div class="subtitle">Ph.D. Applicant — Mechanical Engineering</div>
         </div>
       </div>
       <nav>
         <a href="#about">ABOUT</a>
-        <a href="#news">NEWS</a>
+        <a href="#experience">EXPERIENCE</a>
         <a href="#pubs">PUBLICATIONS</a>
+        <a href="#projects">PROJECTS</a>
         <a href="#skills">SKILLS</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#awards">AWARDS</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section id="hero" style="text-align:center;background:var(--card);">
-      <h2 style="font-size:1.4rem;margin-top:0">Your Name</h2>
-      <p class="muted" style="margin:0">Your University · Your Department</p>
-      <p class="muted" style="margin:.2rem 0 0">Keyword · Keyword · Keyword</p>
+      <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
+      <p class="muted" style="margin:0">Lawrence, KS, USA</p>
+      <p class="muted" style="margin:.2rem 0 0">Control, Estimation, Machine Learning</p>
       <div style="margin-top:10px">
-        <a class="pill" href="mailto:your.email@example.com">your.email@example.com</a>
-        <a class="pill" target="_blank" rel="noopener" href="#">GitHub</a>
-        <a class="pill" target="_blank" rel="noopener" href="#">Google Scholar</a>
-        <a class="pill" target="_blank" rel="noopener" href="#">CV</a>
+        <a class="pill" href="mailto:alivaziri@ku.edu">Email</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://alivaziri.github.io/">GitHub</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ali-vaziri-63338512a">LinkedIn</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en">Google Scholar</a>
       </div>
     </section>
 
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I am a student/researcher/professional at [Your Institution or Company]. My work focuses on [describe your work and research interests here]. I am passionate about [mention a key interest or goal].
+        I develop safe and computationally efficient optimal control frameworks for complex systems governed by neural-network dynamics. My work blends optimal control and Bayesian inference with GPU-accelerated inference to achieve real-time, robust decision-making in high-dimensional, nonlinear dynamical systems (e.g., autonomous vehicles, soft robots, and thermo-fluid systems).
       </p>
-      <div>
-        <span class="pill">Keyword 1</span>
-        <span class="pill">Keyword 2</span>
-        <span class="pill">Keyword 3</span>
-        <span class="pill">Keyword 4</span>
-      </div>
     </section>
 
-    <section id="news">
-      <h2>NEWS</h2>
-      <ul>
-        <li><strong>Sep 2025.</strong> Started a new position at [Your Institution].</li>
-        <li><strong>Aug 2025.</strong> Our latest paper on [Topic] was accepted to [Conference/Journal].</li>
-      </ul>
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul class="compact-list">
+            <li><strong>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</strong> | Cambridge, MA | Summer 2024</li>
+            <li><strong>Research Collaboration — MERL</strong> | Cambridge, MA | Spring 2024</li>
+            <li><strong>Graduate Research Assistant — University of Kansas</strong> | Lawrence, KS | 2023 - Present</li>
+            <li><strong>Undergraduate Researcher — Sharif University of Technology</strong> | Tehran, Iran | 2020 - 2022</li>
+            <li><strong>Teaching Assistant — Sharif University of Technology</strong> | Tehran, Iran | Spring 2018 - 2019</li>
+        </ul>
     </section>
 
     <section id="pubs">
@@ -131,65 +132,107 @@
       <article class="pub">
         <div class="thumb" style="background-image:url('')"></div>
         <div>
-          <strong>Title of Your First Paper</strong><br>
-          <span class="muted"><strong>Your Name</strong>, Co-author Name — Conference or Journal, Year</span><br>
-          <div class="links">
-            <a href="#" target="_blank" rel="noopener">Paper</a>
-            <a href="#" target="_blank" rel="noopener">Code</a>
-          </div>
+          <strong>Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — Under review, NeurIPS 2025</span>
         </div>
       </article>
-
       <article class="pub">
         <div class="thumb" style="background-image:url('')"></div>
         <div>
-          <strong>Title of Your Second Paper</strong><br>
-          <span class="muted">Co-author Name, <strong>Your Name</strong> — Conference or Journal, Year</span><br>
-          <div class="links">
-            <a href="#" target="_blank" rel="noopener">Paper</a>
-            <a href="#" target="_blank" rel="noopener">Slides</a>
-          </div>
+          <strong>Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — Under review, Applied Thermal Engineering</span>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="thumb" style="background-image:url('')"></div>
+        <div>
+          <strong>Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — American Control Conference (ACC), 2025</span><br>
+          <div class="links"><a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="thumb" style="background-image:url('')"></div>
+        <div>
+          <strong>Optimal Inferential Control of Convolutional Neural Networks</strong><br>
+          <span class="muted"><strong>Ali Vaziri</strong>, et al. — ACC 2025 (Best Student Paper nominee)</span><br>
+          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="thumb" style="background-image:url('')"></div>
+        <div>
+          <strong>Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning</strong><br>
+          <span class="muted">Iman Askari, <strong>Ali Vaziri</strong>, et al. — IEEE Transactions on Robotics (T-RO), 2025</span><br>
+          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a></div>
         </div>
       </article>
     </section>
 
+    <section id="projects">
+        <h2>Undergraduate Projects</h2>
+        <div class="grid">
+          <div class="card"><h3>AUBO-i5 (6R) Robot</h3><p>Forward/inverse kinematics, Simscape modeling, Jacobian analysis, and Newton–Euler dynamics with PD control.</p></div>
+          <div class="card"><h3>Surgical Needle GUI</h3><p>Developed a MATLAB GUI for collision-free path planning using RRT for surgical needle navigation.</p></div>
+          <div class="card"><h3>SCARA Robot</h3><p>DH-based forward/inverse kinematics with SimMechanics verification.</p></div>
+          <div class="card"><h3>Inverse Pendulum</h3><p>Lagrangian modeling and PID control implementation in Simulink.</p></div>
+        </div>
+    </section>
+
     <section id="skills">
-      <h2>Technical Skills</h2>
+      <h2>Skills</h2>
       <div class="grid">
         <div class="card">
-          <strong>Area 1</strong>
-          <ul style="margin:8px 0 0 18px">
-            <li>Skill A</li>
-            <li>Skill B</li>
-          </ul>
+            <h3>Control & Estimation</h3>
+            <ul>
+                <li>Optimal Inferential Control & MPC</li>
+                <li>Kalman Filtering & Smoothing (EnKF/EnKS)</li>
+                <li>Robust Filtering with Student's-t</li>
+            </ul>
         </div>
         <div class="card">
-          <strong>Area 2</strong>
-          <ul style="margin:8px 0 0 18px">
-            <li>Skill C</li>
-            <li>Skill D</li>
-          </ul>
+            <h3>Machine Learning</h3>
+            <ul>
+                <li>Neural ODE/PDEs, CNNs, GRU/LSTM</li>
+                <li>Physics-Informed ML</li>
+                <li>Reinforcement Learning Fundamentals</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Optimization</h3>
+            <ul>
+                <li>Gradient-Based & Gradient-Free Methods</li>
+                <li>Ensemble Kalman Inversion for NN Training</li>
+                <li>Constrained Nonlinear Optimization (CasADi)</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Programming</h3>
+            <ul>
+                <li><strong>Languages:</strong> Python, MATLAB, C/C++</li>
+                <li><strong>Tools:</strong> PyTorch, TensorFlow, CUDA</li>
+            </ul>
         </div>
       </div>
     </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="grid">
-        <div class="card"><strong>Email</strong><br><a href="mailto:your.email@example.com">your.email@example.com</a></div>
-        <div class="card"><strong>GitHub</strong><br><a target="_blank" rel="noopener" href="#">github.com/your-username</a></div>
-        <div class="card"><strong>Google Scholar</strong><br><a target="_blank" rel="noopener" href="#">Scholar profile</a></div>
-        <div class="card"><strong>CV</strong><br><a target="_blank" rel="noopener" href="#">Download CV (PDF)</a></div>
-      </div>
+    
+    <section id="awards">
+        <h2>Awards & Honours</h2>
+        <ul class="compact-list">
+            <li>“Challenge Seeker” Outstanding Student Award, University of Kansas (2025)</li>
+            <li>Student Travel Award, American Control Conference (ACC) (2025)</li>
+            <li>Wyatt Memorial Scholarship (Top 1% of graduate students) (2023)</li>
+            <li>Best Publication Award (MIC) (2022)</li>
+            <li>Excellent Student Award: 3rd Rank, Sharif Marine Engineering (2019)</li>
+            <li>Top 0.4% in Iran Nationwide University Entrance Exam (2016)</li>
+        </ul>
     </section>
   </main>
 
   <div class="bg-strip bg-bottom" aria-hidden="true"></div>
 
   <footer>
-    <div class="wrap">
-      <div class="muted">© <span id="year"></span> Your Name</div>
-    </div>
+    <div class="wrap"><div class="muted">© <span id="year"></span> Ali Vaziri</div></div>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
