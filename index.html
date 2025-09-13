@@ -3,69 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ali Vaziri</title>
-  <meta name="description" content="Ali Vaziri — Optimal control, ML for dynamical systems, and GPU-accelerated scientific computing." />
-  <link rel="canonical" href="https://alivaziri.github.io/" />
+  <title>Your Name</title>
+  <meta name="description" content="Your Name — Your field of study and research interests." />
+  <link rel="canonical" href="https://your-username.github.io/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ali Vaziri" />
-  <meta property="og:description" content="Optimal control • ML for dynamical systems • Scientific computing" />
+  <meta property="og:title" content="Your Name" />
+  <meta property="og:description" content="Your field • Your interests • Your work" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/bg.png" />
+  <meta property="og:image" content="./assets/avatar.jpg" />
 
   <style>
     :root{
-      --bg: #0b1020; --fg:#e5e7eb; --muted:#9aa3b2; --link:#8ab4ff; --border:#1f2a44; --card:#0f172a; --accent:#7aa2f7;
-      --max: 980px; --radius: 14px; --shadow: 0 10px 30px rgba(0,0,0,.25);
+      /* Light Theme (Default) */
+      --bg: #f6f7fb; --fg: #111827; --muted:#6b7280; --link:#0b5fff; --border:#e5e7eb; --card:#ffffff; --accent:#0b5fff;
+      --max: 980px; --radius: 14px; --shadow: 0 1px 2px rgba(0,0,0,.06);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
     img{max-width:100%;display:block}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
 
-    /* Top & bottom background strips (visible elements so they won't get hidden) */
-    .bg-strip{width:100%;background-position:center;background-size:cover;background-repeat:no-repeat}
-    .bg-top{height:220px;background-image:url('./assets/brain-top.jpg')}
-    .bg-bottom{height:180px;background-image:url('./assets/brain-bottom.jpg');margin-top:40px}
+    /* Top & bottom background strips */
+    .bg-strip{width:100%;background-color:#ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);}
+    .bg-top{height:220px;}
+    .bg-bottom{height:180px;margin-top:40px}
 
     /* Header */
-    header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.85);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--border)}
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(120deg,#041a5e 0%, #0b5fff 85%)}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
     .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
 
     .brand{display:flex;gap:16px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:999px;border:3px solid var(--border);background:#111b3a url('./assets/avatar.jpg') center/cover no-repeat}
+    /* --- TODO: Add your avatar image URL here --- */
+    .avatar{width:120px;height:120px;border-radius:999px;border:3px solid #ffffff; background:#ffffff url('') center/cover no-repeat}
     .title{display:flex;flex-direction:column}
-    .title h1{margin:0;font-size:1.5rem;font-weight:800}
-    .subtitle{margin:4px 0 0;color:var(--muted);font-size:1rem}
+    .title h1{margin:0;font-size:1.5rem;font-weight:800; color: #ffffff;}
+    .subtitle{margin:4px 0 0;color:#eef4ff;font-size:1rem}
 
     nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
-    nav a{color:#dbe6ff;font-weight:600}
-    .theme{display:flex;gap:6px}
-    .theme button{background:transparent;color:var(--fg);border:1px solid var(--border);padding:6px 10px;border-radius:10px;cursor:pointer}
+    nav a{color:#eef4ff;font-weight:600}
 
     main{padding:28px 18px}
     section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    section h2{margin:0 0 10px;font-size:1.05rem;color:#dbe6ff}
+    section h2{margin:0 0 10px;font-size:1.05rem;color:var(--fg)}
     .muted{color:var(--muted)}
-    .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#0c132b;color:#cbd5e1;margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
+    .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#f0f3fa;color:var(--muted);margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
 
     /* Grid + cards (used in Contact) */
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .card{background:#0c132b;border:1px solid var(--border);border-radius:12px;padding:14px}
+    .card{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:14px}
 
     /* Publications list */
-    .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#0c132b;margin:10px 0}
-    .thumb{width:110px;height:74px;border-radius:8px;background:#111b3a url('./assets/bg.png') center/cover no-repeat;border:1px solid var(--border)}
+    .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#ffffff;margin:10px 0}
+    /* --- TODO: Add your publication thumbnail URL in the HTML style attribute --- */
+    .thumb{width:110px;height:74px;border-radius:8px;background:#f0f3fa;border:1px solid var(--border)}
     .links a{margin-right:10px}
 
     footer{padding:30px 18px;color:var(--muted);text-align:center}
-
-    /* Light mode */
-    .light{--bg:#f6f7fb;--fg:#111827;--muted:#6b7280;--link:#0b5fff;--border:#e5e7eb;--card:#ffffff;--accent:#0b5fff;--shadow:0 1px 2px rgba(0,0,0,.06)}
-    .light header{background:linear-gradient(120deg,#041a5e 0%, #0b5fff 85%)}
-    .light nav a{color:#eef4ff}
-    .light .card,.light .pub{background:#fff}
 
     @media(max-width:860px){.grid{grid-template-columns:1fr}.pub{grid-template-columns:1fr}.thumb{width:100%;height:150px}}
     @media(max-width:600px){
@@ -74,26 +68,9 @@
       .avatar{width:90px;height:90px}
     }
   </style>
-
-  <script>
-    // Theme toggle
-    const applyTheme = (mode)=>{
-      const doc = document.documentElement;
-      doc.classList.remove('light'); // default dark
-      if(mode==='light') doc.classList.add('light');
-      if(mode==='auto'){
-        const mq = window.matchMedia('(prefers-color-scheme: light)');
-        mq.addEventListener('change',()=>applyTheme(localStorage.getItem('theme')||'auto'));
-        if(mq.matches) doc.classList.add('light');
-      }
-    }
-    const setTheme=(m)=>{localStorage.setItem('theme',m);applyTheme(m)}
-    document.addEventListener('DOMContentLoaded',()=>applyTheme(localStorage.getItem('theme')||'auto'))
-  </script>
 </head>
 <body>
 
-  <!-- TOP BRAIN BACKGROUND -->
   <div class="bg-strip bg-top" aria-hidden="true"></div>
 
   <header>
@@ -101,8 +78,8 @@
       <div class="brand">
         <div class="avatar" aria-hidden="true"></div>
         <div class="title">
-          <h1>Ali Vaziri</h1>
-          <div class="subtitle">Ph.D. student · Optimal control • ML for dynamics • Scientific computing</div>
+          <h1>Your Name</h1>
+          <div class="subtitle">Your Title · Your Field • Your Interests</div>
         </div>
       </div>
       <nav>
@@ -110,181 +87,108 @@
         <a href="#news">NEWS</a>
         <a href="#pubs">PUBLICATIONS</a>
         <a href="#skills">SKILLS</a>
-        <a href="#awards">AWARDS</a>
         <a href="#contact">CONTACT</a>
-        <div class="theme" role="group" aria-label="Theme">
-          <button onclick="setTheme('light')" title="Light">Light</button>
-          <button onclick="setTheme('dark')" title="Dark">Dark</button>
-          <button onclick="setTheme('auto')" title="Auto">Auto</button>
-        </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="hero" style="text-align:center;background:linear-gradient(120deg,rgba(79,70,229,.12),rgba(15,23,42,.2));">
-      <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
-      <p class="muted" style="margin:0">University of Kansas · Mechanical Engineering</p>
-      <p class="muted" style="margin:.2rem 0 0">Optimization · Bayesian Inference · GPU-accelerated Control</p>
+    <section id="hero" style="text-align:center;background:var(--card);">
+      <h2 style="font-size:1.4rem;margin-top:0">Your Name</h2>
+      <p class="muted" style="margin:0">Your University · Your Department</p>
+      <p class="muted" style="margin:.2rem 0 0">Keyword · Keyword · Keyword</p>
       <div style="margin-top:10px">
-        <a class="pill" href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://github.com/Alivaziri">GitHub</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Google Scholar</a>
-        <a class="pill" target="_blank" rel="noopener" href="./CV.pdf">CV</a>
+        <a class="pill" href="mailto:your.email@example.com">your.email@example.com</a>
+        <a class="pill" target="_blank" rel="noopener" href="#">GitHub</a>
+        <a class="pill" target="_blank" rel="noopener" href="#">Google Scholar</a>
+        <a class="pill" target="_blank" rel="noopener" href="#">CV</a>
       </div>
     </section>
 
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I am a Ph.D. student at the University of Kansas advised by Prof. Huazhen Fang. My research studies
-        optimal control and Bayesian inference for machine-learned dynamical systems (e.g., Neural ODEs) with an emphasis
-        on real-time deployment via GPU acceleration. Interests include inference-in-the-loop control, heavy-tailed motion
-        planning, and physics-aware system identification in robotics and energy systems.
+        I am a student/researcher/professional at [Your Institution or Company]. My work focuses on [describe your work and research interests here]. I am passionate about [mention a key interest or goal].
       </p>
       <div>
-        <span class="pill">Optimal Control</span>
-        <span class="pill">Bayesian Inference</span>
-        <span class="pill">Neural ODEs</span>
-        <span class="pill">GPU · PyTorch</span>
-        <span class="pill">MPC / LQR</span>
+        <span class="pill">Keyword 1</span>
+        <span class="pill">Keyword 2</span>
+        <span class="pill">Keyword 3</span>
+        <span class="pill">Keyword 4</span>
       </div>
     </section>
 
     <section id="news">
       <h2>NEWS</h2>
-      <ul class="news">
-        <li><strong>Aug 2025.</strong> ACC 2025 paper on heavy-tailed Bayesian motion planning accepted. <a href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">(paper)</a></li>
-        <li><strong>Jul 2025.</strong> T-RO article on inferential MPC for neural state-space models online first.</li>
-        <li><strong>Jun 2025.</strong> Preprint: continuous-time optimal control of Neural ODEs via Bayesian inference.</li>
+      <ul>
+        <li><strong>Sep 2025.</strong> Started a new position at [Your Institution].</li>
+        <li><strong>Aug 2025.</strong> Our latest paper on [Topic] was accepted to [Conference/Journal].</li>
       </ul>
     </section>
 
-    <!-- PUBLICATIONS (your list added verbatim, styled) -->
     <section id="pubs">
-      <h2>Publication List</h2>
-
+      <h2>Publications</h2>
       <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/neurips25.png')"></div>
+        <div class="thumb" style="background-image:url('')"></div>
         <div>
-          <strong>Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, NeurIPS 2025</span>
+          <strong>Title of Your First Paper</strong><br>
+          <span class="muted"><strong>Your Name</strong>, Co-author Name — Conference or Journal, Year</span><br>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Paper</a>
+            <a href="#" target="_blank" rel="noopener">Code</a>
+          </div>
         </div>
       </article>
 
       <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/pnas.png')"></div>
+        <div class="thumb" style="background-image:url('')"></div>
         <div>
-          <strong>Optimal Inferential Control of Machine Learning Models</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, PNAS</span>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/ate.png')"></div>
-        <div>
-          <strong>Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — under review, Applied Thermal Engineering (MERL)</span>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/acc25.png')"></div>
-        <div>
-          <strong>Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — American Control Conference (ACC), 2025</span><br>
-          <div class="links"><a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a></div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/acc25-cnn.png')"></div>
-        <div>
-          <strong>Optimal Inferential Control of Convolutional Neural Networks</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — ACC 2025 · Best Student Paper nominee</span><br>
-          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a></div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="thumb" style="background-image:url('./assets/pubs/tro25.png')"></div>
-        <div>
-          <strong>Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning</strong><br>
-          <span class="muted">Iman Askari, <strong>Ali Vaziri</strong>, et al. — IEEE Transactions on Robotics (T-RO), 2025</span><br>
-          <div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a></div>
+          <strong>Title of Your Second Paper</strong><br>
+          <span class="muted">Co-author Name, <strong>Your Name</strong> — Conference or Journal, Year</span><br>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Paper</a>
+            <a href="#" target="_blank" rel="noopener">Slides</a>
+          </div>
         </div>
       </article>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills">
       <h2>Technical Skills</h2>
       <div class="grid">
         <div class="card">
-          <strong>Control & Estimation</strong>
+          <strong>Area 1</strong>
           <ul style="margin:8px 0 0 18px">
-            <li>Bayesian MPC & Optimal Inferential Control</li>
-            <li>PDE Optimal Control</li>
-            <li>MPC, NMPC, Path-Integral Control (CasADi/IPOPT, fmincon, MPPI)</li>
-            <li>Kalman Filters: KF, EKF, UKF, EnKF (Auto-Diff)</li>
-            <li>Ensemble Kalman Smoothing; Particle Filters, SMC</li>
-            <li>Robust Filtering & Smoothing</li>
+            <li>Skill A</li>
+            <li>Skill B</li>
           </ul>
         </div>
         <div class="card">
-          <strong>ML & Dynamical Modeling</strong>
+          <strong>Area 2</strong>
           <ul style="margin:8px 0 0 18px">
-            <li>Physics-Informed ML; Neural ODEs/PDEs</li>
-            <li>CNNs, GRUs, LSTMs, FNNs</li>
-            <li>Dynamic Programming & RL (Q-Learning, Ψ-Learning)</li>
-            <li>Time-Series Modeling</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Optimization & System ID</strong>
-          <ul style="margin:8px 0 0 18px">
-            <li>GPU Computing (CUDA, PyTorch, TensorFlow)</li>
-            <li>Gradient-Free Optimization</li>
-            <li>Ensemble Kalman Inversion (for ML Training)</li>
-            <li>Expectation-Maximization (EM)</li>
+            <li>Skill C</li>
+            <li>Skill D</li>
           </ul>
         </div>
       </div>
-    </section>
-
-    <!-- AWARDS -->
-    <section id="awards">
-      <h2>Awards, Grants & Honours</h2>
-      <ul style="margin:0 0 0 18px">
-        <li><strong>2025</strong> — “Challenge Seeker” Outstanding Student Award (University of Kansas)</li>
-        <li><strong>2025</strong> — Student Travel Award, ACC 2025</li>
-        <li><strong>2025</strong> — Annual GEA Research Showcase Competition (KU)</li>
-        <li><strong>2025</strong> — I2S Student Research Symposium (ISRS) at KU</li>
-        <li><strong>2024</strong> — Annual GEA Research Showcase Competition (KU)</li>
-        <li><strong>2023</strong> — Wyatt Memorial Scholarship (Top 1% of graduate students)</li>
-        <li><strong>2022</strong> — Best Publication Award at MIC 2022</li>
-        <li><strong>2019</strong> — Excellent Student Award: 3rd Rank among Sharif Marine Eng. students</li>
-        <li><strong>2016</strong> — Top 0.4% in Iran’s nationwide university entrance exam (≈170,000 students)</li>
-      </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <div class="grid">
-        <div class="card"><strong>Email</strong><br><a href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a></div>
-        <div class="card"><strong>GitHub</strong><br><a target="_blank" rel="noopener" href="https://github.com/Alivaziri">github.com/Alivaziri</a></div>
-        <div class="card"><strong>Google Scholar</strong><br><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ">Scholar profile</a></div>
-        <div class="card"><strong>CV</strong><br><a target="_blank" rel="noopener" href="./CV.pdf">Download CV (PDF)</a></div>
+        <div class="card"><strong>Email</strong><br><a href="mailto:your.email@example.com">your.email@example.com</a></div>
+        <div class="card"><strong>GitHub</strong><br><a target="_blank" rel="noopener" href="#">github.com/your-username</a></div>
+        <div class="card"><strong>Google Scholar</strong><br><a target="_blank" rel="noopener" href="#">Scholar profile</a></div>
+        <div class="card"><strong>CV</strong><br><a target="_blank" rel="noopener" href="#">Download CV (PDF)</a></div>
       </div>
     </section>
   </main>
 
-  <!-- BOTTOM BRAIN BACKGROUND -->
   <div class="bg-strip bg-bottom" aria-hidden="true"></div>
 
   <footer>
     <div class="wrap">
-      <div class="muted">© <span id="year"></span> Ali Vaziri · Built with plain HTML/CSS</div>
+      <div class="muted">© <span id="year"></span> Your Name</div>
     </div>
   </footer>
 
