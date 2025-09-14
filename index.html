@@ -10,7 +10,7 @@
   <meta property="og:title" content="Ali Vaziri" />
   <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/avatar.jpg" />
+  <meta property="og:image" content="image_da6dfe.png" />
 
   <style>
     :root{
@@ -34,23 +34,24 @@
 
     .brand{display:flex;gap:20px;align-items:center}
     .avatar{
-        width:200px;
-        height:200px;
+        width:150px;
+        height:150px;
         border-radius:999px;
-        border: none; /* Removed the border */
+        border: none;
         background-color: #ffffff;
         background-position: center;
-        background-size: cover;
+        background-size: contain; /* Changed from 'cover' to 'contain' to prevent cropping */
         background-repeat: no-repeat;
         flex-shrink: 0;
-        background-image: url('./assets/avatar.jpg');
+        /* Make sure 'image_da6dfe.png' is in the same folder as your HTML file */
+        background-image: url('image_da6dfe.png');
     }
     .title{display:flex;flex-direction:column}
     .title h1{margin:0;font-size:1.8rem;font-weight:800; color: var(--fg);}
     .subtitle{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
 
     nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
-    nav a{color:var(--link);font-weight:600}
+    nav a{color:var(--fg);font-weight:600} /* Changed color from --link to --fg */
 
     main{padding:28px 18px;}
     section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
@@ -101,20 +102,19 @@
         <a href="#experience">EXPERIENCE</a>
         <a href="#pubs">PUBLICATIONS</a>
         <a href="#projects">PROJECTS</a>
-        <a href="#skills">SKILLS</a>
-        <a href="#awards">AWARDS</a>
+        <a href="#contact">CONTACT</a>
       </nav>
     </div>
   </header>
  
   <main>
-    <section id="hero" style="text-align:center;background:var(--card);">
-      <h2 style="font-size:1.4rem;margin-top:0">Ali Vaziri</h2>
+    <section id="hero" style="text-align:center;background:var(--card); padding-top: 20px;">
+      <!-- Removed the h2 with the repeated name -->
       <p class="muted" style="margin:0">Lawrence, KS, USA</p>      
       <p class="muted" style="margin:.2rem 0 0">Control, Estimation, Machine Learning</p>
       <div style="margin-top:10px">
         <a class="pill" href="mailto:alivaziri@ku.edu">Email</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://alivaziri.github.io/">GitHub</a>
+        <a class="pill" target="_blank" rel="noopener" href="https://github.com/Alivaziri/">GitHub</a>
         <a class="pill" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ali-vaziri-63338512a">LinkedIn</a>
         <a class="pill" target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en">Google Scholar</a>
       </div>
@@ -140,57 +140,55 @@
 
     <section id="pubs">
       <h2>Publications</h2>
-      <article class="pub">
-        <div class="thumb" style="background-image:url('')"></div>
-        <div>
-          <strong>Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — Under review, NeurIPS 2025</span>
-        </div>
-      </article>
-      <article class="pub">
-        <div class="thumb" style="background-image:url('')"></div>
-        <div>
-          <strong>Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling</strong><br>
-          <span class="muted"><strong>Ali Vaziri</strong>, et al. — Under review, Applied Thermal Engineering</span>
-        </div>
-      </article>
+      <h3>First-Authored</h3>
+      <ul class="compact-list">
+        <li><strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.</li>
+        <li><strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”, To be submitted.</li>
+        <li><strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”, Under review, <em>Applied Thermal Engineering</em>.</li>
+        <li><strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”, In 2025 <em>American Control Conference (ACC)</em>, (<a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>).</li>
+        <li><strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”, In 2025 <em>American Control Conference (ACC)</em>; Best Student Paper nominee (<a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>).</li>
+      </ul>
+      <h3 style="margin-top: 20px;">Co-Authored</h3>
+      <ul class="compact-list">
+        <li>Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”, <em>IEEE Transactions on Robotics (T-RO)</em>, 2025, (<a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>).</li>
+      </ul>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
+        <h2>Side Projects</h2>
         <div class="single-col-card">
           <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
           <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
-          <div class="links" style="margin-top:10px;"><a href="#" target="_blank" rel="noopener">Source Code</a></div>
+          
         </div>
         <div class="single-col-card">
           <h3>GPU-Accelerated Optimal Control of Soft Robots</h3>
           <p>Designed a continuous-time MPC scheme using Bayesian inference for Neural-ODE-based soft robot manipulators, achieving significant gains in accuracy and solve times over classical methods.</p>
-          <div class="links" style="margin-top:10px;"><a href="#" target="_blank" rel="noopener">View Research</a></div>
+          
         </div>
+        <div class="single-col-card">
+          <h3>Selected Undergraduate Projects in Sharif (2018-2021)</h3>
+          <ul class="compact-list" style="padding-left: 20px; margin-top: 10px;">
+              <li>AUBO-i5 (6R) collaborative robot: forward/inverse kinematics (Robotics Toolbox), Simscape model, Jacobian & singularity analysis; Newton–Euler dynamics with PD control (MATLAB/Simulink).</li>
+              <li>Surgical needle navigation GUI (MATLAB): collision-free path planning with RRT.</li>
+              <li>SCARA robot: DH-based forward/inverse kinematics; SimMechanics verification.</li>
+          </ul>
+      </div>
+    </section>
+    
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Feel free to reach out to me via email. I'm always open to discussing new projects, creative ideas, or opportunities.
+      </p>
+      <div style="margin-top:10px">
+        <a class="pill" href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a>
+      </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="single-col-card">
-        <h3>Control & Estimation</h3>
-        <p>Optimal Inferential Control & MPC, Kalman Filtering & Smoothing (EnKF/EnKS), Robust Filtering with Student's-t Distribution.</p>
-      </div>
-      <div class="single-col-card">
-        <h3>Machine Learning</h3>
-        <p>Neural ODE/PDEs, CNNs, GRU/LSTM, Physics-Informed ML, System Identification, Reinforcement Learning Fundamentals.</p>
-      </div>
-    </section>
-   
-    <section id="awards">
-        <h2>Awards & Honours</h2>
-        <ul class="compact-list">
-            <li>“Challenge Seeker” Outstanding Student Award, University of Kansas (2025)</li>
-            <li>Student Travel Award, American Control Conference (ACC) (2025)</li>
-            <li>Wyatt Memorial Scholarship (Top 1% of graduate students) (2023)</li>
-        </ul>
-    </section>
   </main>
+
+  <!-- The div that created the bottom background has been removed. -->
 
   <footer>
     <div class="wrap"><div class="muted">© <span id="year"></span> Ali Vaziri</div></div>
@@ -199,3 +197,4 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
