@@ -10,7 +10,7 @@
   <meta property="og:title" content="Ali Vaziri" />
   <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="avatar.jpg" />
+  <meta property="og:image" content="image_da6dfe.png" />
 
   <style>
     :root{
@@ -20,7 +20,7 @@
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
-    img{max-width:100%;display:block}
+    img, video{max-width:100%;display:block}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
 
     /* Background strip for bottom (styles are kept in case they are needed for other elements) */
@@ -69,11 +69,15 @@
     .single-col-card ul { padding-left: 20px; margin-top: 5px; margin-bottom: 5px; }
 
     /* Publications list */
-    .pub{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#ffffff;margin:10px 0}
-    .thumb{width:110px;height:74px;border-radius:8px;background:#f0f3fa;border:1px solid var(--border)}
-    .links a{margin-right:10px}
     ul.compact-list { margin: 0; padding-left: 20px; list-style-position: outside; }
     ul.compact-list li { margin-bottom: 8px; }
+
+    .publication-media {
+        max-width: 100%; /* Ensure it's responsive */
+        border-radius: 8px; /* Match the theme */
+        margin-top: 10px; /* Add some space */
+        border: 1px solid var(--border);
+    }
 
     footer{padding:30px 18px;color:var(--muted);text-align:center}
 
@@ -142,29 +146,54 @@
       <h2>Publications</h2>
       <h3>First-Authored</h3>
       <ul class="compact-list">
-        <li><strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.</li>
-        <li><strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”, To be submitted.</li>
-        <li><strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”, Under review, <em>Applied Thermal Engineering</em>.</li>
-        <li><strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”, In 2025 <em>American Control Conference (ACC)</em>, (<a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>).</li>
-        <li><strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”, In 2025 <em>American Control Conference (ACC)</em>; Best Student Paper nominee (<a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>).</li>
+        <li>
+          <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+          <img src="https://placehold.co/600x400/e5e7eb/6b7280?text=Publication+Visual" alt="Publication visual placeholder" class="publication-media">
+        </li>
+        <li>
+          <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”, To be submitted.
+          <img src="https://placehold.co/600x400/e5e7eb/6b7280?text=Publication+Visual" alt="Publication visual placeholder" class="publication-media">
+        </li>
+        <li>
+          <strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”, Under review, <em>Applied Thermal Engineering</em>.
+          <img src="https://placehold.co/600x400/e5e7eb/6b7280?text=Publication+Visual" alt="Publication visual placeholder" class="publication-media">
+        </li>
+        <li>
+          <strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”, In 2025 <em>American Control Conference (ACC)</em>, (<a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>).
+          <video class="publication-media" width="100%" autoplay loop muted playsinline>
+              <source src="Overtaking Scenario.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+        </li>
+        <li>
+          <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”, In 2025 <em>American Control Conference (ACC)</em>; Best Student Paper nominee (<a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>).
+          <video class="publication-media" width="100%" autoplay loop muted playsinline>
+            <source src="Overtaking Scenario.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </li>
       </ul>
       <h3 style="margin-top: 20px;">Co-Authored</h3>
       <ul class="compact-list">
-        <li>Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”, <em>IEEE Transactions on Robotics (T-RO)</em>, 2025, (<a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>).</li>
+        <li>
+          Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”, <em>IEEE Transactions on Robotics (T-RO)</em>, 2025, (<a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>).
+          <video class="publication-media" width="100%" autoplay loop muted playsinline>
+            <source src="Overtaking Scenario.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </li>
       </ul>
     </section>
 
     <section id="projects">
-        <h2>Side Projects</h2>
+        <h2>Projects</h2>
         <div class="single-col-card">
           <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
           <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
-          
         </div>
         <div class="single-col-card">
           <h3>GPU-Accelerated Optimal Control of Soft Robots</h3>
           <p>Designed a continuous-time MPC scheme using Bayesian inference for Neural-ODE-based soft robot manipulators, achieving significant gains in accuracy and solve times over classical methods.</p>
-          
         </div>
         <div class="single-col-card">
           <h3>Selected Undergraduate Projects in Sharif (2018-2021)</h3>
