@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience | Ali Vaziri</title>
+  <meta name="description" content="Ali Vaziri — Optimal Control - Estimation - Machine Learning." />
+  <link rel="canonical" href="https://alivaziri.github.io/experience.html" />
+
+  <meta property="og:title" content="Experience | Ali Vaziri" />
+  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Ali_HS.jpg" />
+
+  <style>
+    :root{
+      /* Light Theme (Default) */
+      --bg: #f6f7fb; --fg: #111827; --muted:#6b7280; --link:#0b5fff; --border:#e5e7eb; --card:#ffffff; --accent:#0b5fff;
+      --max: 980px; --radius: 14px; --shadow: 0 1px 2px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
+    img, video{max-width:100%;display:block}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+
+    /* Background strip for bottom (styles are kept in case they are needed for other elements) */
+    .bg-strip{width:100%;background-color:#ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);}
+    .bg-bottom{height:180px;margin-top:40px}
+
+    /* Header */
+    header{z-index:20; background:none;} /* Removed position:sticky and border */
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
+
+    .brand{display:flex;gap:20px;align-items:center}
+    .avatar{
+        width:150px;
+        height:150px;
+        border-radius:999px;
+        border: none;
+        background-color: #ffffff;
+        background-position: center;
+        background-size: contain; /* Changed from 'cover' to 'contain' to prevent cropping */
+        background-repeat: no-repeat;
+        flex-shrink: 0;
+        /* Make sure 'image_da6dfe.png' is in the same folder as your HTML file */
+        background-image: url('assets/Ali_HS.jpg');
+    }
+    .title{display:flex;flex-direction:column}
+    .title h1{margin:0;font-size:1.8rem;font-weight:800; color: var(--fg);}
+    .subtitle{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+
+    nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
+    nav a{color:var(--fg);font-weight:600} /* Changed color from --link to --fg */
+
+    main{padding:28px 18px;}
+    section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    section h2{margin:0 0 15px;font-size:1.05rem;color:var(--fg)}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#f0f3fa;color:var(--muted);margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
+
+    /* Single Column Card Layout */
+    .single-col-card {
+        background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px;
+    }
+    .single-col-card:last-child { margin-bottom: 0; }
+    .single-col-card h3 { margin: 0 0 5px; font-size: 1rem; }
+    .single-col-card p, .single-col-card li { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .single-col-card ul { padding-left: 20px; margin-top: 5px; margin-bottom: 5px; }
+
+    /* Publications list */
+    ul.compact-list { margin: 0; padding: 0; list-style: none; }
+    ul.compact-list li { margin-bottom: 25px; } /* Increased margin for better separation */
+    ul.compact-list li:last-child { margin-bottom: 0; }
+
+    /* NEW STYLES for Publication Layout */
+    .publication-item {
+        display: flex;
+        flex-direction: row;
+        gap: 20px; /* Space between media and text */
+        align-items: flex-start;
+    }
+    .publication-media-container {
+        flex: 0 0 220px; /* Defines a fixed width for the media column */
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Space between multiple images */
+    }
+    .publication-info {
+        flex: 1; /* Allows the text content to fill the remaining space */
+    }
+    .publication-media {
+        max-width: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        margin-top: 0; /* Margin is now handled by the container's gap */
+    }
+
+    footer{padding:30px 18px;color:var(--muted);text-align:center}
+
+    /* Responsive adjustments */
+    @media(max-width: 768px) {
+        .publication-item {
+            flex-direction: column; /* Stack media on top of text on small screens */
+        }
+        .publication-media-container {
+            flex-basis: auto; /* Reset the fixed width */
+            width: 100%;
+        }
+    }
+
+    @media(max-width:600px){
+      .mast{flex-direction:column;align-items:center;text-align:center}
+      nav{margin-left:0;justify-content:center}
+      .avatar{width:120px;height:120px}
+      .title h1{font-size: 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap mast">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="title">
+          <h1>Ali Vaziri</h1>
+          <div class="subtitle">Researcher in Optimal Control of ML Models</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">ABOUT</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="publications.html">PUBLICATIONS</a>
+        <a href="certifications.html">CERTIFICATIONS</a>
+        <a href="projects.html">PROJECTS</a>
+      </nav>
+    </div>
+  </header>
+ 
+  <main>
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul style="padding-left: 20px;">
+            <li><strong>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</strong> | Cambridge, MA | Summer 2024</li>
+            <li><strong>Research Collaboration — MERL</strong> | Cambridge, MA | Spring 2024</li>
+            <li><strong>Graduate Research Assistant — University of Kansas</strong> | Lawrence, KS | 2023 - Present</li>
+            <li><strong>Undergraduate Researcher — Sharif University of Technology</strong> | Tehran, Iran | 2020 - 2022</li>
+            <li><strong>Teaching Assistant — Sharif University of Technology</strong> | Tehran, Iran | Spring 2018 - 2019</li>
+        </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><div class="muted">© <span id="year"></span> Ali Vaziri</div></div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
