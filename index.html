@@ -95,6 +95,14 @@
         border: 1px solid var(--border);
         margin-top: 0; /* Margin is now handled by the container's gap */
     }
+    
+    .view-all-link {
+        display: block;
+        margin-top: 20px;
+        font-weight: 600;
+        text-align: right;
+        font-size: 0.9rem;
+    }
 
     footer{padding:30px 18px;color:var(--muted);text-align:center}
 
@@ -158,14 +166,40 @@
       <p>
         My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
       </p>
-      <p>
-        I focus on developing computationally efficient frameworks that merge the predictive power of Bayesian inference with the sheer speed of GPU-accelerated solvers, deployed using PyTorch CUDA and cuDNN libraries. This approach allows for robust, real-time decision-making in dynamic environments.
-      </p>
-      <p>
-        The applications of this work are exciting and diverse, ranging from motion planning for <strong>autonomous vehicles</strong> and the intricate control of <strong>soft robotics</strong> to optimizing large-scale <strong>thermo-fluid systems</strong>.
-      </p>
+    </section>
+
+    <section id="experience">
+      <h2>Recent Experience</h2>
+      <ul style="padding-left: 20px; margin: 0; list-style: none;">
+        <li><strong>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</strong><br><span class="muted">Cambridge, MA | Summer 2024</span></li>
+      </ul>
+      <a href="experience.html" class="view-all-link">View All Experience &rarr;</a>
+    </section>
+
+    <section id="pubs">
+      <h2>Recent Publication</h2>
+      <ul class="compact-list">
+        <li class="publication-item">
+          <div class="publication-media-container" style="flex-basis: 150px;">
+            <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
+          </div>
+          <div class="publication-info">
+            <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+          </div>
+        </li>
+      </ul>
+      <a href="publications.html" class="view-all-link">View All Publications &rarr;</a>
     </section>
     
+    <section id="projects">
+      <h2>Featured Project</h2>
+      <div class="single-col-card" style="margin-bottom: 0;">
+        <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
+        <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
+      </div>
+      <a href="projects.html" class="view-all-link">View All Projects &rarr;</a>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p>
