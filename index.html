@@ -69,19 +69,46 @@
     .single-col-card ul { padding-left: 20px; margin-top: 5px; margin-bottom: 5px; }
 
     /* Publications list */
-    ul.compact-list { margin: 0; padding-left: 20px; list-style-position: outside; }
-    ul.compact-list li { margin-bottom: 18px; }
+    ul.compact-list { margin: 0; padding: 0; list-style: none; }
+    ul.compact-list li { margin-bottom: 25px; } /* Increased margin for better separation */
+    ul.compact-list li:last-child { margin-bottom: 0; }
 
+    /* NEW STYLES for Publication Layout */
+    .publication-item {
+        display: flex;
+        flex-direction: row;
+        gap: 20px; /* Space between media and text */
+        align-items: flex-start;
+    }
+    .publication-media-container {
+        flex: 0 0 220px; /* Defines a fixed width for the media column */
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Space between multiple images */
+    }
+    .publication-info {
+        flex: 1; /* Allows the text content to fill the remaining space */
+    }
     .publication-media {
-        max-width: 100%; /* Ensure it's responsive */
-        border-radius: 8px; /* Match the theme */
-        margin-top: 10px; /* Add some space */
+        max-width: 100%;
+        border-radius: 8px;
         border: 1px solid var(--border);
+        margin-top: 0; /* Margin is now handled by the container's gap */
     }
 
     footer{padding:30px 18px;color:var(--muted);text-align:center}
 
-    @media(max-width:860px){.pub{grid-template-columns:1fr}.thumb{width:100%;height:150px}}
+    /* Responsive adjustments */
+    @media(max-width: 768px) {
+        .publication-item {
+            flex-direction: column; /* Stack media on top of text on small screens */
+        }
+        .publication-media-container {
+            flex-basis: auto; /* Reset the fixed width */
+            width: 100%;
+        }
+    }
+
     @media(max-width:600px){
       .mast{flex-direction:column;align-items:center;text-align:center}
       nav{margin-left:0;justify-content:center}
@@ -113,7 +140,6 @@
  
   <main>
     <section id="hero" style="text-align:center;background:var(--card); padding-top: 20px;">
-      <!-- Removed the h2 with the repeated name -->
       <p class="muted" style="margin:0">Lawrence, KS, USA</p>      
       <p class="muted" style="margin:.2rem 0 0">Control, Estimation, Machine Learning</p>
       <div style="margin-top:10px">
@@ -133,7 +159,7 @@
 
     <section id="experience">
         <h2>Experience</h2>
-        <ul class="compact-list">
+        <ul style="padding-left: 20px;">
             <li><strong>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</strong> | Cambridge, MA | Summer 2024</li>
             <li><strong>Research Collaboration — MERL</strong> | Cambridge, MA | Spring 2024</li>
             <li><strong>Graduate Research Assistant — University of Kansas</strong> | Lawrence, KS | 2023 - Present</li>
@@ -146,37 +172,61 @@
       <h2>Publications</h2>
       <h3>First-Authored</h3>
       <ul class="compact-list">
-        <li>
-          <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
-          <img src="assets/Picture1.png" alt="Publication visual placeholder" class="publication-media">
-          <img src="assets/robot_snapshots_strip_page-0001.jpg" alt="Publication visual placeholder" class="publication-media">
-          <img src="assets/trajs.png" alt="Publication visual placeholder" class="publication-media">
+        <li class="publication-item">
+          <div class="publication-media-container">
+            <img src="assets/Picture1.png" alt="Publication visual placeholder" class="publication-media">
+            <img src="assets/robot_snapshots_strip_page-0001.jpg" alt="Publication visual placeholder" class="publication-media">
+            <img src="assets/robot_trajectory.png" alt="Publication visual placeholder" class="publication-media">
+          </div>
+          <div class="publication-info">
+            <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+          </div>
         </li>
-        <li>
-          <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”, To be submitted.
-          <img src="assets/OIC_ML.png" alt="Optimal Inferential Control of Machine Learning Models" class="publication-media">
-          <img src="assets/streamlines_2D_page-0001.jpg" alt="streamlines_2D.jpg" class="publication-media">
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/OIC_ML.png" alt="Optimal Inferential Control of Machine Learning Models" class="publication-media">
+                <img src="assets/streamlines_2D_page-0001.jpg" alt="streamlines_2D.jpg" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”, To be submitted.
+            </div>
         </li>
-        <li>
-          <strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”, Under review, <em>Applied Thermal Engineering</em>.
-          <img src="assets/ASHP_new.png" alt="Publication visual placeholder" class="publication-media">
-          <img src="assets/GRU.png" alt="Publication visual placeholder" class="publication-media">
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/ASHP_new.png" alt="Publication visual placeholder" class="publication-media">
+                <img src="assets/GRU.png" alt="Publication visual placeholder" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”, Under review, <em>Applied Thermal Engineering</em>.
+            </div>
         </li>
-        <li>
-          <strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”, In 2025 <em>American Control Conference (ACC)</em>, (<a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>).
-          <img src="assets/OvertakingScenario.gif" alt="Overtaking Scenario GIF" class="publication-media">
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/OvertakingScenario.gif" alt="Overtaking Scenario GIF" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”, In 2025 <em>American Control Conference (ACC)</em>, (<a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>).
+            </div>
         </li>
-        <li>
-          <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”, In 2025 <em>American Control Conference (ACC)</em>; Best Student Paper nominee (<a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>).
-          <img src="assets/NS2D_controlled.gif" alt="Controlled 2D NS" class="publication-media">
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/NS2D_controlled.gif" alt="Controlled 2D NS" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”, In 2025 <em>American Control Conference (ACC)</em>; Best Student Paper nominee (<a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>).
+            </div>
         </li>
       </ul>
       <h3 style="margin-top: 20px;">Co-Authored</h3>
       <ul class="compact-list">
-        <li>
-          Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”, <em>IEEE Transactions on Robotics (T-RO)</em>, 2025, (<a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>).
-          <img src="assets/Exp_Overtaking_Traj_page-0001.jpg" alt="Publication visual placeholder" class="publication-media">
-          <img src="assets/Exp_NN_test2_page-0001.jpg" alt="Publication visual placeholder" class="publication-media">
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/Exp_Overtaking_Traj_page-0001.jpg" alt="Publication visual placeholder" class="publication-media">
+                <img src="assets/Exp_NN_test2_page-0001.jpg" alt="Publication visual placeholder" class="publication-media">
+            </div>
+            <div class="publication-info">
+                Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”, <em>IEEE Transactions on Robotics (T-RO)</em>, 2025, (<a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>).
+            </div>
         </li>
       </ul>
     </section>
@@ -193,14 +243,14 @@
         </div>
         <div class="single-col-card">
           <h3>Selected Undergraduate Projects in Sharif (2018-2021)</h3>
-          <ul class="compact-list" style="padding-left: 20px; margin-top: 10px;">
+          <ul class="compact-list" style="padding-left: 20px; margin-top: 10px; list-style: disc;">
               <li>AUBO-i5 (6R) collaborative robot: forward/inverse kinematics (Robotics Toolbox), Simscape model, Jacobian & singularity analysis; Newton–Euler dynamics with PD control (MATLAB/Simulink).</li>
               <li>Surgical needle navigation GUI (MATLAB): collision-free path planning with RRT.</li>
               <li>SCARA robot: DH-based forward/inverse kinematics; SimMechanics verification.</li>
           </ul>
-      </div>
+    </div>
     </section>
-    
+   
     <section id="contact">
       <h2>Contact</h2>
       <p>
@@ -213,8 +263,6 @@
 
   </main>
 
-  <!-- The div that created the bottom background has been removed. -->
-
   <footer>
     <div class="wrap"><div class="muted">© <span id="year"></span> Ali Vaziri</div></div>
   </footer>
@@ -222,4 +270,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
