@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications | Ali Vaziri</title>
+  <meta name="description" content="Ali Vaziri — Optimal Control - Estimation - Machine Learning." />
+  <link rel="canonical" href="https://alivaziri.github.io/publications.html" />
+
+  <meta property="og:title" content="Publications | Ali Vaziri" />
+  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Ali_HS.jpg" />
+
+  <style>
+    :root{
+      /* Light Theme (Default) */
+      --bg: #f6f7fb; --fg: #111827; --muted:#6b7280; --link:#0b5fff; --border:#e5e7eb; --card:#ffffff; --accent:#0b5fff;
+      --max: 980px; --radius: 14px; --shadow: 0 1px 2px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
+    img, video{max-width:100%;display:block}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+
+    /* Background strip for bottom (styles are kept in case they are needed for other elements) */
+    .bg-strip{width:100%;background-color:#ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);}
+    .bg-bottom{height:180px;margin-top:40px}
+
+    /* Header */
+    header{z-index:20; background:none;} /* Removed position:sticky and border */
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
+
+    .brand{display:flex;gap:20px;align-items:center}
+    .avatar{
+        width:150px;
+        height:150px;
+        border-radius:999px;
+        border: none;
+        background-color: #ffffff;
+        background-position: center;
+        background-size: contain; /* Changed from 'cover' to 'contain' to prevent cropping */
+        background-repeat: no-repeat;
+        flex-shrink: 0;
+        /* Make sure 'image_da6dfe.png' is in the same folder as your HTML file */
+        background-image: url('assets/Ali_HS.jpg');
+    }
+    .title{display:flex;flex-direction:column}
+    .title h1{margin:0;font-size:1.8rem;font-weight:800; color: var(--fg);}
+    .subtitle{margin:4px 0 0;color:var(--muted);font-size:1.1rem}
+
+    nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
+    nav a{color:var(--fg);font-weight:600} /* Changed color from --link to --fg */
+
+    main{padding:28px 18px;}
+    section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    section h2{margin:0 0 15px;font-size:1.05rem;color:var(--fg)}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#f0f3fa;color:var(--muted);margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
+
+    /* Single Column Card Layout */
+    .single-col-card {
+        background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px;
+    }
+    .single-col-card:last-child { margin-bottom: 0; }
+    .single-col-card h3 { margin: 0 0 5px; font-size: 1rem; }
+    .single-col-card p, .single-col-card li { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .single-col-card ul { padding-left: 20px; margin-top: 5px; margin-bottom: 5px; }
+
+    /* Publications list */
+    ul.compact-list { margin: 0; padding: 0; list-style: none; }
+    ul.compact-list li { margin-bottom: 25px; } /* Increased margin for better separation */
+    ul.compact-list li:last-child { margin-bottom: 0; }
+
+    /* NEW STYLES for Publication Layout */
+    .publication-item {
+        display: flex;
+        flex-direction: row;
+        gap: 20px; /* Space between media and text */
+        align-items: flex-start;
+    }
+    .publication-media-container {
+        flex: 0 0 220px; /* Defines a fixed width for the media column */
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Space between multiple images */
+    }
+    .publication-info {
+        flex: 1; /* Allows the text content to fill the remaining space */
+    }
+    .publication-media {
+        max-width: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        margin-top: 0; /* Margin is now handled by the container's gap */
+    }
+
+    footer{padding:30px 18px;color:var(--muted);text-align:center}
+
+    /* Responsive adjustments */
+    @media(max-width: 768px) {
+        .publication-item {
+            flex-direction: column; /* Stack media on top of text on small screens */
+        }
+        .publication-media-container {
+            flex-basis: auto; /* Reset the fixed width */
+            width: 100%;
+        }
+    }
+
+    @media(max-width:600px){
+      .mast{flex-direction:column;align-items:center;text-align:center}
+      nav{margin-left:0;justify-content:center}
+      .avatar{width:120px;height:120px}
+      .title h1{font-size: 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap mast">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="title">
+          <h1>Ali Vaziri</h1>
+          <div class="subtitle">Researcher in Optimal Control of ML Models</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">ABOUT</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="publications.html">PUBLICATIONS</a>
+        <a href="certifications.html">CERTIFICATIONS</a>
+        <a href="projects.html">PROJECTS</a>
+      </nav>
+    </div>
+  </header>
+ 
+  <main>
+    <section id="pubs">
+      <h2>Publications</h2>
+      <h3>First-Authored</h3>
+      <ul class="compact-list">
+        <li class="publication-item">
+          <div class="publication-media-container">
+            <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
+            <img src="assets/SoftRobot_3DTraj.gif" alt="Publication visual placeholder" class="publication-media">
+            <img src="assets/robot_snapshots_strip_page-0001.jpg" alt="Publication visual placeholder" class="publication-media">
+          </div>
+          <div class="publication-info">
+            <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+          </div>
+        </li>
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/OIC_ML.png" alt="Optimal Inferential Control of Machine Learning Models" class="publication-media">
+                <img src="assets/streamlines_2D_page-0001.jpg" alt="streamlines_2D.jpg" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”, Under review, Proceedings of the National Academy of Sciences of the United States of America (PNAS)</em>.
+            </div>
+        </li>
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/CNN_OIC.png" alt="Controlled 2D NS" class="publication-media">
+                <img src="assets/NS2D_controlled.gif" alt="Controlled 2D NS" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”, In 2025 <em>American Control Conference (ACC)</em>; Best Student Paper nominee (<a href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>).
+            </div>
+        </li>
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/Burgers1.png" alt="Optimal Control of PDEs" class="publication-media">
+                <img src="assets/Burgers2.png" alt="Optimal Control of PDEs" class="publication-media">
+                <img src="assets/Burgers3.png" alt="Optimal Control of PDEs" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Robust GPU-Enabled Framework for Optimal Boundary Control and Optimal Distributed Control of PDEs”, In preparation.
+            </div>
+        </li>
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/ASHP_new.png" alt="Publication visual placeholder" class="publication-media">
+                <img src="assets/GRU.png" alt="Publication visual placeholder" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”, Under review, <em>Applied Thermal Engineering</em>.
+            </div>
+        </li>
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/OvertakingScenario.gif" alt="BIMP" class="publication-media">
+                <img src="assets/EnKTS.png" alt="BIMP" class="publication-media">
+                <img src="assets/EnKTS2.png" alt="BIMP" class="publication-media">
+                <img src="assets/EnKTS3.png" alt="BIMP" class="publication-media">
+                <img src="assets/NN_vehicle.png" alt="BIMP" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”, In 2025 <em>American Control Conference (ACC)</em>, (<a href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>).
+            </div>
+        </li>
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/undergrad1.png" alt="Underwater Robot for Trash Collection" class="publication-media">
+                <img src="assets/undergrad2.png" alt="Underwater Robot for Trash Collection" class="publication-media">
+              <img src="assets/pathplanning.png" alt="Underwater Robot for Trash Collection" class="publication-media">
+            </div>
+            <div class="publication-info">
+                <strong>Ali Vaziri</strong>, et al. “Underwater Robot Design and Control for Plastic Trash Collection in Marine Environment". <em>B.Sc. Thesis, Sharif University of Technology</em>, 2022 (Best Paper Award).
+            </div>
+        </li>
+      </ul>
+      <h3 style="margin-top: 20px;">Co-Authored</h3>
+      <ul class="compact-list">
+        <li class="publication-item">
+            <div class="publication-media-container">
+                <img src="assets/GRU_traj.png" alt="Publication visual placeholder" class="publication-media">
+                <img src="assets/GRU_TRO.png" alt="placeholder" class="publication-media">
+            </div>
+            <div class="publication-info">
+                Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”, <em>IEEE Transactions on Robotics (T-RO)</em>, 2025, (<a href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>).
+            </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><div class="muted">© <span id="year"></span> Ali Vaziri</div></div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
