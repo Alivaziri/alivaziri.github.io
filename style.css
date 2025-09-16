@@ -1,113 +1,158 @@
-/* style.css (Final Version with Theme Toggle) */
-:root{
-  /* al-folio inspired Light Theme (Default) */
-  --bg: #ffffff; 
-  --fg: #333333; 
-  --muted: #6c757d; 
-  --link: #8C1515; /* Stanford Cardinal Red */
-  --border: #dee2e6;
-  --max: 980px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ali Vaziri</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <meta name="description" content="Ali Vaziri — GPU-based Optimal control of ML models, Motion planning, autonomous vehicles." />
+    <link rel="canonical" href="https://alivaziri.github.io/" />
+    <meta property="og:title" content="Ali Vaziri" />
+    <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/Ali_HS.jpg" />
+</head>
+<body>
 
-/* Dark theme is now controlled by a class on the <html> tag */
-html.dark-mode {
-  --bg: #1c2128; 
-  --fg: #cdd9e5; 
-  --muted: #848d97; 
-  --link: #e57373; /* A lighter red for dark mode */
-  --border: #444c56;
-}
+    <header>
+        <div class="wrap mast">
+            <div class="header-left">
+                <img src="assets/Ali_HS.jpg" alt="Ali Vaziri" class="header-avatar">
+                <div class="brand">
+                    <h1>Ali Vaziri</h1>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <nav>
+                    <a href="index.html" class="active">ABOUT</a>
+                    <a href="experience.html">EXPERIENCE</a>
+                    <a href="publications.html">PUBLICATIONS</a>
+                    <a href="certifications.html">CERTIFICATIONS</a>
+                    <a href="projects.html">PROJECTS</a>
+                </nav>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+ 
+    <main class="wrap">
+    
+        <section id="about" class="about-section">
+            <div class="about-text">
+                <p class="subtitle">
+                    GPU-based Optimal control of ML models, Motion planning, autonomous vehicles
+                </p>
+                <p>
+                    I am a Ph.D. candidate in Mechanical Engineering at the University of Kansas, located in Lawrence, KS. My academic journey began with a B.Sc. from Sharif University of Technology and includes an M.Sc. from KU. My graduate studies have been proudly supported by the Wyatt Memorial Scholarships and the National Science Foundation.
+                </p>
+                <p>
+                    My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
+                </p>
+                <p>
+                    I focus on developing computationally efficient frameworks that merge the predictive power of Bayesian inference with the sheer speed of GPU-accelerated solvers, deployed using PyTorch CUDA and cuDNN libraries. This approach allows for robust, real-time decision-making in dynamic environments.
+                </p>
+                <p>
+                    The applications of this work are exciting and diverse, ranging from motion planning for <strong>autonomous vehicles</strong> and the intricate control of <strong>soft robotics</strong> to optimizing large-scale <strong>thermo-fluid systems</strong>.
+                </p>
+                 <div class="publication-links">
+                    <a href="mailto:alivaziri@ku.edu" class="btn">✉️ Email</a>
+                    <a href="assets/CV.pdf" target="_blank" rel="noopener" class="btn">📄 CV</a>
+                    <a href="https://github.com/Alivaziri/" target="_blank" rel="noopener" class="btn">GitHub</a>
+                    <a href="https://www.linkedin.com/in/ali-vaziri-63338512a" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en" target="_blank" rel="noopener" class="btn">Google Scholar</a>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="assets/Ali_HS.jpg" alt="Photo of Ali Vaziri" class="avatar">
+            </div>
+        </section>
 
-*{box-sizing:border-box}
-body{
-    margin:0;
-    padding:0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height:1.6;
-    background:var(--bg);
-    color:var(--fg);
-    font-size: 1.1rem;
-    transition: background-color 0.3s, color 0.3s;
-}
-img{max-width:100%;display:block}
-a{color:var(--link);text-decoration:none} 
-a:hover{text-decoration:underline}
+        <section id="recent-experience">
+            <h2>Recent Experience</h2>
+            <ul class="item-list">
+                <li>
+                    <div class="item-header">
+                        <h3>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</h3>
+                        <span>Summer 2024</span>
+                    </div>
+                    <p>Cambridge, MA</p>
+                </li>
+            </ul>
+            <a href="experience.html" class="view-all-link">View All Experience &rarr;</a>
+        </section>
 
-h1, h2, h3 {
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 600;
-    color: var(--fg);
-}
+        <section id="recent-pubs">
+            <h2>Recent Publication</h2>
+            <ul class="item-list">
+                <li class="publication-item">
+                    <div class="publication-media-container" style="flex-basis: 150px;">
+                        <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
+                    </div>
+                    <div class="publication-info">
+                        <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+                    </div>
+                </li>
+            </ul>
+            <a href="publications.html" class="view-all-link">View All Publications &rarr;</a>
+        </section>
+        
+        <section id="featured-project">
+            <h2>Featured Project</h2>
+            <ul class="item-list">
+                 <li>
+                    <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
+                    <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
+                </li>
+            </ul>
+            <a href="projects.html" class="view-all-link">View All Projects &rarr;</a>
+        </section>
 
-h1 { font-size: 2.5rem; margin: 0; }
-h2 { font-size: 1.75rem; margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-h3 { font-size: 1.2rem; margin: 20px 0 10px 0; }
+    </main>
 
-/* Layout */
-.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    <footer>
+        <div class="wrap">
+            © <span id="year"></span> Ali Vaziri
+        </div>
+    </footer>
 
-/* Header */
-header .mast{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 25px 0;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 40px;
-}
-.brand h1 { font-size: 1.8rem; }
-.nav-wrapper { display: flex; align-items: center; gap: 20px; }
-nav{display:flex;gap:20px;font-size: 1.1rem;}
-nav a{color:var(--fg);font-weight:500}
-nav a.active { color: var(--link); font-weight: bold; }
+    <script>
+        // Set year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-/* Item List styling (for experience, etc.) */
-ul.item-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-}
-ul.item-list > li { margin-bottom: 25px; line-height: 1.5; }
-ul.item-list li .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-.item-header span { color: var(--muted); font-style: italic; }
-ul.item-list li p { margin: 5px 0 0 0; color: var(--muted); }
+        // Theme Toggler Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
 
-/* Publication Item styling */
-.publication-item { display: flex; flex-direction: row; gap: 20px; align-items: flex-start; }
-.publication-media-container { flex: 0 0 220px; }
-.publication-media-container img { border-radius: 4px; border: 1px solid var(--border); margin-bottom: 10px; }
-.publication-info { flex: 1; }
-.publication-info strong { font-size: 1.1rem; }
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                htmlEl.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        }
 
-/* Publication Link Buttons */
-.publication-links { margin-top: 10px; }
-.btn { display: inline-block; padding: 4px 12px; margin: 5px 5px 0 0; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: background-color 0.2s; }
-.btn:hover { background-color: var(--border); color: var(--fg); text-decoration: none; }
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-/* NEW: Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem; /* Adjust size of emoji */
-    padding: 0;
-    line-height: 1;
-}
-.theme-toggle .icon-sun { display: none; }
-.theme-toggle .icon-moon { display: inline; }
-html.dark-mode .theme-toggle .icon-sun { display: inline; }
-html.dark-mode .theme-toggle .icon-moon { display: none; }
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        } else if (systemPrefersDark) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
 
-/* Footer */
-footer{ padding:20px 0; color:var(--muted); text-align:center; border-top: 1px solid var(--border); margin-top: 60px; font-size: 0.9rem; }
-
-/* Responsive adjustments */
-@media(max-width: 768px) {
-    body { font-size: 1rem; }
-    header .mast { flex-direction: column; gap: 20px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-    ul.item-list li .item-header { flex-direction: column; align-items: flex-start; }
-    .publication-item { flex-direction: column; }
-    .publication-media-container { flex-basis: auto; width: 100%; }
-}
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = htmlEl.classList.contains('dark-mode');
+            applyTheme(isDarkMode ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>
