@@ -4,140 +4,145 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ali Vaziri</title>
-  <meta name="description" content="Ali Vaziri — Optimal Control - Estimation - Machine Learning." />
+  <meta name="description" content="Ali Vaziri — GPU-based Optimal control of ML models, Motion planning, autonomous vehicles." />
   <link rel="canonical" href="https://alivaziri.github.io/" />
 
   <meta property="og:title" content="Ali Vaziri" />
-  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+  <meta property="og:description" content="GPU-based Optimal control of ML models, Motion planning, autonomous vehicles." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/Ali_HS.jpg" />
 
   <style>
     :root{
-      /* Light Theme (Default) */
-      --bg: #f6f7fb; --fg: #111827; --muted:#6b7280; --link:#0b5fff; --border:#e5e7eb; --card:#ffffff; --accent:#0b5fff;
-      --max: 980px; --radius: 14px; --shadow: 0 1px 2px rgba(0,0,0,.06);
+      /* NEW: al-folio inspired Light Theme */
+      --bg: #ffffff; 
+      --fg: #333333; 
+      --muted: #6c757d; 
+      --link: #8C1515; /* Stanford Cardinal Red */
+      --border: #dee2e6;
+      --max: 980px;
     }
     
-    /* NEW: Dark Theme using system preference */
     @media (prefers-color-scheme: dark) {
-        :root {
-            --bg: #111827; --fg: #f6f7fb; --muted:#9ca3af; --link:#438aff; --border:#374151; --card:#1f2937;
-        }
-        /* Optional: Change pill background in dark mode */
-        .pill { background: #374151; }
+      :root {
+          --bg: #1c2128; 
+          --fg: #cdd9e5; 
+          --muted: #848d97; 
+          --link: #e57373; /* A lighter red for dark mode */
+          --border: #444c56;
+      }
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;line-height:1.65;background:var(--bg);color:var(--fg)}
-    img, video{max-width:100%;display:block}
-    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    body{
+        margin:0;
+        padding:0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height:1.6;
+        background:var(--bg);
+        color:var(--fg);
+        font-size: 1.1rem;
+    }
+    img{max-width:100%;display:block}
+    a{color:var(--link);text-decoration:none} 
+    a:hover{text-decoration:underline}
 
-    /* Background strip for bottom (styles are kept in case they are needed for other elements) */
-    .bg-strip{width:100%;background-color: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);}
-    .bg-bottom{height:180px;margin-top:40px}
+    h1, h2 {
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 600;
+        color: var(--fg);
+    }
 
+    h1 { font-size: 2.5rem; margin: 0; }
+    h2 { font-size: 1.75rem; margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+    /* Layout */
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    
     /* Header */
-    header{z-index:20; background:none;}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .mast{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
-
-    .brand{display:flex;gap:20px;align-items:center}
-    .avatar{
-      width:150px;
-      height:150px;
-      border-radius:999px; /* This makes the div a circle */
-      border: none;
-      background-color: var(--card);
-      background-position: center;
-      /* UPDATED: 'cover' ensures the image fills the circle, even if it has to crop a bit */
-      background-size: cover; 
-      background-repeat: no-repeat;
-      flex-shrink: 0;
-      background-image: url('assets/Ali_HS.jpg');
+    header .mast{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding: 25px 0;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 40px;
     }
-    /* UPDATED: Title and Subtitle styles for single-line display */
-    .title{display:flex; align-items: baseline; gap: 10px; flex-wrap: wrap;}
-    .title h1{margin:0;font-size:1.8rem;font-weight:800; color: var(--fg);}
-    .subtitle{margin:0;color:var(--muted);font-size:1.1rem}
+    .brand h1 { font-size: 1.8rem; }
+    nav{display:flex;gap:20px;font-size: 1.1rem;}
+    nav a{color:var(--fg);font-weight:500}
+    nav a.active { color: var(--link); font-weight: bold; } /* Style for the current page link */
 
-    nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
-    nav a{color:var(--fg);font-weight:600}
 
-    main{padding:28px 18px;}
-    section{max-width:var(--max);margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    section h2{margin:0 0 15px;font-size:1.05rem;color:var(--fg)}
-    #about p {
-      margin-top: 0;
-      margin-bottom: 0.4rem;
-    }
-    .muted{color:var(--muted)}
-    .pill{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--border);background:#f0f3fa;color:var(--muted);margin:2px 6px 0 0;font-size:.85rem;white-space:nowrap}
-
-    /* Single Column Card Layout */
-    .single-col-card {
-        background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px;
-    }
-    .single-col-card:last-child { margin-bottom: 0; }
-    .single-col-card h3 { margin: 0 0 5px; font-size: 1rem; }
-    .single-col-card p, .single-col-card li { margin: 0; font-size: 0.9rem; color: var(--muted); }
-    .single-col-card ul { padding-left: 20px; margin-top: 5px; margin-bottom: 5px; }
-
-    /* Publications list */
-    ul.compact-list { margin: 0; padding: 0; list-style: none; }
-    ul.compact-list li { margin-bottom: 25px; }
-    ul.compact-list li:last-child { margin-bottom: 0; }
-
-    .publication-item {
+    /* About Section - Two Column Layout */
+    .about-section {
         display: flex;
-        flex-direction: row;
-        gap: 20px;
+        gap: 40px;
         align-items: flex-start;
     }
-    .publication-media-container {
-        flex: 0 0 220px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .publication-info {
-        flex: 1;
-    }
-    .publication-media {
-        max-width: 100%;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-        margin-top: 0;
-    }
+    .about-text { flex: 2; /* Takes up 2/3 of the space */ }
+    .about-image { flex: 1; /* Takes up 1/3 of the space */ }
     
+    .about-image .avatar {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        aspect-ratio: 1 / 1; /* Make it a square */
+        border-radius: 50%; /* Make it a circle */
+        object-fit: cover; /* Ensure the image covers the circle area */
+        margin: 0 auto;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--muted);
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Generic Section styling */
+    section { margin-bottom: 40px; }
+    
+    /* Publication/Experience List styling */
+    ul.item-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul.item-list li {
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+    ul.item-list li strong {
+        display: block;
+        font-size: 1.1rem;
+    }
+
     .view-all-link {
         display: block;
-        margin-top: 20px;
+        margin-top: 15px;
         font-weight: 600;
         text-align: right;
+    }
+    
+    /* Footer */
+    footer{
+        padding:20px 0;
+        color:var(--muted);
+        text-align:center;
+        border-top: 1px solid var(--border);
+        margin-top: 60px;
         font-size: 0.9rem;
     }
 
-    footer{padding:30px 18px;color:var(--muted);text-align:center}
-
     /* Responsive adjustments */
     @media(max-width: 768px) {
-      .publication-item {
-          flex-direction: column;
-      }
-      .publication-media-container {
-          flex-basis: auto;
-          width: 100%;
-      }
-    }
-
-    @media(max-width:600px){
-      .mast{flex-direction:column;align-items:center;text-align:center}
-      nav{margin-left:0;justify-content:center}
-      .avatar{width:120px;height:120px}
-      .title h1{font-size: 1.5rem;}
-      /* Center title content when it wraps */
-      .title{justify-content: center;}
+        body { font-size: 1rem; }
+        .about-section { flex-direction: column-reverse; /* Stack image on top */ }
+        .about-image .avatar { max-width: 200px; }
+        header .mast { flex-direction: column; gap: 20px; }
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -146,70 +151,55 @@
   <header>
     <div class="wrap mast">
       <div class="brand">
-        <div class="avatar" aria-hidden="true"></div>
-        <div class="title">
-          <h1>Ali Vaziri</h1>
-          <div class="subtitle">Researcher in Optimal Control of ML Models</div>
-        </div>
+        <h1>Ali Vaziri</h1>
       </div>
       <nav>
-        <a href="index.html">ABOUT</a>
+        <a href="index.html" class="active">ABOUT</a>
         <a href="experience.html">EXPERIENCE</a>
         <a href="publications.html">PUBLICATIONS</a>
-        <a href="certifications.html">CERTIFICATIONS</a>
         <a href="projects.html">PROJECTS</a>
       </nav>
     </div>
   </header>
  
-  <main>
-    <section id="hero" style="text-align:center;background:var(--card); padding-top: 20px;">
-      <p class="muted" style="margin:0">Lawrence, KS, USA</p>      
-      <p class="muted" style="margin:.2rem 0 0">Control, Estimation, Machine Learning</p>
-      <div style="margin-top:10px">
-        <a class="pill" href="mailto:alivaziri@ku.edu">Email</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://github.com/Alivaziri/">GitHub</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ali-vaziri-63338512a">LinkedIn</a>
-        <a class="pill" target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en">Google Scholar</a>
-      </div>
+  <main class="wrap">
+    
+    <section id="about" class="about-section">
+        <div class="about-text">
+            <p class="subtitle">
+                GPU-based Optimal control of ML models, Motion planning, autonomous vehicles
+            </p>
+            <p>
+                I am a Ph.D. candidate in Mechanical Engineering at the University of Kansas. My academic journey began with a B.Sc. from Sharif University of Technology and includes an M.Sc. from KU. My graduate studies have been proudly supported by the Wyatt Memorial Scholarships and the National Science Foundation.
+            </p>
+            <p>
+                My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
+            </p>
+            <p>
+                I focus on developing computationally efficient frameworks that merge the predictive power of Bayesian inference with the sheer speed of GPU-accelerated solvers, deployed using PyTorch CUDA and cuDNN libraries. This approach allows for robust, real-time decision-making in dynamic environments.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="assets/Ali_HS.jpg" alt="Photo of Ali Vaziri" class="avatar">
+        </div>
     </section>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a Ph.D. candidate in Mechanical Engineering at the University of Kansas. My academic journey began with a B.Sc. from Sharif University of Technology and includes an M.Sc. from KU. My graduate studies have been proudly supported by the Wyatt Memorial Scholarships and the National Science Foundation.
-  </p>
-  <p>
-    My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
-  </p>
-  <p>
-    I focus on developing computationally efficient frameworks that merge the predictive power of Bayesian inference with the sheer speed of GPU-accelerated solvers, deployed using PyTorch CUDA and cuDNN libraries. This approach allows for robust, real-time decision-making in dynamic environments.
-  </p>
-  <p>
-    The applications of this work are exciting and diverse, ranging from motion planning for <strong>autonomous vehicles</strong> and the intricate control of <strong>soft robotics</strong> to optimizing large-scale <strong>thermo-fluid systems</strong>.
-  </p>
-</section>
-
-
 
     <section id="experience">
       <h2>Recent Experience</h2>
-      <ul style="padding-left: 20px; margin: 0; list-style: none;">
-        <li><strong>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</strong><br><span class="muted">Cambridge, MA | Summer 2024</span></li>
+      <ul class="item-list">
+        <li>
+          <strong>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</strong>
+          <span class="muted">Cambridge, MA | Summer 2024</span>
+        </li>
       </ul>
       <a href="experience.html" class="view-all-link">View All Experience &rarr;</a>
     </section>
 
     <section id="pubs">
       <h2>Recent Publication</h2>
-      <ul class="compact-list">
-        <li class="publication-item">
-          <div class="publication-media-container" style="flex-basis: 150px;">
-            <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
-          </div>
-          <div class="publication-info">
-            <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
-          </div>
+      <ul class="item-list">
+        <li>
+          <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
         </li>
       </ul>
       <a href="publications.html" class="view-all-link">View All Publications &rarr;</a>
@@ -217,27 +207,21 @@
     
     <section id="projects">
       <h2>Featured Project</h2>
-      <div class="single-col-card" style="margin-bottom: 0;">
-        <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
-        <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
-      </div>
+       <ul class="item-list">
+        <li>
+          <strong>Real-Time Motion Planning for Autonomous Vehicles</strong>
+          <p class="muted">Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
+        </li>
+      </ul>
       <a href="projects.html" class="view-all-link">View All Projects &rarr;</a>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Feel free to reach out to me via email. I'm always open to discussing new projects, creative ideas, or opportunities.
-      </p>
-      <div style="margin-top:10px">
-        <a class="pill" href="mailto:alivaziri@ku.edu">alivaziri@ku.edu</a>
-      </div>
     </section>
 
   </main>
 
   <footer>
-    <div class="wrap"><div class="muted">© <span id="year"></span> Ali Vaziri</div></div>
+    <div class="wrap">
+        © <span id="year"></span> Ali Vaziri
+    </div>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
