@@ -39,7 +39,7 @@
             </div>
         </div>
     </header>
- 
+
     <main class="wrap">
     
         <section id="about" class="about-section">
@@ -94,7 +94,7 @@
                         <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
                     </div>
                     <div class="publication-info">
-                        <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+                        <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, <span class="publication-status">Under review</span>, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
                     </div>
                 </li>
             </ul>
