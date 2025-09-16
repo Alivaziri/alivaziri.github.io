@@ -18,11 +18,8 @@
 
     <header>
         <div class="wrap mast">
-            <div class="header-left">
-                <img src="assets/Ali_HS.jpg" alt="Ali Vaziri" class="header-avatar">
-                <div class="brand">
-                    <h1>Ali Vaziri</h1>
-                </div>
+            <div class="brand">
+                <h1>Ali Vaziri</h1>
             </div>
             <div class="nav-wrapper">
                 <nav>
@@ -39,7 +36,7 @@
             </div>
         </div>
     </header>
-
+ 
     <main class="wrap">
     
         <section id="about" class="about-section">
@@ -53,15 +50,9 @@
                 <p>
                     My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
                 </p>
-                <p>
-                    I focus on developing computationally efficient frameworks that merge the predictive power of Bayesian inference with the sheer speed of GPU-accelerated solvers, deployed using PyTorch CUDA and cuDNN libraries. This approach allows for robust, real-time decision-making in dynamic environments.
-                </p>
-                <p>
-                    The applications of this work are exciting and diverse, ranging from motion planning for <strong>autonomous vehicles</strong> and the intricate control of <strong>soft robotics</strong> to optimizing large-scale <strong>thermo-fluid systems</strong>.
-                </p>
                  <div class="publication-links">
                     <a href="mailto:alivaziri@ku.edu" class="btn">✉️ Email</a>
-                    <a href="assets/CV.pdf" target="_blank" rel="noopener" class="btn">📄 CV</a>
+                    <a href="assets/Ali_Vaziri_CV.pdf" target="_blank" rel="noopener" class="btn">📄 CV</a>
                     <a href="https://github.com/Alivaziri/" target="_blank" rel="noopener" class="btn">GitHub</a>
                     <a href="https://www.linkedin.com/in/ali-vaziri-63338512a" target="_blank" rel="noopener" class="btn">LinkedIn</a>
                     <a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en" target="_blank" rel="noopener" class="btn">Google Scholar</a>
@@ -94,7 +85,7 @@
                         <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
                     </div>
                     <div class="publication-info">
-                        <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, <span class="publication-status">Under review</span>, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+                        <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
                     </div>
                 </li>
             </ul>
