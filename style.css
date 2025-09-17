@@ -259,7 +259,6 @@ a:hover { text-decoration: underline; }
   gap: var(--space-3);
 }
 @media (max-width: 980px) { .cards { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
 
 .card {
   background: var(--card);
