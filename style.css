@@ -45,7 +45,12 @@ h3 { font-size: 1.2rem; margin: 20px 0 10px 0; }
 
 /* Layout */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-
+.avatar {
+  border-radius: 50%;
+  width: 200px; 
+  height: 200px;
+  object-fit: cover;
+}
 /* Header */
 header .mast{
     display:flex;
