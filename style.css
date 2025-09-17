@@ -291,33 +291,30 @@ a:hover { text-decoration: underline; }
 .item-header span { color: var(--muted); font-size: 0.95rem; }
 
 /* ---------- Publications ---------- */
-/* Stack figures vertically in the left column */
+/* Left media column: stack figures vertically */
 .pub-media {
   display: grid;
-  grid-template-columns: 1fr;      /* single column stack */
-  gap: 8px;
-  align-content: start;
+  grid-template-columns: 1fr;     /* single column */
+  gap: 8px;                       /* space between stacked figures */
+  align-content: start;           /* keep stack aligned to top */
 }
 
-/* Uniform box height per paper, images scale INSIDE (no crop) */
-.pub { --thumb-h: 180px; }         /* default; override per paper via inline style if needed */
-
+/* Uniform sizing per paper (already supported) */
 .pub .thumb {
   width: 100%;
-  height: var(--thumb-h);
-  object-fit: contain;             /* <-- scales, no cropping */
+  aspect-ratio: var(--thumb-ratio, 4/3); /* keep same shape across figures in that paper */
+  object-fit: contain;                      /* crop to fill evenly */
   background: color-mix(in oklab, var(--fg) 4%, var(--bg)); /* subtle letterbox */
   border-radius: 10px;
   border: 1px solid var(--line);
-
-  /* make sure any earlier 'aspect-ratio' or 'cover' rules get neutralized */
-  aspect-ratio: auto !important;
 }
 
-/* Optional: on very wide screens you can bump the figure height a bit */
-@media (min-width: 1100px) {
-  .pub { --thumb-h: 200px; }
+/* (Optional) If a paper has many figures, cap the column height and make it scroll */
+.pub-media.scroll {
+  max-height: 560px;                /* adjust as you like */
+  overflow: auto;
 }
+
 
 
 /* ---------- Tables (optional) ---------- */
