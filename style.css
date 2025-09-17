@@ -106,107 +106,98 @@ h2 { font-size: 1.15rem; letter-spacing: .02em; text-transform: uppercase; color
   .name { font-size: 1.5rem; }
 }
 
-/* ==== Publications: left-thumb (uniform size) ==== */
-/* Pattern: media-object (image left, text right). */
-.publication-item {
+/* ==========================================================
+   Publications — Stacked-left figures, no cropping
+   (applies to both your `.publication-*` and `.pub*` variants)
+   ========================================================== */
+
+/* Lists */
+.pub-list,
+.item-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+
+/* Card */
+.publication-item,
+.pub {
   display: grid;
-  grid-template-columns: clamp(120px, 26vw, 220px) 1fr; /* left column stays modest */
-  gap: 16px;
-  padding: 14px;
-  border: 1px solid var(--line, #e6e8eb);
-  border-radius: var(--radius, 12px);
+  grid-template-columns: clamp(240px, 34vw, 440px) 1fr; /* roomy media column */
+  gap: 18px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   background: var(--bg);
 }
 
-/* Left column: thumbnail strip */
-.publication-media-container {
+/* Left media column */
+.publication-media-container,
+.pub-thumb {
   align-self: start;
-  overflow: hidden;
-  border: 1px solid var(--line, #e6e8eb);
+  border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--card, #f8f9fb);
-
-  /* lay out multiple images/GIFs as a compact strip */
-  display: grid;
-  grid-auto-rows: 120px;      /* uniform thumb height */
-  gap: 6px;
-  padding: 6px;
+  background: var(--card);
+  padding: 10px;
+  display: flex;                 /* vertical stack of figures */
+  flex-direction: column;
+  gap: 10px;
+  overflow: visible;             /* don't crop by default */
 }
 
-/* Each image fills its row neatly without distortion */
-.publication-media-container .publication-media {
+/* Image/GIF treatment: show full content (letterbox if needed) */
+.publication-media-container .publication-media,
+.thumb-strip img,
+.pub-thumb img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;          /* crop to fill the box, preserve aspect */
+  height: auto;
+  object-fit: contain;           /* no cropping */
   object-position: center;
+  background: var(--card);
   border-radius: 8px;
-  display: block;
 }
 
-/* Right column */
-.publication-info {
+/* If you kept a .thumb-strip wrapper, ensure it's vertical */
+.thumb-strip { display: flex; flex-direction: column; gap: 10px; }
+
+/* Right column (text) */
+.publication-info,
+.pub-body {
   display: grid;
   gap: 6px;
   align-content: start;
 }
 
-/* Mobile: stack (image block above text) */
+/* Chips & badges for links/status */
+.chip {
+  display: inline-block; font-weight: 600; text-decoration: none;
+  color: var(--fg); background: var(--card); border: 1px solid var(--line);
+  padding: 6px 10px; border-radius: 999px;
+}
+.chip:hover { border-color: var(--fg); }
+
+.badge {
+  display: inline-block; font-size: 0.85rem;
+  background: rgba(11,95,255,.08); color: var(--accent);
+  border: 1px solid rgba(11,95,255,.25);
+  padding: 2px 8px; border-radius: 999px;
+}
+
+/* Optional: if a paper has many figures and you prefer scrolling
+   instead of tall cards, uncomment the next two lines. */
+/* .publication-media-container, .pub-thumb { max-height: 460px; overflow-y: auto; } */
+
+/* Mobile: stack image block above text */
 @media (max-width: 720px) {
-  .publication-item { grid-template-columns: 1fr; }
-  .publication-media-container { grid-auto-rows: 160px; }
+  .publication-item,
+  .pub { grid-template-columns: 1fr; }
 }
 
-.pub { grid-template-columns: clamp(120px, 26vw, 220px) 1fr; }
-.thumb-strip { grid-auto-rows: 120px; }
-.thumb-strip img { object-fit: cover; object-position: center; }
-
-/* === Publications: larger left column + uncropped previews === */
-.publication-item {
-  /* Wider media column so figures/GIFs have room */
-  grid-template-columns: clamp(200px, 30vw, 360px) 1fr;
-  gap: 18px;
-  padding: 16px;
-}
-
-/* Taller rows for each image in the left strip */
-.publication-media-container {
-  /* Flexible height: grows on large screens, never tiny on small ones */
-  grid-auto-rows: clamp(160px, 22vw, 300px);
-  gap: 10px;
-  padding: 10px;
-}
-
-/* Show entire image/GIF without cropping (letterboxed if needed) */
-.publication-media-container .publication-media {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;               /* no cropping */
-  object-position: center;
-  background: var(--card, #f8f9fb);  /* subtle letterbox background */
-  border-radius: 8px;
-  display: block;
-}
-
-/* Optional: if you prefer photos to fill (but GIFs not), keep photos 'cover' */
-@supports (selector(:has(*))) { /* guard, safe to remove if desired */
-  .publication-media-container .publication-media:not([src$=".gif"]) {
-    object-fit: contain; /* change to 'cover' if you want filled thumbnails */
-  }
-}
-
-/* Mobile: stack and still keep generous figure height */
-@media (max-width: 720px) {
-  .publication-item { grid-template-columns: 1fr; }
-  .publication-media-container { grid-auto-rows: clamp(180px, 40vw, 340px); }
-}
-
-/* Icon sizing + swap */
+/* ==========================================================
+   Theme toggle icon swap (sun/moon)
+   ========================================================== */
 .theme-toggle { display:grid; place-items:center; width:36px; height:36px; border-radius:999px; }
 .theme-toggle .icon { width:22px; height:22px; display:block; }
 .icon-moon { display:none; }              /* light by default: show sun */
 :root.dark .icon-sun { display:none; }    /* dark mode: show moon */
 :root.dark .icon-moon { display:block; }
 
-/* optional: a gentle spin when toggling */
+/* subtle interaction */
 .theme-toggle:active .icon-sun { transform: rotate(20deg); }
 .theme-toggle:active .icon-moon { transform: rotate(-20deg); }
