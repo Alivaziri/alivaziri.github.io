@@ -1,118 +1,91 @@
-/* style.css (Final Version with Theme Toggle) */
-:root{
-  /* al-folio inspired Light Theme (Default) */
-  --bg: #ffffff; 
-  --fg: #333333; 
-  --muted: #6c757d; 
-  --link: #8C1515; /* Stanford Cardinal Red */
-  --border: #dee2e6;
-  --max: 980px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Vaziri</title>
+    <style>
+        /* Basic body styles for the example */
+        body {
+            font-family: sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-/* Dark theme is now controlled by a class on the <html> tag */
-html.dark-mode {
-  --bg: #1c2128; 
-  --fg: #cdd9e5; 
-  --muted: #848d97; 
-  --link: #e57373; /* A lighter red for dark mode */
-  --border: #444c56;
-}
+        /* --- KEY STYLES FOR THE ABOUT SECTION --- */
+        
+        /* 1. Make the parent section a flex container */
+        .about-section {
+            display: flex; /* Arranges children (text and image) in a row */
+            align-items: center; /* Vertically centers the items */
+            gap: 30px; /* Adds space between the text and the image */
+            flex-wrap: wrap; /* Allows items to stack on smaller screens */
+        }
 
-*{box-sizing:border-box}
-body{
-    margin:0;
-    padding:0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height:1.6;
-    background:var(--bg);
-    color:var(--fg);
-    font-size: 1.1rem;
-    transition: background-color 0.3s, color 0.3s;
-}
-img{max-width:100%;display:block}
-a{color:var(--link);text-decoration:none} 
-a:hover{text-decoration:underline}
+        /* 2. Style the image to be a circle */
+        .avatar {
+            width: 180px;      /* Set a fixed width */
+            height: 180px;     /* Set a fixed height */
+            border-radius: 50%;/* This makes the image circular */
+            object-fit: cover; /* Prevents the image from distorting */
+        }
+        
+        /* 3. Allow the text container to grow and fill the space */
+        .about-text {
+            flex: 1; /* Allows the text block to take up the available space */
+            min-width: 300px; /* Prevents the text from getting too squished */
+        }
 
-h1, h2, h3 {
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 600;
-    color: var(--fg);
-}
+        /* 4. Style for your links/buttons */
+        .publication-links {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-h1 { font-size: 2.5rem; margin: 0; }
-h2 { font-size: 1.75rem; margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-h3 { font-size: 1.2rem; margin: 20px 0 10px 0; }
+        .publication-links a {
+            text-decoration: none;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+        }
+        /* End of key styles */
 
-/* Layout */
-.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-.avatar {
-  border-radius: 50%;
-  width: 200px; 
-  height: 200px;
-  object-fit: cover;
-}
-/* Header */
-header .mast{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 25px 0;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 40px;
-}
-.brand h1 { font-size: 1.8rem; }
-.nav-wrapper { display: flex; align-items: center; gap: 20px; }
-nav{display:flex;gap:20px;font-size: 1.1rem;}
-nav a{color:var(--fg);font-weight:500}
-nav a.active { color: var(--link); font-weight: bold; }
+    </style>
+</head>
+<body>
 
-/* Item List styling (for experience, etc.) */
-ul.item-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-}
-ul.item-list > li { margin-bottom: 25px; line-height: 1.5; }
-ul.item-list li .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-.item-header span { color: var(--muted); font-style: italic; }
-ul.item-list li p { margin: 5px 0 0 0; color: var(--muted); }
+    <section id="about" class="about-section">
+        
+        <div class="about-text">
+            <p class="subtitle">
+                GPU-based Optimal control of ML models, Motion planning, autonomous vehicles
+            </p>
+            <p>
+                I am a Ph.D. candidate in Mechanical Engineering at the University of Kansas, located in Lawrence, KS. My academic journey began with a B.Sc. from Sharif University of Technology and includes an M.Sc. from KU. My graduate studies have been proudly supported by the Wyatt Memorial Scholarships and the National Science Foundation.
+            </p>
+            <p>
+                My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
+            </p>
+            <div class="publication-links">
+                <a href="mailto:alivaziri@ku.edu">✉️ Email</a>
+                <a href="assets/CV.pdf">📄 CV</a>
+                <a href="https://github.com/Alivaziri/">GitHub</a>
+                <a href="https://www.linkedin.com/in/ali-vaziri-63338512a">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en">Google Scholar</a>
+            </div>
+        </div>
+        
+        <div class="about-image">
+            <img src="assets/Ali_HS.jpg" alt="Photo of Ali Vaziri" class="avatar">
+        </div>
 
-/* Publication Item styling */
-.publication-item { display: flex; flex-direction: row; gap: 20px; align-items: flex-start; }
-.publication-media-container { flex: 0 0 220px; }
-.publication-media-container img { border-radius: 4px; border: 1px solid var(--border); margin-bottom: 10px; }
-.publication-info { flex: 1; }
-.publication-info strong { font-size: 1.1rem; }
+    </section>
 
-/* Publication Link Buttons */
-.publication-links { margin-top: 10px; }
-.btn { display: inline-block; padding: 4px 12px; margin: 5px 5px 0 0; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: background-color 0.2s; }
-.btn:hover { background-color: var(--border); color: var(--fg); text-decoration: none; }
-
-/* NEW: Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem; /* Adjust size of emoji */
-    padding: 0;
-    line-height: 1;
-}
-.theme-toggle .icon-sun { display: none; }
-.theme-toggle .icon-moon { display: inline; }
-html.dark-mode .theme-toggle .icon-sun { display: inline; }
-html.dark-mode .theme-toggle .icon-moon { display: none; }
-
-/* Footer */
-footer{ padding:20px 0; color:var(--muted); text-align:center; border-top: 1px solid var(--border); margin-top: 60px; font-size: 0.9rem; }
-
-/* Responsive adjustments */
-@media(max-width: 768px) {
-    body { font-size: 1rem; }
-    header .mast { flex-direction: column; gap: 20px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-    ul.item-list li .item-header { flex-direction: column; align-items: flex-start; }
-    .publication-item { flex-direction: column; }
-    .publication-media-container { flex-basis: auto; width: 100%; }
-}
+</body>
+</html>
