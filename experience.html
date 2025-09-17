@@ -1,87 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Experience | Ali Vaziri</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <meta name="description" content="Professional experience of Ali Vaziri." />
-    <link rel="canonical" href="https://alivaziri.github.io/experience.html" />
-    <meta property="og:title" content="Experience | Ali Vaziri" />
-    <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/Ali_HS.jpg" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience | Ali Vaziri</title>
+
+  <meta name="description" content="Professional experience of Ali Vaziri." />
+  <link rel="canonical" href="https://alivaziri.github.io/experience.html" />
+  <meta property="og:title" content="Experience | Ali Vaziri" />
+  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Ali_HS.jpg" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <div class="wrap mast">
-            <div class="brand">
-                <h1>Ali Vaziri</h1>
-            </div>
-            <nav>
-                <a href="index.html">ABOUT</a>
-                <a href="experience.html" class="active">EXPERIENCE</a>
-                <a href="publications.html">PUBLICATIONS</a>
-                <a href="certifications.html">CERTIFICATIONS</a>
-                <a href="projects.html">PROJECTS</a>
-            </nav>
-        </div>
-    </header>
- 
-    <main class="wrap">
-    
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul class="item-list">
-                <li>
-                    <div class="item-header">
-                        <h3>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</h3>
-                        <span>Summer 2024</span>
-                    </div>
-                    <p>Cambridge, MA</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <h3>Research Collaboration — MERL</h3>
-                        <span>Spring 2024</span>
-                    </div>
-                    <p>Cambridge, MA</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <h3>Graduate Research Assistant — University of Kansas</h3>
-                        <span>2023 – Present</span>
-                    </div>
-                    <p>Lawrence, KS</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <h3>Undergraduate Researcher — Sharif University of Technology</h3>
-                        <span>2020 – 2022</span>
-                    </div>
-                    <p>Tehran, Iran</p>
-                </li>
-                 <li>
-                    <div class="item-header">
-                        <h3>Teaching Assistant — Sharif University of Technology</h3>
-                        <span>Spring 2018 – 2019</span>
-                    </div>
-                    <p>Tehran, Iran</p>
-                </li>
-            </ul>
-        </section>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap mast">
+      <a class="brand" href="index.html" aria-label="Ali Vaziri — Home">Ali Vaziri</a>
 
-    </main>
+      <button id="menuButton" class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-text">Menu</span>
+      </button>
 
-    <footer>
-        <div class="wrap">
-            © <span id="year"></span> Ali Vaziri
-        </div>
-    </footer>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html">About</a>
+        <a href="experience.html" aria-current="page" class="active">Experience</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <button id="themeToggle" class="chip" type="button" aria-label="Toggle dark mode">☾</button>
+      </nav>
+    </div>
+  </header>
 
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <main id="main" class="wrap">
+    <section class="section" style="border-top:none;padding-top:24px">
+      <h1 class="section-title" style="font-size:1.6rem">Experience</h1>
+
+      <ul class="item-list">
+        <li>
+          <div class="item-header">
+            <h3>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</h3>
+            <span>Summer 2024</span>
+          </div>
+          <p class="muted">Cambridge, MA</p>
+        </li>
+
+        <li>
+          <div class="item-header">
+            <h3>Research Collaboration — MERL</h3>
+            <span>Spring 2024</span>
+          </div>
+          <p class="muted">Cambridge, MA</p>
+        </li>
+
+        <li>
+          <div class="item-header">
+            <h3>Graduate Research Assistant — University of Kansas</h3>
+            <span>2023 – Present</span>
+          </div>
+          <p class="muted">Lawrence, KS</p>
+        </li>
+
+        <li>
+          <div class="item-header">
+            <h3>Undergraduate Researcher — Sharif University of Technology</h3>
+            <span>2020 – 2022</span>
+          </div>
+          <p class="muted">Tehran, Iran</p>
+        </li>
+
+        <li>
+          <div class="item-header">
+            <h3>Teaching Assistant — Sharif University of Technology</h3>
+            <span>Spring 2018 – 2019</span>
+          </div>
+          <p class="muted">Tehran, Iran</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="year"></span> Ali Vaziri</div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme handling (matches index.html)
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (storedTheme) {
+      root.setAttribute('data-theme', storedTheme);
+    } else if (prefersDark) {
+      root.setAttribute('data-theme', 'dark');
+    }
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+      const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+    });
+
+    // Mobile menu toggle
+    const btn = document.getElementById('menuButton');
+    const nav = document.getElementById('primary-nav');
+    btn?.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
