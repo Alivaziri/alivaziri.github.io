@@ -199,3 +199,14 @@ h2 { font-size: 1.15rem; letter-spacing: .02em; text-transform: uppercase; color
   .publication-item { grid-template-columns: 1fr; }
   .publication-media-container { grid-auto-rows: clamp(180px, 40vw, 340px); }
 }
+
+/* Icon sizing + swap */
+.theme-toggle { display:grid; place-items:center; width:36px; height:36px; border-radius:999px; }
+.theme-toggle .icon { width:22px; height:22px; display:block; }
+.icon-moon { display:none; }              /* light by default: show sun */
+:root.dark .icon-sun { display:none; }    /* dark mode: show moon */
+:root.dark .icon-moon { display:block; }
+
+/* optional: a gentle spin when toggling */
+.theme-toggle:active .icon-sun { transform: rotate(20deg); }
+.theme-toggle:active .icon-moon { transform: rotate(-20deg); }
