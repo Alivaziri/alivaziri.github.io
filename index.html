@@ -1,4 +1,600 @@
 <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ali Vaziri</title><!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ali Vaziri</title>
+
+    
+
+    <link rel="stylesheet" href="style.css">
+
+    
+
+    <meta name="description" content="Ali Vaziri — GPU-based Optimal control of ML models, Motion planning, autonomous vehicles." />
+
+    <link rel="canonical" href="https://alivaziri.github.io/" />
+
+    <meta property="og:title" content="Ali Vaziri" />
+
+    <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:image" content="assets/Ali_HS.jpg" />
+
+</head>
+
+<body>
+
+
+
+    <header>
+
+        <div class="wrap mast">
+
+            <div class="brand">
+
+                <h1>Ali Vaziri</h1>
+
+            </div>
+
+            <div class="nav-wrapper">
+
+                <nav>
+
+                    <a href="index.html" class="active">ABOUT</a>
+
+                    <a href="experience.html">EXPERIENCE</a>
+
+                    <a href="publications.html">PUBLICATIONS</a>
+
+                    <a href="certifications.html">CERTIFICATIONS</a>
+
+                    <a href="projects.html">PROJECTS</a>
+
+                </nav>
+
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+
+                    <span class="icon-sun">☀️</span>
+
+                    <span class="icon-moon">🌙</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+ 
+
+    <main class="wrap">
+
+    
+
+        <section id="about" class="about-section">
+
+            <div class="about-text">
+
+                <p class="subtitle">
+
+                    GPU-based Optimal control of ML models, Motion planning, autonomous vehicles
+
+                </p>
+
+                <p>
+
+                    I am a Ph.D. candidate in Mechanical Engineering at the University of Kansas, located in Lawrence, KS. My academic journey began with a B.Sc. from Sharif University of Technology and includes an M.Sc. from KU. My graduate studies have been proudly supported by the Wyatt Memorial Scholarships and the National Science Foundation.
+
+                </p>
+
+                <p>
+
+                    My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
+
+                </p>
+
+                 <div class="publication-links">
+
+                    <a href="mailto:alivaziri@ku.edu" class="btn">✉️ Email</a>
+
+                    <a href="assets/CV.pdf" target="_blank" rel="noopener" class="btn">📄 CV</a>
+
+                    <a href="https://github.com/Alivaziri/" target="_blank" rel="noopener" class="btn">GitHub</a>
+
+                    <a href="https://www.linkedin.com/in/ali-vaziri-63338512a" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+
+                    <a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en" target="_blank" rel="noopener" class="btn">Google Scholar</a>
+
+                </div>
+
+            </div>
+
+            <div class="about-image">
+
+                <img src="assets/Ali_HS.jpg" alt="Photo of Ali Vaziri" class="avatar">
+
+            </div>
+
+        </section>
+
+
+
+        <section id="recent-experience">
+
+            <h2>Recent Experience</h2>
+
+            <ul class="item-list">
+
+                <li>
+
+                    <div class="item-header">
+
+                        <h3>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</h3>
+
+                        <span>Summer 2024</span>
+
+                    </div>
+
+                    <p>Cambridge, MA</p>
+
+                </li>
+
+            </ul>
+
+            <a href="experience.html" class="view-all-link">View All Experience &rarr;</a>
+
+        </section>
+
+
+
+        <section id="recent-pubs">
+
+            <h2>Recent Publication</h2>
+
+            <ul class="item-list">
+
+                <li class="publication-item">
+
+                    <div class="publication-media-container" style="flex-basis: 150px;">
+
+                        <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
+
+                    </div>
+
+                    <div class="publication-info">
+
+                        <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+            <a href="publications.html" class="view-all-link">View All Publications &rarr;</a>
+
+        </section>
+
+        
+
+        <section id="featured-project">
+
+            <h2>Featured Project</h2>
+
+            <ul class="item-list">
+
+                 <li>
+
+                    <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
+
+                    <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
+
+                </li>
+
+            </ul>
+
+            <a href="projects.html" class="view-all-link">View All Projects &rarr;</a>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="wrap">
+
+            © <span id="year"></span> Ali Vaziri
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        // Set year in footer
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+
+
+        // Theme Toggler Logic
+
+        const themeToggle = document.getElementById('theme-toggle');
+
+        const htmlEl = document.documentElement;
+
+
+
+        function applyTheme(theme) {
+
+            if (theme === 'dark') {
+
+                htmlEl.classList.add('dark-mode');
+
+                localStorage.setItem('theme', 'dark');
+
+            } else {
+
+                htmlEl.classList.remove('dark-mode');
+
+                localStorage.setItem('theme', 'light');
+
+            }
+
+        }
+
+
+
+        const savedTheme = localStorage.getItem('theme');
+
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+
+
+        if (savedTheme) {
+
+            applyTheme(savedTheme);
+
+        } else if (systemPrefersDark) {
+
+            applyTheme('dark');
+
+        } else {
+
+            applyTheme('light');
+
+        }
+
+
+
+        themeToggle.addEventListener('click', () => {
+
+            const isDarkMode = htmlEl.classList.contains('dark-mode');
+
+            applyTheme(isDarkMode ? 'light' : 'dark');
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+    
+
+    <link rel="stylesheet" href="style.css">
+
+    
+
+    <meta name="description" content="Ali Vaziri — GPU-based Optimal control of ML models, Motion planning, autonomous vehicles." />
+
+    <link rel="canonical" href="https://alivaziri.github.io/" />
+
+    <meta property="og:title" content="Ali Vaziri" />
+
+    <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:image" content="assets/Ali_HS.jpg" />
+
+</head>
+
+<body>
+
+
+
+    <header>
+
+        <div class="wrap mast">
+
+            <div class="brand">
+
+                <h1>Ali Vaziri</h1>
+
+            </div>
+
+            <div class="nav-wrapper">
+
+                <nav>
+
+                    <a href="index.html" class="active">ABOUT</a>
+
+                    <a href="experience.html">EXPERIENCE</a>
+
+                    <a href="publications.html">PUBLICATIONS</a>
+
+                    <a href="certifications.html">CERTIFICATIONS</a>
+
+                    <a href="projects.html">PROJECTS</a>
+
+                </nav>
+
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+
+                    <span class="icon-sun">☀️</span>
+
+                    <span class="icon-moon">🌙</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+ 
+
+    <main class="wrap">
+
+    
+
+        <section id="about" class="about-section">
+
+            <div class="about-text">
+
+                <p class="subtitle">
+
+                    GPU-based Optimal control of ML models, Motion planning, autonomous vehicles
+
+                </p>
+
+                <p>
+
+                    I am a Ph.D. candidate in Mechanical Engineering at the University of Kansas, located in Lawrence, KS. My academic journey began with a B.Sc. from Sharif University of Technology and includes an M.Sc. from KU. My graduate studies have been proudly supported by the Wyatt Memorial Scholarships and the National Science Foundation.
+
+                </p>
+
+                <p>
+
+                    My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
+
+                </p>
+
+                 <div class="publication-links">
+
+                    <a href="mailto:alivaziri@ku.edu" class="btn">✉️ Email</a>
+
+                    <a href="assets/CV.pdf" target="_blank" rel="noopener" class="btn">📄 CV</a>
+
+                    <a href="https://github.com/Alivaziri/" target="_blank" rel="noopener" class="btn">GitHub</a>
+
+                    <a href="https://www.linkedin.com/in/ali-vaziri-63338512a" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+
+                    <a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en" target="_blank" rel="noopener" class="btn">Google Scholar</a>
+
+                </div>
+
+            </div>
+
+            <div class="about-image">
+
+                <img src="assets/Ali_HS.jpg" alt="Photo of Ali Vaziri" class="avatar">
+
+            </div>
+
+        </section>
+
+
+
+        <section id="recent-experience">
+
+            <h2>Recent Experience</h2>
+
+            <ul class="item-list">
+
+                <li>
+
+                    <div class="item-header">
+
+                        <h3>Research Intern — Mitsubishi Electric Research Laboratories (MERL)</h3>
+
+                        <span>Summer 2024</span>
+
+                    </div>
+
+                    <p>Cambridge, MA</p>
+
+                </li>
+
+            </ul>
+
+            <a href="experience.html" class="view-all-link">View All Experience &rarr;</a>
+
+        </section>
+
+
+
+        <section id="recent-pubs">
+
+            <h2>Recent Publication</h2>
+
+            <ul class="item-list">
+
+                <li class="publication-item">
+
+                    <div class="publication-media-container" style="flex-basis: 150px;">
+
+                        <img src="assets/SoftRobot_3D.gif" alt="Publication visual placeholder" class="publication-media">
+
+                    </div>
+
+                    <div class="publication-info">
+
+                        <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”, Under review, <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+            <a href="publications.html" class="view-all-link">View All Publications &rarr;</a>
+
+        </section>
+
+        
+
+        <section id="featured-project">
+
+            <h2>Featured Project</h2>
+
+            <ul class="item-list">
+
+                 <li>
+
+                    <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
+
+                    <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
+
+                </li>
+
+            </ul>
+
+            <a href="projects.html" class="view-all-link">View All Projects &rarr;</a>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="wrap">
+
+            © <span id="year"></span> Ali Vaziri
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        // Set year in footer
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+
+
+        // Theme Toggler Logic
+
+        const themeToggle = document.getElementById('theme-toggle');
+
+        const htmlEl = document.documentElement;
+
+
+
+        function applyTheme(theme) {
+
+            if (theme === 'dark') {
+
+                htmlEl.classList.add('dark-mode');
+
+                localStorage.setItem('theme', 'dark');
+
+            } else {
+
+                htmlEl.classList.remove('dark-mode');
+
+                localStorage.setItem('theme', 'light');
+
+            }
+
+        }
+
+
+
+        const savedTheme = localStorage.getItem('theme');
+
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+
+
+        if (savedTheme) {
+
+            applyTheme(savedTheme);
+
+        } else if (systemPrefersDark) {
+
+            applyTheme('dark');
+
+        } else {
+
+            applyTheme('light');
+
+        }
+
+
+
+        themeToggle.addEventListener('click', () => {
+
+            const isDarkMode = htmlEl.classList.contains('dark-mode');
+
+            applyTheme(isDarkMode ? 'light' : 'dark');
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -185,3 +781,4 @@
   </script> -->
 </body>
 </html> 
+ -->
