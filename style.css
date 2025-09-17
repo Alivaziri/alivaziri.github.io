@@ -291,29 +291,43 @@ a:hover { text-decoration: underline; }
 .item-header span { color: var(--muted); font-size: 0.95rem; }
 
 /* ---------- Publications ---------- */
-.pub { --thumb-h: 160px; }               /* default height (per paper). Override inline if needed */
-.pub .thumb-strip {
+.pub.row {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(160px, 1fr); /* consistent column width */
-  gap: 6px;
-  overflow-x: auto;
-  padding-bottom: 6px;
+  grid-template-columns: var(--media-w, 260px) 1fr; /* left media column fixed, right fluid */
+  gap: var(--space-3);
+  align-items: start;
 }
-.pub .thumb-strip img,
-.pub .thumb-strip video,
-.pub .thumb-strip canvas {
+
+@media (max-width: 820px) {
+  .pub.row {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+}
+
+/* Media grid inside the left column */
+.pub-media {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-up grid of thumbs */
+  gap: 6px;
+}
+
+/* Uniform thumbnail sizing per paper */
+.pub .thumb {
   width: 100%;
-  height: var(--thumb-h);
-  object-fit: cover;                     /* uniform size without distortion */
+  aspect-ratio: var(--thumb-ratio, 4/3); /* consistent per paper, override inline if needed */
+  object-fit: cover;                      /* crop to fill evenly */
   border-radius: 10px;
   border: 1px solid var(--line);
 }
 
-/* Optional: a larger layout on wide screens */
+/* If a paper should show a single big figure, make it span both columns */
+.pub-media .thumb:first-child:only-child { grid-column: 1 / -1; }
+
+/* Optional: slight enlargement on wide screens */
 @media (min-width: 1100px) {
-  .pub { --thumb-h: 180px; }
+  .pub.row { --media-w: 300px; }
 }
+
 
 /* ---------- Tables (optional) ---------- */
 table { width: 100%; border-collapse: collapse; }
