@@ -1,105 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali Vaziri</title>
-    <style>
-        /* Basic body styles for the example */
-        body {
-            font-family: sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+/* --- Global Variables & Theme --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --primary-color: #007bff;
+    --secondary-color: #f8f9fa;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
 
-/* --- About Section Styles --- */
+html.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #4dabf7;
+    --secondary-color: #1e1e1e;
+    --border-color: #424242;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
 
-/* This creates the side-by-side layout */
+/* --- General Body & Typography --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- About Section Layout --- */
 .about-section {
-    display: flex;         /* Use Flexbox for alignment */
-    align-items: center;   /* Vertically center the items */
-    gap: 40px;             /* Adds space between the image and the text */
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 40px;
+    padding: 2rem 0;
 }
 
-/* This controls the image container's size */
 .about-image {
-    flex-shrink: 0;        /* Prevents the image from shrinking */
-    flex-basis: 150px;     /* Sets the initial size of the image container */
+    flex-shrink: 0;
+    flex-basis: 175px;
 }
 
-/* This makes your avatar image a circle */
 .avatar {
-    width: 150px;              /* Set a fixed width */
-    height: 150px;             /* Set a fixed height */
-    border-radius: 50%;        /* This is the key to making it a circle! */
-    object-fit: cover;         /* Ensures the image covers the area without distortion */
-    display: block;            /* Removes any extra space below the image */
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 
-/* Optional: For smaller screens (like mobile), you can stack them */
+.about-text {
+    flex: 1;
+}
+
+/* --- Buttons / Links --- */
+.publication-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* --- Responsive Design for Mobile --- */
 @media (max-width: 768px) {
+    body {
+        margin-top: 20px;
+    }
+    
     .about-section {
-        flex-direction: column; /* Stack image and text vertically */
-        text-align: center;     /* Center the text */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-text {
+        order: 2; /* Make text appear after the image */
+    }
+
+    .about-image {
+        order: 1; /* Make image appear first */
+        margin-bottom: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .publication-links {
+        justify-content: center; /* Center buttons on mobile */
     }
 }
-        
-        /* 3. Allow the text container to grow and fill the space */
-        .about-text {
-            flex: 1; /* Allows the text block to take up the available space */
-            min-width: 300px; /* Prevents the text from getting too squished */
-        }
-
-        /* 4. Style for your links/buttons */
-        .publication-links {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .publication-links a {
-            text-decoration: none;
-            color: #333;
-            background-color: #f0f0f0;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            border: 1px solid #ddd;
-        }
-        /* End of key styles */
-
-    </style>
-</head>
-<body>
-
-    <section id="about" class="about-section">
-        
-        <div class="about-text">
-            <p class="subtitle">
-                GPU-based Optimal control of ML models, Motion planning, autonomous vehicles
-            </p>
-            <p>
-                I am a Ph.D. candidate in Mechanical Engineering at the University of Kansas, located in Lawrence, KS. My academic journey began with a B.Sc. from Sharif University of Technology and includes an M.Sc. from KU. My graduate studies have been proudly supported by the Wyatt Memorial Scholarships and the National Science Foundation.
-            </p>
-            <p>
-                My research mission is to build safer, smarter, and faster control systems for complex, high-dimensional systems represented by machine learning models. I specialize in the intersection of three key fields: <strong>optimal control</strong>, <strong>estimation theory</strong>, and <strong>machine learning</strong>.
-            </p>
-            <div class="publication-links">
-                <a href="mailto:alivaziri@ku.edu">✉️ Email</a>
-                <a href="assets/CV.pdf">📄 CV</a>
-                <a href="https://github.com/Alivaziri/">GitHub</a>
-                <a href="https://www.linkedin.com/in/ali-vaziri-63338512a">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ&hl=en">Google Scholar</a>
-            </div>
-        </div>
-        
-        <div class="about-image">
-            <img src="assets/Ali_HS.jpg" alt="Photo of Ali Vaziri" class="avatar">
-        </div>
-
-    </section>
-
-</body>
-</html>
