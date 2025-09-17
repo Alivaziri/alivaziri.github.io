@@ -1,72 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projects | Ali Vaziri</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <meta name="description" content="Selected projects by Ali Vaziri." />
-    <link rel="canonical" href="https://alivaziri.github.io/projects.html" />
-    <meta property="og:title" content="Projects | Ali Vaziri" />
-    <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/Ali_HS.jpg" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Ali Vaziri</title>
+
+  <meta name="description" content="Selected projects by Ali Vaziri." />
+  <link rel="canonical" href="https://alivaziri.github.io/projects.html" />
+  <meta property="og:title" content="Projects | Ali Vaziri" />
+  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Ali_HS.jpg" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <div class="wrap mast">
-            <div class="brand">
-                <h1>Ali Vaziri</h1>
-            </div>
-            <nav>
-                <a href="index.html">ABOUT</a>
-                <a href="experience.html">EXPERIENCE</a>
-                <a href="publications.html">PUBLICATIONS</a>
-                <a href="certifications.html">CERTIFICATIONS</a>
-                <a href="projects.html" class="active">PROJECTS</a>
-            </nav>
-        </div>
-    </header>
- 
-    <main class="wrap">
-    
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul class="item-list">
-                <li>
-                    <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
-                    <p>Developed a learning-based framework using GRU and ResNet models for AV trajectory planning, validated on real-world driving datasets and integrated with MPC benchmarks.</p>
-                </li>
-                <li>
-                    <h3>GPU-Accelerated Optimal Control of Soft Robots</h3>
-                    <p>Designed a continuous-time MPC scheme using Bayesian inference for Neural-ODE-based soft robot manipulators, achieving significant gains in accuracy and solve times over classical methods.</p>
-                </li>
-                <li>
-                    <h3>RL-Based Sensor Placement</h3>
-                    <p>Designed RL-based sensor placement strategies for persistent monitoring; minimized estimation-error covariance for robust state coverage.</p>
-                </li>
-                <li>
-                    <h3>Physics-Informed Machine Learning for PDEs</h3>
-                    <p>Designed PINNs (FNNs, CNNs and ConvLSTMs) for 2D/3D Navier Stokes PDE, Burgers PDE and KS PDE. Training without data, validated with true data.</p>
-                </li>
-                 <li>
-                    <h3>Selected Undergraduate Projects in Sharif (2018-2021)</h3>
-                    <p>Includes work on an underwater robot for trash collection, kinematic/dynamic analysis of collaborative robots, and surgical needle navigation GUIs.</p>
-                </li>
-            </ul>
-        </section>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap mast">
+      <a class="brand" href="index.html" aria-label="Ali Vaziri — Home">Ali Vaziri</a>
 
-    </main>
+      <button id="menuButton" class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-text">Menu</span>
+      </button>
 
-    <footer>
-        <div class="wrap">
-            © <span id="year"></span> Ali Vaziri
-        </div>
-    </footer>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html" aria-current="page" class="active">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <button id="themeToggle" class="chip" type="button" aria-label="Toggle dark mode">☾</button>
+      </nav>
+    </div>
+  </header>
 
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <main id="main" class="wrap">
+    <section class="section" style="border-top:none;padding-top:24px">
+      <h1 class="section-title" style="font-size:1.6rem">Projects</h1>
+
+      <ul class="item-list">
+        <li>
+          <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
+          <p class="muted">
+            Developed a learning-based framework using GRU and ResNet models for AV trajectory planning,
+            validated on real-world driving datasets and integrated with MPC benchmarks.
+          </p>
+        </li>
+
+        <li>
+          <h3>GPU-Accelerated Optimal Control of Soft Robots</h3>
+          <p class="muted">
+            Designed a continuous-time MPC scheme using Bayesian inference for Neural-ODE-based soft robot manipulators,
+            achieving significant gains in accuracy and solve times over classical methods.
+          </p>
+        </li>
+
+        <li>
+          <h3>RL-Based Sensor Placement</h3>
+          <p class="muted">
+            Designed RL-based sensor placement strategies for persistent monitoring; minimized estimation-error covariance
+            for robust state coverage.
+          </p>
+        </li>
+
+        <li>
+          <h3>Physics-Informed Machine Learning for PDEs</h3>
+          <p class="muted">
+            Built PINNs (FNNs, CNNs, ConvLSTMs) for 2D/3D Navier–Stokes, Burgers, and Kuramoto–Sivashinsky equations.
+            Trained with weak/zero data assumptions and validated against true data.
+          </p>
+        </li>
+
+        <li>
+          <h3>Selected Undergraduate Projects in Sharif (2018–2021)</h3>
+          <p class="muted">
+            Underwater robot for trash collection, kinematic/dynamic analysis of collaborative robots,
+            and surgical needle navigation GUIs.
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="year"></span> Ali Vaziri</div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme handling (matches index.html)
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (storedTheme) {
+      root.setAttribute('data-theme', storedTheme);
+    } else if (prefersDark) {
+      root.setAttribute('data-theme', 'dark');
+    }
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+      const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+    });
+
+    // Mobile menu toggle
+    const btn = document.getElementById('menuButton');
+    const nav = document.getElementById('primary-nav');
+    btn?.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
