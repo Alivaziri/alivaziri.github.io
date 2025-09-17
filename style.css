@@ -1,51 +1,50 @@
-    <style>
-        /* Basic body styles for the example */
-        body {
-            font-family: sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+/* Basic body styles for the example */
+body {
+    font-family: sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-        /* --- KEY STYLES FOR THE ABOUT SECTION --- */
-        
-        /* 1. Make the parent section a flex container */
-        .about-section {
-            display: flex; /* Arranges children (text and image) in a row */
-            align-items: center; /* Vertically centers the items */
-            gap: 30px; /* Adds space between the text and the image */
-            flex-wrap: wrap; /* Allows items to stack on smaller screens */
-        }
+/* --- KEY STYLES FOR THE ABOUT SECTION --- */
 
-        /* 2. Style the image to be a circle */
-        .avatar {
-            width: 180px;      /* Set a fixed width */
-            height: 180px;     /* Set a fixed height */
-            border-radius: 50%;/* This makes the image circular */
-            object-fit: cover; /* Prevents the image from distorting */
-        }
-        
-        /* 3. Allow the text container to grow and fill the space */
-        .about-text {
-            flex: 1; /* Allows the text block to take up the available space */
-            min-width: 300px; /* Prevents the text from getting too squished */
-        }
+/* 1. Make the parent section a flex container */
+.about-section {
+    display: flex; /* Arranges children (text and image) in a row */
+    align-items: center; /* Vertically centers the items */
+    gap: 30px; /* Adds space between the text and the image */
+    flex-wrap: wrap; /* Allows items to stack on smaller screens */
+}
 
-        /* 4. Style for your links/buttons */
-        .publication-links {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+/* 2. Style the image to be a circle */
+.avatar {
+    width: 180px;      /* Set a fixed width */
+    height: 180px;     /* Set a fixed height */
+    border-radius: 50%;/* This makes the image circular */
+    object-fit: cover; /* Prevents the image from distorting */
+}
 
-        .publication-links a {
-            text-decoration: none;
-            color: #333;
-            background-color: #f0f0f0;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            border: 1px solid #ddd;
-        }
-        /* End of key styles */
+/* 3. Allow the text container to grow and fill the space */
+.about-text {
+    flex: 1; /* Allows the text block to take up the available space */
+    min-width: 300px; /* Prevents the text from getting too squished */
+}
+
+/* 4. Style for your links/buttons */
+.publication-links {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.publication-links a {
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+/* End of key styles */
