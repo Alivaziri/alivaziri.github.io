@@ -140,6 +140,30 @@
     <circle cx="12" cy="12" r="9" fill="currentColor" mask="url(#moon-cut)"/>
   </svg>
 </button>
+<script>
+  const root = document.documentElement;
+  const btn  = document.getElementById('theme-toggle');
+
+  // Respect system preference first
+  const saved = localStorage.getItem('theme');
+  if (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    root.classList.add('dark'); // default to dark if system prefers
+  } else if (saved === 'dark') {
+    root.classList.add('dark');
+  }
+
+  // A11y state for a true toggle button
+  const syncPressed = () => btn.setAttribute('aria-pressed', root.classList.contains('dark'));
+  syncPressed();
+
+  btn.addEventListener('click', () => {
+    const isDark = root.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    syncPressed();
+    // Optional: also update label for screen readers
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  });
+</script>
 
   
 <!--   <script>
