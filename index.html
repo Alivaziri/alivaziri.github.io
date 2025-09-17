@@ -112,7 +112,37 @@
     </div>
   </footer>
 
-  <script>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+  <!-- Sun (day) -->
+  <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="5" fill="currentColor" />
+    <g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+      <line x1="12" y1="2"  x2="12" y2="5"  />
+      <line x1="12" y1="19" x2="12" y2="22" />
+      <line x1="2"  y1="12" x2="5"  y2="12" />
+      <line x1="19" y1="12" x2="22" y2="12" />
+      <line x1="4.6" y1="4.6" x2="6.8" y2="6.8" />
+      <line x1="17.2" y1="17.2" x2="19.4" y2="19.4" />
+      <line x1="17.2" y1="6.8" x2="19.4" y2="4.6" />
+      <line x1="4.6" y1="19.4" x2="6.8" y2="17.2" />
+    </g>
+  </svg>
+
+  <!-- Moon (night) -->
+  <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+    <defs>
+      <!-- Crescent via mask: base circle minus an offset circle -->
+      <mask id="moon-cut">
+        <rect width="100%" height="100%" fill="#fff"/>
+        <circle cx="14" cy="10" r="8" fill="#000"/>
+      </mask>
+    </defs>
+    <circle cx="12" cy="12" r="9" fill="currentColor" mask="url(#moon-cut)"/>
+  </svg>
+</button>
+
+  
+<!--   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -128,6 +158,6 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       btn.setAttribute('aria-pressed', isDark);
     });
-  </script>
+  </script> -->
 </body>
 </html> 
