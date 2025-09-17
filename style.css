@@ -305,20 +305,29 @@ a:hover { text-decoration: underline; }
 }
 
 /* Media grid inside the left column */
+/* Left media column: stack figures vertically */
 .pub-media {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2-up grid of thumbs */
-  gap: 6px;
+  grid-template-columns: 1fr;     /* single column */
+  gap: 8px;                       /* space between stacked figures */
+  align-content: start;           /* keep stack aligned to top */
 }
 
-/* Uniform thumbnail sizing per paper */
+/* Uniform sizing per paper (already supported) */
 .pub .thumb {
   width: 100%;
-  aspect-ratio: var(--thumb-ratio, 4/3); /* consistent per paper, override inline if needed */
+  aspect-ratio: var(--thumb-ratio, 4/3); /* keep same shape across figures in that paper */
   object-fit: cover;                      /* crop to fill evenly */
   border-radius: 10px;
   border: 1px solid var(--line);
 }
+
+/* (Optional) If a paper has many figures, cap the column height and make it scroll */
+.pub-media.scroll {
+  max-height: 560px;                /* adjust as you like */
+  overflow: auto;
+}
+
 
 /* If a paper should show a single big figure, make it span both columns */
 .pub-media .thumb:first-child:only-child { grid-column: 1 / -1; }
