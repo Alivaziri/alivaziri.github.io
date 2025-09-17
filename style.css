@@ -291,50 +291,32 @@ a:hover { text-decoration: underline; }
 .item-header span { color: var(--muted); font-size: 0.95rem; }
 
 /* ---------- Publications ---------- */
-.pub.row {
-  display: grid;
-  grid-template-columns: var(--media-w, 260px) 1fr; /* left media column fixed, right fluid */
-  gap: var(--space-3);
-  align-items: start;
-}
-
-@media (max-width: 820px) {
-  .pub.row {
-    grid-template-columns: 1fr; /* stack on mobile */
-  }
-}
-
-/* Media grid inside the left column */
-/* Left media column: stack figures vertically */
+/* Stack figures vertically in the left column */
 .pub-media {
   display: grid;
-  grid-template-columns: 1fr;     /* single column */
-  gap: 8px;                       /* space between stacked figures */
-  align-content: start;           /* keep stack aligned to top */
+  grid-template-columns: 1fr;      /* single column stack */
+  gap: 8px;
+  align-content: start;
 }
 
-/* Uniform sizing per paper (already supported) */
+/* Uniform box height per paper, images scale INSIDE (no crop) */
+.pub { --thumb-h: 180px; }         /* default; override per paper via inline style if needed */
+
 .pub .thumb {
   width: 100%;
-  aspect-ratio: var(--thumb-ratio, 4/3); /* keep same shape across figures in that paper */
-  object-fit: cover;                      /* crop to fill evenly */
+  height: var(--thumb-h);
+  object-fit: contain;             /* <-- scales, no cropping */
+  background: color-mix(in oklab, var(--fg) 4%, var(--bg)); /* subtle letterbox */
   border-radius: 10px;
   border: 1px solid var(--line);
+
+  /* make sure any earlier 'aspect-ratio' or 'cover' rules get neutralized */
+  aspect-ratio: auto !important;
 }
 
-/* (Optional) If a paper has many figures, cap the column height and make it scroll */
-.pub-media.scroll {
-  max-height: 560px;                /* adjust as you like */
-  overflow: auto;
-}
-
-
-/* If a paper should show a single big figure, make it span both columns */
-.pub-media .thumb:first-child:only-child { grid-column: 1 / -1; }
-
-/* Optional: slight enlargement on wide screens */
+/* Optional: on very wide screens you can bump the figure height a bit */
 @media (min-width: 1100px) {
-  .pub.row { --media-w: 300px; }
+  .pub { --thumb-h: 200px; }
 }
 
 
