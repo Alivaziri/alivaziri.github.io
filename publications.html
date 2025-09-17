@@ -1,65 +1,220 @@
-/* ==== Publications Layout (inspired by clean academic lists) ==== */
-/* Ref: left-thumb + right-meta, compact badges, scannable rows.  */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications | Ali Vaziri</title>
+  <meta name="description" content="Publications by Ali Vaziri." />
+  <link rel="canonical" href="https://alivaziri.github.io/publications.html" />
+  <meta property="og:title" content="Publications | Ali Vaziri" />
+  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Ali_HS.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-.pub-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  <header class="site-header">
+    <div class="wrap mast">
+      <a class="brand" href="index.html">Ali Vaziri</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="publications.html" aria-current="page">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+      </nav>
+    </div>
+  </header>
 
-/* Media object */
-.pub {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 16px;
-  padding: 14px;
-  border: 1px solid var(--line, #e6e8eb);
-  border-radius: var(--radius, 12px);
-  background: var(--bg);
-}
+  <main id="main" class="wrap">
+    <section class="section" style="border-top:none;padding-top:24px">
+      <h1>Publications</h1>
 
-.pub-thumb { overflow: hidden; border-radius: 10px; border: 1px solid var(--line, #e6e8eb); background: var(--card, #f8f9fb); }
+      <!-- ===== First-Authored ===== -->
+      <h2 class="section-title">First-Authored</h2>
+      <ul class="pub-list">
 
-.thumb-strip {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 6px;
-  padding: 6px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-.thumb-strip img {
-  width: 188px; height: 120px; object-fit: cover; border-radius: 8px; scroll-snap-align: start;
-  background: #fff;
-}
+        <!-- Neural ODEs (NeurIPS under review) -->
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/SoftRobot_3D.gif" alt="Soft robot 3D animation">
+              <img src="assets/SoftRobot_3DTraj.gif" alt="Soft robot trajectory">
+              <img src="assets/robot_snapshots_strip_page-0001.jpg" alt="Robot snapshots">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              <strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”
+            </div>
+            <div class="pub-meta">
+              <span class="badge">Under review</span>
+              <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.
+            </div>
+            <div class="pub-links">
+              <!-- add links later if you have them -->
+            </div>
+          </div>
+        </li>
 
-.pub-body { display: grid; gap: 6px; align-content: start; }
-.pub-title { font-weight: 600; }
-.pub-meta { color: var(--muted, #5b6370); font-size: 0.96rem; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+        <!-- OIC of ML models (PNAS under review) -->
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/OIC_ML.png" alt="Optimal Inferential Control of Machine Learning Models">
+              <img src="assets/streamlines_2D_page-0001.jpg" alt="2D streamlines">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”
+            </div>
+            <div class="pub-meta">
+              <span class="badge">Under review</span>
+              <em>Proceedings of the National Academy of Sciences of the United States of America (PNAS)</em>.
+            </div>
+            <div class="pub-links"></div>
+          </div>
+        </li>
 
-/* Compact chips for Paper/Code/etc. */
-.chip {
-  display: inline-block;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--fg);
-  background: var(--card, #f8f9fb);
-  border: 1px solid var(--line, #e6e8eb);
-  padding: 6px 10px;
-  border-radius: 999px;
-}
-.chip:hover { border-color: var(--fg); }
+        <!-- OIC of CNNs (ACC 2025) -->
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/CNN_OIC.png" alt="CNN OIC diagram">
+              <img src="assets/NS2D_controlled.gif" alt="Controlled 2D NS">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              <strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”
+            </div>
+            <div class="pub-meta">
+              In 2025 <em>American Control Conference (ACC)</em>; <span class="badge">Best Student Paper nominee</span>.
+            </div>
+            <div class="pub-links">
+              <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>
+              <a class="chip" href="https://github.com/Alivaziri/Optimal-Inferential-Control-of-CNNs" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </li>
 
-/* Status badges */
-.badge {
-  display: inline-block;
-  font-size: 0.85rem;
-  background: rgba(11,95,255,.08);
-  color: var(--accent, #0b5fff);
-  border: 1px solid rgba(11,95,255,.25);
-  padding: 2px 8px;
-  border-radius: 999px;
-}
+        <!-- PDE control (in preparation) -->
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/Burgers1.png" alt="Optimal Control of PDEs">
+              <img src="assets/Burgers2.png" alt="Optimal Control of PDEs">
+              <img src="assets/Burgers3.png" alt="Optimal Control of PDEs">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              <strong>Ali Vaziri</strong>, et al. “Robust GPU-Enabled Framework for Optimal Boundary Control and Optimal Distributed Control of PDEs”
+            </div>
+            <div class="pub-meta">
+              <span class="badge">In preparation</span>
+            </div>
+            <div class="pub-links"></div>
+          </div>
+        </li>
 
-/* Mobile */
-@media (max-width: 720px) {
-  .pub { grid-template-columns: 1fr; }
-  .thumb-strip img { width: 100%; height: 160px; }
-}
+        <!-- HVAC NODE (ATE under review) -->
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/ASHP_new.png" alt="ASHP diagram">
+              <img src="assets/GRU.png" alt="GRU diagram">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              <strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”
+            </div>
+            <div class="pub-meta">
+              <span class="badge">Under review</span>
+              <em>Applied Thermal Engineering</em>.
+            </div>
+            <div class="pub-links"></div>
+          </div>
+        </li>
+
+        <!-- Heavy-tailed BIMP (ACC 2025) -->
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/OvertakingScenario.gif" alt="BIMP Overtaking Scenario">
+              <img src="assets/EnKTS.png" alt="EnKTS diagram 1">
+              <img src="assets/EnKTS2.png" alt="EnKTS diagram 2">
+              <img src="assets/EnKTS3.png" alt="EnKTS diagram 3">
+              <img src="assets/NN_vehicle.png" alt="Neural Network Vehicle">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              <strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”
+            </div>
+            <div class="pub-meta">
+              In 2025 <em>American Control Conference (ACC)</em>.
+            </div>
+            <div class="pub-links">
+              <a class="chip" href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- B.Sc. thesis -->
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/undergrad1.png" alt="Underwater Robot">
+              <img src="assets/undergrad2.png" alt="Underwater Robot">
+              <img src="assets/pathplanning.png" alt="Path planning diagram">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              <strong>Ali Vaziri</strong>, et al. “Underwater Robot Design and Control for Plastic Trash Collection in Marine Environment"
+            </div>
+            <div class="pub-meta">
+              <em>B.Sc. Thesis, Sharif University of Technology</em>, 2022 (Best Paper Award).
+            </div>
+            <div class="pub-links"></div>
+          </div>
+        </li>
+      </ul>
+
+      <!-- ===== Co-Authored ===== -->
+      <h2 class="section-title">Co-Authored</h2>
+      <ul class="pub-list">
+        <li class="pub">
+          <div class="pub-thumb">
+            <div class="thumb-strip">
+              <img src="assets/GRU_traj.png" alt="GRU Trajectory">
+              <img src="assets/GRU_TRO.png" alt="GRU diagram">
+            </div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">
+              Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”
+            </div>
+            <div class="pub-meta">
+              <em>IEEE Transactions on Robotics (T-RO)</em>, 2025.
+            </div>
+            <div class="pub-links">
+              <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="year"></span> Ali Vaziri</div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
