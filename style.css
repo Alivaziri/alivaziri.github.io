@@ -290,32 +290,50 @@ a:hover { text-decoration: underline; }
 .item-header h3 { margin: 0; font-size: 1.05rem; }
 .item-header span { color: var(--muted); font-size: 0.95rem; }
 
-/* ---------- Publications ---------- */
-/* Left media column: stack figures vertically */
-.pub-media {
+/* === Publications: media LEFT, text RIGHT (always) === */
+.pub.row{
   display: grid;
-  grid-template-columns: 1fr;     /* single column */
-  gap: 8px;                       /* space between stacked figures */
-  align-content: start;           /* keep stack aligned to top */
+  grid-template-columns: var(--media-w, 280px) 1fr; /* left fixed, right fluid */
+  gap: 16px;
+  align-items: start;
 }
 
-/* Uniform sizing per paper (already supported) */
-.pub .thumb {
+/* Make sure grid order is left->right regardless of HTML quirks */
+.pub-media{ grid-column: 1; }
+.pub-body { grid-column: 2; }
+
+/* Stack all figures vertically in the LEFT column */
+.pub-media{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+/* Uniform boxes per paper; scale images to fit (no crop) */
+.pub{ --thumb-h: 180px; } /* tweak per paper via inline style on <li class="pub row"> */
+.pub .thumb{
   width: 100%;
-  aspect-ratio: var(--thumb-ratio, 4/3); /* keep same shape across figures in that paper */
-  object-fit: contain;                      /* crop to fill evenly */
+  height: var(--thumb-h);
+  object-fit: contain;                  /* <-- scales, never crops */
+  aspect-ratio: auto !important;        /* neutralize any earlier aspect-ratio rules */
   background: color-mix(in oklab, var(--fg) 4%, var(--bg)); /* subtle letterbox */
   border-radius: 10px;
   border: 1px solid var(--line);
 }
 
-/* (Optional) If a paper has many figures, cap the column height and make it scroll */
-.pub-media.scroll {
-  max-height: 560px;                /* adjust as you like */
-  overflow: auto;
+/* Optional: keep two columns down to smaller widths.
+   If you WANT stacking on very small screens, keep this.
+   If you want figures left even on phones, DELETE this block. */
+@media (max-width: 600px){
+  .pub.row{ grid-template-columns: 1fr; }   /* stacks on small screens */
+  .pub-media, .pub-body{ grid-column: auto; }
 }
 
-
+/* Optional: a bit wider media on big screens */
+@media (min-width: 1200px){
+  .pub.row{ --media-w: 320px; }
+}
 
 /* ---------- Tables (optional) ---------- */
 table { width: 100%; border-collapse: collapse; }
