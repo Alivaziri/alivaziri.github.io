@@ -12,6 +12,20 @@
   <meta property="og:image" content="assets/Ali_HS.jpg" />
   <meta name="theme-color" content="#0b5fff" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- EITHER Plausible (recommended) -->
+  <script defer data-domain="alivaziri.github.io" src="https://plausible.io/js/script.js"></script>
+
+  <!-- OR Google Analytics 4
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  -->
+  
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -121,5 +135,17 @@
       nav.classList.toggle('open');
     });
   </script>
+  
+  <!-- (Optional) Custom event tracking for Plausible -->
+  <script>
+    const track = (name, props={}) => window.plausible && window.plausible(name, { props });
+    document.querySelector('a[href="assets/CV.pdf"]')?.addEventListener('click', () => track('CV Click'));
+    document.querySelector('a[href^="https://github.com/Alivaziri"]')?.addEventListener('click', () => track('GitHub Click'));
+    document.querySelector('a[href^="https://scholar.google.com"]')?.addEventListener('click', () => track('Scholar Click'));
+    if (location.hostname === 'localhost') { window.plausible = () => {}; }
+  </script>
+
+  <!-- If using GA4 instead, replace the block above with the GA4 click handlers -->
+
 </body>
 </html>
