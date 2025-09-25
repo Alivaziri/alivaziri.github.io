@@ -77,6 +77,7 @@
           <div class="social">
             <a class="chip" href="https://github.com/Alivaziri" target="_blank" rel="noopener">GitHub</a>
             <a class="chip" href="https://scholar.google.com/citations?user=" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="chip" href="https://www.linkedin.com/in/ali-vaziri-63338512a/" target="_blank" rel="noopener" aria-label="LinkedIn profile for Ali Vaziri">LinkedIn</a>
           </div>
         </div>
 
@@ -141,6 +142,7 @@
     document.querySelector('a[href="assets/CV.pdf"]')?.addEventListener('click', () => track('CV Click'));
     document.querySelector('a[href^="https://github.com/Alivaziri"]')?.addEventListener('click', () => track('GitHub Click'));
     document.querySelector('a[href^="https://scholar.google.com"]')?.addEventListener('click', () => track('Scholar Click'));
+    document.querySelector('a[href^="https://www.linkedin.com/in/ali-vaziri-"]')?.addEventListener('click', () => track('LinkedIn Click'));
     if (location.hostname === 'localhost') { window.plausible = () => {}; }
   </script>
 
