@@ -44,44 +44,137 @@
     <section class="section" style="border-top:none;padding-top:24px">
       <h1 class="section-title" style="font-size:1.6rem">Projects</h1>
 
+      <!-- Featured research -->
       <ul class="item-list">
+        <li>
+          <h3>GPU-Accelerated MPC for Neural-ODE Soft Robots</h3>
+          <p class="muted">
+            Continuous-time MPC via Bayesian inference for Neural-ODE-based soft-robot manipulators; achieved
+            <strong>10×</strong> accuracy gains and <strong>200×</strong> faster solve times vs. CasADi&nbsp;+&nbsp;IPOPT.
+          </p>
+          <div class="meta">
+            <span class="chip">NeurIPS 2025 — Under Review</span>
+            <span class="chip">KU</span>
+          </div>
+        </li>
+
         <li>
           <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
           <p class="muted">
-            Developed a learning-based framework using GRU and ResNet models for AV trajectory planning,
-            validated on real-world driving datasets and integrated with MPC benchmarks.
+            Learning-based vehicle dynamics (GRU, ResNet) for AV trajectory planning; validated on real-world driving datasets.
+            Integrated with MPC benchmarks (CasADi&nbsp;+&nbsp;IPOPT).
           </p>
+          <div class="meta">
+            <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">IEEE T-RO 2025 — Paper</a>
+            <span class="chip">KU</span>
+          </div>
         </li>
 
         <li>
-          <h3>GPU-Accelerated Optimal Control of Soft Robots</h3>
+          <h3>Heavy-Tailed Bayesian Motion Planning (Student’s-t)</h3>
           <p class="muted">
-            Designed a continuous-time MPC scheme using Bayesian inference for Neural-ODE-based soft robot manipulators,
-            achieving significant gains in accuracy and solve times over classical methods.
+            Sequential Monte Carlo ensemble Kalman-<em>t</em> smoother for robust inference and exploration in NN-based vehicle dynamics.
           </p>
+          <div class="meta">
+            <a class="chip" href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">ACC 2025 — Paper</a>
+            <span class="chip">KU</span>
+          </div>
         </li>
 
         <li>
-          <h3>RL-Based Sensor Placement</h3>
+          <h3>GPU MPC of CNNs via Matrix-Var. Ensemble Kalman Smoothing</h3>
           <p class="muted">
-            Designed RL-based sensor placement strategies for persistent monitoring; minimized estimation-error covariance
-            for robust state coverage.
+            Gradient-free CUDA-based matrix-variate EKS for controlling convolutional neural networks; <strong>20×</strong> faster and
+            <strong>12×</strong> more memory-efficient on large networks.
           </p>
+          <div class="meta">
+            <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">ACC 2025 — Paper</a>
+            <span class="chip">KU</span>
+          </div>
         </li>
 
         <li>
-          <h3>Physics-Informed Machine Learning for PDEs</h3>
+          <h3>Tensor-Var. GPU EKS for High-Dimensional NN Systems</h3>
           <p class="muted">
-            Built PINNs (FNNs, CNNs, ConvLSTMs) for 2D/3D Navier–Stokes, Burgers, and Kuramoto–Sivashinsky equations.
-            Trained with weak/zero data assumptions and validated against true data.
+            Tensor-compatible ensemble Kalman smoother for optimal control of NN-modeled 3D/2D Navier–Stokes &amp; Burgers’ PDEs,
+            enabling millisecond-scale control where classical solvers fail.
           </p>
+          <div class="meta">
+            <span class="chip">To be submitted — 2025</span>
+            <span class="chip">KU</span>
+          </div>
         </li>
 
         <li>
-          <h3>Selected Undergraduate Projects in Sharif (2018–2021)</h3>
+          <h3>Physics-Constrained Neural-ODE-GRU for HVAC</h3>
           <p class="muted">
-            Underwater robot for trash collection, kinematic/dynamic analysis of collaborative robots,
-            and surgical needle navigation GUIs.
+            Digital-twin HVAC modeling with data-efficient training; <strong>14%</strong> accuracy improvement and <strong>5.7×</strong> faster runtime.
+          </p>
+          <div class="meta">
+            <span class="chip">Applied Thermal Engineering — Under Review</span>
+            <span class="chip">KU</span>
+          </div>
+        </li>
+
+        <li>
+          <h3>MERL — Real-Time HVAC Digital Twins (Internship)</h3>
+          <p class="muted">
+            Extended digital-twin concepts to HVAC with real-time Neural ODE/GRU simulators; delivered a PyTorch toolkit and
+            improved forecasting accuracy with GPU acceleration.
+          </p>
+          <div class="meta">
+            <span class="chip">MERL</span>
+            <span class="chip">Summer 2024</span>
+          </div>
+        </li>
+
+        <li>
+          <h3>MERL — Optimal Inferential Control for HVAC (Collaboration)</h3>
+          <p class="muted">
+            Collaborated with MERL researchers (via KU advisor) on optimal inferential control of NN dynamical systems (HVAC digital twins).
+          </p>
+          <div class="meta">
+            <span class="chip">MERL</span>
+            <span class="chip">Spring 2024</span>
+          </div>
+        </li>
+
+        <li>
+          <h3>RL-Based Sensor Placement for Persistent Monitoring</h3>
+          <p class="muted">
+            Designed reinforcement-learning policies to minimize estimation-error covariance and improve coverage in monitoring tasks.
+          </p>
+          <div class="meta">
+            <span class="chip">KU</span>
+          </div>
+        </li>
+
+        <li>
+          <h3>Mobile Robot + SCARA Arm for Ocean Plastic Collection</h3>
+          <p class="muted">
+            Built a mobile robot with SCARA arm; integrated RRT/Dijkstra/potential-field planning with PID control. CAD in SolidWorks,
+            simulation in MATLAB/Simulink.
+          </p>
+          <div class="meta">
+            <span class="chip">Sharif University of Technology</span>
+            <span class="chip">2020–2022</span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- (Optional) Legacy / broader buckets -->
+      <h2 class="section-title" style="font-size:1.2rem;margin-top:2rem">Earlier &amp; Related Work</h2>
+      <ul class="item-list">
+        <li>
+          <h3>Physics-Informed ML for PDEs</h3>
+          <p class="muted">
+            PINNs (FNNs, CNNs, ConvLSTMs) for 2D/3D Navier–Stokes, Burgers, and Kuramoto–Sivashinsky with weak/zero-data training.
+          </p>
+        </li>
+        <li>
+          <h3>Selected Undergraduate Projects (2018–2021)</h3>
+          <p class="muted">
+            Underwater trash-collection robot, collaborative-robot kinematics/dynamics, and surgical needle-navigation GUIs.
           </p>
         </li>
       </ul>
@@ -96,7 +189,7 @@
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme handling (matches index.html)
+    // Theme handling
     const root = document.documentElement;
     const storedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
