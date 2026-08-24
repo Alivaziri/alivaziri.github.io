@@ -1,206 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Ali Vaziri</title>
-
-  <meta name="description" content="Selected projects by Ali Vaziri." />
-  <link rel="canonical" href="https://alivaziri.github.io/projects.html" />
-  <meta property="og:title" content="Projects | Ali Vaziri" />
-  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/Ali_HS.jpg" />
-
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Selected projects by Ali Vaziri in scalable autonomous-driving simulation, optimal inferential control, scientific ML, and robotics.">
+  <link rel="canonical" href="https://alivaziri.github.io/projects.html">
+  <meta property="og:title" content="Projects | Ali Vaziri">
+  <meta property="og:description" content="Selected ML systems, scientific machine-learning, control, and robotics projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
+  <meta name="theme-color" content="#163f35">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header -->
   <header class="site-header">
-    <div class="wrap mast">
-      <a class="brand" href="index.html" aria-label="Ali Vaziri — Home">Ali Vaziri</a>
-
-      <button id="menuButton" class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-text">Menu</span>
-      </button>
-
-      <nav id="primary-nav" class="site-nav" aria-label="Primary">
-        <a href="index.html">About</a>
-        <a href="experience.html">Experience</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html" aria-current="page" class="active">Projects</a>
-        <a href="certifications.html">Certifications</a>
-        <button id="themeToggle" class="chip" type="button" aria-label="Toggle dark mode">☾</button>
+    <div class="shell nav-shell">
+      <a class="wordmark" href="index.html" aria-label="Ali Vaziri, home"><span class="wordmark-mark" aria-hidden="true">AV</span><span>Ali Vaziri</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="projects.html" aria-current="page">Projects</a>
+        <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap">
-    <section class="section" style="border-top:none;padding-top:24px">
-      <h1 class="section-title" style="font-size:1.6rem">Projects</h1>
+  <main id="main">
+    <header class="page-intro shell">
+      <div><p class="section-kicker">Selected projects</p><h1>Models made measurable.</h1></div>
+      <div><p>These projects combine learning, inference, control, and systems engineering. Reported comparisons are limited to the evaluations described in the associated work.</p></div>
+    </header>
 
-      <!-- Featured research -->
-      <ul class="item-list">
-        <li>
-          <h3>GPU-Accelerated MPC for Neural-ODE Soft Robots</h3>
-          <p class="muted">
-            Continuous-time MPC via Bayesian inference for Neural-ODE-based soft-robot manipulators; achieved
-            <strong>10×</strong> accuracy gains and <strong>200×</strong> faster solve times vs. CasADi&nbsp;+&nbsp;IPOPT.
-          </p>
-        </li>
-
-        <li>
-          <h3>Real-Time Motion Planning for Autonomous Vehicles</h3>
-          <p class="muted">
-            Learning-based vehicle dynamics (GRU, ResNet) for AV trajectory planning; validated on real-world driving datasets.
-            Integrated with MPC benchmarks (CasADi&nbsp;+&nbsp;IPOPT).
-          </p>
-          <div class="meta">
-            <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">IEEE T-RO 2025 — Paper</a>
+    <section class="section shell">
+      <div class="project-list">
+        <article class="project-card" id="scenario-conversion">
+          <div class="project-media">
+            <div class="project-metric-board" aria-label="Project results">
+              <div><strong>38K+</strong><span>highway scenes</span></div>
+              <div><strong>~1 TB</strong><span>raw tracking data</span></div>
+              <div><strong>4×</strong><span>faster training</span></div>
+              <div><strong>24%</strong><span>lower error vs. baseline</span></div>
+            </div>
           </div>
-        </li>
-
-        <li>
-          <h3>Heavy-Tailed Bayesian Motion Planning (with Student’s-t distribution)</h3>
-          <p class="muted">
-            Sequential Monte Carlo ensemble Kalman-<em>t</em> smoother for robust inference and exploration in deep learning models of vehicle dynamics.
-          </p>
-          <div class="meta">
-            <a class="chip" href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">ACC 2025 — Paper</a>
+          <div class="project-content">
+            <p class="card-index">General Motors · Cruise Team · 2026</p>
+            <h2>Multimodal scenario conversion at scale</h2>
+            <p>An end-to-end system reconstructs missing vehicles’ motion in recorded-driving simulations. The work covered cloud data processing, distributed training, held-out trajectory evaluation, and collision and quality metrics.</p>
+            <div class="tag-row"><span class="tag">PyTorch DDP</span><span class="tag">8× H100</span><span class="tag">GCS</span><span class="tag">Dataflow</span><span class="tag">Mixed precision</span></div>
+            <a class="text-link" href="experience.html#gm">Experience details <span aria-hidden="true">→</span></a>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <h3>GPU MPC of CNNs via Matrix-Var. Ensemble Kalman Smoothing</h3>
-          <p class="muted">
-            Gradient-free CUDA-based matrix-variate EKS for controlling convolutional neural networks; <strong>20×</strong> faster and
-            <strong>12×</strong> more memory-efficient on large networks.
-          </p>
-          <div class="meta">
-            <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">ACC 2025 — Paper</a>
+        <article class="project-card" id="inferential-control">
+          <div class="project-media"><img src="assets/OIC_ML.png" alt="Optimal inferential control framework for machine-learning dynamical models" loading="lazy"></div>
+          <div class="project-content">
+            <p class="card-index">Scientific ML · Bayesian control</p>
+            <h2>Optimal control as probabilistic inference</h2>
+            <p>This research treats a control objective as an inference problem and uses ensemble smoothing to compute control inputs for learned dynamics. GPU-compatible matrix- and tensor-variate implementations target neural state-space models and high-dimensional spatial systems.</p>
+            <div class="tag-row"><span class="tag">Bayesian inference</span><span class="tag">Ensemble Kalman smoothing</span><span class="tag">MPC</span><span class="tag">CUDA</span></div>
+            <a class="text-link" href="publications.html">Related publications <span aria-hidden="true">→</span></a>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <h3>Tensor-Var. GPU EKS for High-Dimensional Deep Learning Models</h3>
-          <p class="muted">
-            Tensor-compatible ensemble Kalman smoother for optimal control of NN-modeled 3D/2D Navier–Stokes &amp; Burgers’ PDEs,
-            enabling millisecond-scale control where classical solvers fail.
-          </p>
-        </li>
-
-        <li>
-          <h3>Physics-Constrained Neural-ODE-GRU for HVAC</h3>
-          <p class="muted">
-            Digital-twin HVAC modeling with data-efficient training; <strong>14%</strong> accuracy improvement and <strong>5.7×</strong> faster runtime.
-          </p>
-          <div class="meta">
-            <span class="chip">MERL</span>
-            <span class="chip">Summer 2024</span>
+        <article class="project-card" id="neural-ode-control">
+          <div class="project-media"><img src="assets/robot_trajectory.png" alt="Trajectory of a controlled Neural ODE soft-robot model" loading="lazy"></div>
+          <div class="project-content">
+            <p class="card-index">Neural ODEs · Continuous-time control</p>
+            <h2>GPU-accelerated control of Neural ODE systems</h2>
+            <p>Continuous-time model predictive inferential control was evaluated on neural dynamical models, including a soft-robot manipulator. Tested configurations solved up to 200× faster than CasADi/IPOPT benchmarks.</p>
+            <div class="tag-row"><span class="tag">Neural ODE</span><span class="tag">PyTorch</span><span class="tag">CasADi</span><span class="tag">IPOPT</span></div>
+            <a class="text-link" href="publications.html">Publication status <span aria-hidden="true">→</span></a>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <h3>MERL — Real-Time HVAC Digital Twins (Internship)</h3>
-          <p class="muted">
-            Extended digital-twin concepts to HVAC with real-time Neural ODE/GRU simulators; delivered a PyTorch toolkit and
-            improved forecasting accuracy with GPU acceleration.
-          </p>
-          <div class="meta">
-            <span class="chip">MERL</span>
-            <span class="chip">Summer 2024</span>
+        <article class="project-card" id="hvac-modeling">
+          <div class="project-media"><img src="assets/ASHP_new.png" alt="Vapor-compression HVAC system modeled with a physics-constrained neural network" loading="lazy"></div>
+          <div class="project-content">
+            <p class="card-index">MERL · Energy systems · 2024</p>
+            <h2>Physics-constrained neural HVAC dynamics</h2>
+            <p>A modular Neural ODE–GRU model combines continuous-time dynamics, recurrent sequence modeling, and known physical constraints. It improved forecasting accuracy by 14% and ran 5.7× faster than the previous modeling approach.</p>
+            <div class="tag-row"><span class="tag">Neural ODE</span><span class="tag">GRU</span><span class="tag">Physics constraints</span><span class="tag">Digital twins</span></div>
+            <a class="text-link" href="https://doi.org/10.1016/j.applthermaleng.2026.131100" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <h3>MERL — Optimal Inferential Control for HVAC (Collaboration)</h3>
-          <p class="muted">
-            Collaborated with MERL researchers (via KU advisor) on optimal inferential control of NN dynamical systems (HVAC digital twins).
-          </p>
-          <div class="meta">
-            <span class="chip">MERL</span>
-            <span class="chip">Spring 2024</span>
+        <article class="project-card" id="vehicle-planning">
+          <div class="project-media"><img src="assets/NN_vehicle.png" alt="Neural state-space vehicle model used for motion planning" loading="lazy"></div>
+          <div class="project-content">
+            <p class="card-index">Autonomous vehicles · Planning</p>
+            <h2>Uncertainty-aware motion planning with learned dynamics</h2>
+            <p>GRU and ResNet vehicle models trained on real driving data support Bayesian motion planning and conventional trajectory-optimization pipelines. Heavy-tailed Student’s-t models provide robustness to non-Gaussian uncertainty and outliers.</p>
+            <div class="tag-row"><span class="tag">GRU</span><span class="tag">ResNet</span><span class="tag">Student’s-t</span><span class="tag">Sequential Monte Carlo</span></div>
+            <a class="text-link" href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">IEEE T-RO paper <span aria-hidden="true">↗</span></a>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <h3>RL-Based Sensor Placement for Persistent Monitoring</h3>
-          <p class="muted">
-            Designed reinforcement-learning policies to minimize estimation-error covariance and improve coverage in monitoring tasks.
-          </p>
-        </li>
-
-        <li>
-          <h3>Mobile Robot + SCARA Arm for Ocean Plastic Collection</h3>
-          <p class="muted">
-            Built a mobile robot with SCARA arm; integrated RRT/Dijkstra/potential-field planning with PID control. CAD in SolidWorks,
-            simulation in MATLAB/Simulink.
-          </p>
-          <div class="meta">
-            <span class="chip">Sharif University of Technology</span>
-            <span class="chip">2020–2022</span>
+        <article class="project-card" id="marine-robot">
+          <div class="project-media"><img src="assets/pathplanning.png" alt="Path-planning design for a marine waste-collection robot" loading="lazy"></div>
+          <div class="project-content">
+            <p class="card-index">Sharif University · Robotics</p>
+            <h2>Marine waste-collection robot</h2>
+            <p>A mobile platform with a SCARA arm combined RRT, Dijkstra, and potential-field planning with PID control. The B.S. project included mechanical design, SolidWorks CAD, and MATLAB/Simulink simulation.</p>
+            <div class="tag-row"><span class="tag">Robotics</span><span class="tag">Motion planning</span><span class="tag">PID</span><span class="tag">SolidWorks</span></div>
           </div>
-        </li>
-      </ul>
-
-      <!-- (Optional) Legacy / broader buckets -->
-      <h2 class="section-title" style="font-size:1.2rem;margin-top:2rem">Earlier &amp; Related Work</h2>
-      <ul class="item-list">
-        <li>
-          <h3>Physics-Informed ML for PDEs</h3>
-          <p class="muted">
-            PINNs (FNNs, CNNs, ConvLSTMs) for 2D/3D Navier–Stokes, Burgers, and Kuramoto–Sivashinsky with weak/zero-data training.
-          </p>
-        </li>
-        <li>
-          <h3>Selected Undergraduate Projects (Sharif, 2018–2021)</h3>
-          <ul class="sub-bullets">
-            <li><strong>Ocean plastic collection robot:</strong> mobile base + SCARA arm; hybrid planning (RRT, Dijkstra, potential fields) with PID control.</li>
-            <li><strong>Collaborative-robot analysis:</strong> kinematics/dynamics modeling and simulation (MATLAB/Simulink); rapid CAD prototyping (SolidWorks).</li>
-            <li><strong>Surgical needle navigation GUI:</strong> image-guided toolpath planning with RRT algorithm and visualization interface.</li>
-          </ul>
-        </li>
-
-      </ul>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© <span id="year"></span> Ali Vaziri</div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme handling
-    const root = document.documentElement;
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (storedTheme) {
-      root.setAttribute('data-theme', storedTheme);
-    } else if (prefersDark) {
-      root.setAttribute('data-theme', 'dark');
-    }
-    document.getElementById('themeToggle')?.addEventListener('click', () => {
-      const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-    });
-
-    // Mobile menu toggle
-    const btn = document.getElementById('menuButton');
-    const nav = document.getElementById('primary-nav');
-    btn?.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
-    });
-  </script>
+  <footer class="site-footer"><div class="shell footer-grid"><p>© <span data-year></span> Ali Vaziri</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="certifications.html">Certification</a></nav><p>Built with semantic HTML, CSS &amp; JavaScript.</p></div></footer>
 </body>
 </html>

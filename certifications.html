@@ -1,102 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Certifications | Ali Vaziri</title>
-
-  <meta name="description" content="Certifications held by Ali Vaziri." />
-  <link rel="canonical" href="https://alivaziri.github.io/certifications.html" />
-  <meta property="og:title" content="Certifications | Ali Vaziri" />
-  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/Ali_HS.jpg" />
-
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Certification | Ali Vaziri</title>
+  <meta name="description" content="Selected professional certification completed by Ali Vaziri.">
+  <link rel="canonical" href="https://alivaziri.github.io/certifications.html">
+  <meta property="og:title" content="Certification | Ali Vaziri">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
+  <meta name="theme-color" content="#163f35">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header -->
   <header class="site-header">
-    <div class="wrap mast">
-      <a class="brand" href="index.html" aria-label="Ali Vaziri — Home">Ali Vaziri</a>
-
-      <button id="menuButton" class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-text">Menu</span>
-      </button>
-
-      <nav id="primary-nav" class="site-nav" aria-label="Primary">
-        <a href="index.html">About</a>
-        <a href="experience.html">Experience</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html">Projects</a>
-        <a href="certifications.html" aria-current="page" class="active">Certifications</a>
-        <button id="themeToggle" class="chip" type="button" aria-label="Toggle dark mode">☾</button>
+    <div class="shell nav-shell">
+      <a class="wordmark" href="index.html" aria-label="Ali Vaziri, home"><span class="wordmark-mark" aria-hidden="true">AV</span><span>Ali Vaziri</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a>
+        <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
       </nav>
     </div>
   </header>
-
-  <main id="main" class="wrap">
-    <section class="section" style="border-top:none;padding-top:24px">
-      <h1 class="section-title" style="font-size:1.6rem">Certifications</h1>
-
-      <ul class="item-list">
-        <li>
-          <div class="item-header">
-            <h3>
-              <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/N8CFXWL5LX7D" target="_blank" rel="noopener">
-                Reinforcement Learning Specialization
-              </a>
-            </h3>
-            <span class="badge">Completed</span>
-          </div>
-          <p class="muted"><strong>University of Alberta & AMII (Coursera)</strong></p>
-          <p class="muted">
-            Topics: TD learning, Monte Carlo, SARSA, Q-learning, Policy Gradients, Dyna, function approximation.
-          </p>
-          <div class="pub-links">
-            <a class="chip" href="https://www.coursera.org/account/accomplishments/specialization/certificate/N8CFXWL5LX7D" target="_blank" rel="noopener">View certificate</a>
-          </div>
-        </li>
-      </ul>
+  <main id="main">
+    <header class="page-intro shell">
+      <div><p class="section-kicker">Certification</p><h1>Structured study beyond the lab.</h1></div>
+      <div><p>Selected coursework that complements my research and engineering practice.</p></div>
+    </header>
+    <section class="section shell">
+      <article class="certificate-card">
+        <div>
+          <p class="pub-year">University of Alberta &amp; Alberta Machine Intelligence Institute · Coursera</p>
+          <h2>Reinforcement Learning Specialization</h2>
+          <p>Temporal-difference learning, Monte Carlo methods, SARSA, Q-learning, policy gradients, Dyna, and function approximation.</p>
+        </div>
+        <a class="button button-secondary" href="https://www.coursera.org/account/accomplishments/specialization/certificate/N8CFXWL5LX7D" target="_blank" rel="noopener">View certificate ↗</a>
+      </article>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="wrap">© <span id="year"></span> Ali Vaziri</div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme handling (matches index.html)
-    const root = document.documentElement;
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (storedTheme) {
-      root.setAttribute('data-theme', storedTheme);
-    } else if (prefersDark) {
-      root.setAttribute('data-theme', 'dark');
-    }
-    document.getElementById('themeToggle')?.addEventListener('click', () => {
-      const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-    });
-
-    // Mobile menu toggle
-    const btn = document.getElementById('menuButton');
-    const nav = document.getElementById('primary-nav');
-    btn?.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
-    });
-  </script>
+  <footer class="site-footer"><div class="shell footer-grid"><p>© <span data-year></span> Ali Vaziri</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a></nav><p>Built with semantic HTML, CSS &amp; JavaScript.</p></div></footer>
 </body>
 </html>

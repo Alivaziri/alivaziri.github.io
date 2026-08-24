@@ -1,133 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Experience | Ali Vaziri</title>
-
-  <meta name="description" content="Professional experience of Ali Vaziri." />
-  <link rel="canonical" href="https://alivaziri.github.io/experience.html" />
-  <meta property="og:title" content="Experience | Ali Vaziri" />
-  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/Ali_HS.jpg" />
-
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Industry and academic research experience in scalable machine learning, autonomous-driving simulation, scientific ML, Bayesian inference, and optimal control.">
+  <link rel="canonical" href="https://alivaziri.github.io/experience.html">
+  <meta property="og:title" content="Experience | Ali Vaziri">
+  <meta property="og:description" content="Industry and academic work across ML systems, simulation, scientific ML, and control.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
+  <meta name="theme-color" content="#163f35">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header -->
   <header class="site-header">
-    <div class="wrap mast">
-      <a class="brand" href="index.html" aria-label="Ali Vaziri — Home">Ali Vaziri</a>
-
-      <button id="menuButton" class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-text">Menu</span>
-      </button>
-
-      <nav id="primary-nav" class="site-nav" aria-label="Primary">
-        <a href="index.html">About</a>
-        <a href="experience.html" aria-current="page" class="active">Experience</a>
+    <div class="shell nav-shell">
+      <a class="wordmark" href="index.html" aria-label="Ali Vaziri, home"><span class="wordmark-mark" aria-hidden="true">AV</span><span>Ali Vaziri</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home</a>
+        <a href="experience.html" aria-current="page">Experience</a>
         <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
-        <a href="certifications.html">Certifications</a>
-        <button id="themeToggle" class="chip" type="button" aria-label="Toggle dark mode">☾</button>
+        <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap">
-    <section class="section" style="border-top:none;padding-top:24px">
-      <h1 class="section-title" style="font-size:1.6rem">Experience</h1>
+  <main id="main">
+    <header class="page-intro shell">
+      <div><p class="section-kicker">Experience</p><h1>From research prototypes to systems at scale.</h1></div>
+      <div><p>I build learning, simulation, and control software across the full workflow: data preparation, distributed training, evaluation, inference, and deployment-oriented testing.</p></div>
+    </header>
 
-      <ul class="item-list">
+    <section class="section shell" aria-labelledby="industry-heading">
+      <div class="subsection-heading"><h2 id="industry-heading">Industry research</h2><span>2024–2026</span></div>
+      <div class="timeline">
+        <article class="timeline-item" id="gm">
+          <div class="timeline-date">Summer 2026<br>Sunnyvale, CA</div>
+          <div class="timeline-content">
+            <h2>AI/ML Software Engineering Intern</h2>
+            <p class="timeline-org">General Motors · Cruise Team</p>
+            <ul class="result-list">
+              <li>Built an end-to-end multimodal ML system that reconstructs missing vehicle motion in recorded-driving simulations.</li>
+              <li>Created cloud data and featurization pipelines for more than 38,000 highway scenes from approximately 1 TB of raw tracking data.</li>
+              <li>Scaled training across eight H100 GPUs with PyTorch DistributedDataParallel, NCCL, and mixed precision, reducing training time from 12 hours to 3.</li>
+              <li>Reduced best-candidate average position error by 24% relative to the company baseline on about 58,000 held-out trajectories.</li>
+              <li>Reworked streaming evaluation and parallel loading, reducing full-test runtime from more than 60 minutes to approximately 9.</li>
+              <li>Implemented oriented-footprint collision metrics at 10 Hz for ego-to-surrounding and surrounding-to-surrounding vehicle interactions.</li>
+            </ul>
+          </div>
+        </article>
 
-        <li>
-          <div class="item-header">
-            <h3>Graduate Research Assistant — Michigan State University</h3>
-            <span>2026 - Present</span>
+        <article class="timeline-item">
+          <div class="timeline-date">Summer 2024<br>Cambridge, MA</div>
+          <div class="timeline-content">
+            <h2>Research Intern · Machine Learning Modeling and Optimization</h2>
+            <p class="timeline-org">Mitsubishi Electric Research Laboratories (MERL)</p>
+            <ul class="result-list">
+              <li>Developed a physics-constrained Neural ODE–GRU model for vapor-compression HVAC systems.</li>
+              <li>Improved forecasting accuracy by 14% and runtime by 5.7× relative to the previous modeling approach.</li>
+              <li>Combined continuous-time dynamics, recurrent modeling, and physical constraints to learn from limited data.</li>
+              <li>Delivered reusable PyTorch software for data processing, training, evaluation, and GPU-accelerated control experiments.</li>
+            </ul>
           </div>
-          <p class="muted">East Lansing, MI</p>
-        </li>
-        
-        <li>
-          <div class="item-header">
-            <h3>Machine Learning and Optimization Research Intern — Mitsubishi Electric Research Laboratories (MERL)</h3>
-            <span>Summer 2024</span>
-          </div>
-          <p class="muted">Cambridge, MA</p>
-        </li>
+        </article>
+      </div>
+    </section>
 
-        <li>
-          <div class="item-header">
-            <h3>Research Collaboration — MERL</h3>
-            <span>Spring 2024</span>
-          </div>
-          <p class="muted">Cambridge, MA</p>
-        </li>
+    <section class="section section-tint" aria-labelledby="research-heading">
+      <div class="shell">
+        <div class="subsection-heading"><h2 id="research-heading">Academic research</h2><span>2023–present</span></div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2026–present<br>Michigan</div>
+            <div class="timeline-content">
+              <h2>Graduate Research Assistant</h2>
+              <p class="timeline-org">Michigan State University</p>
+              <ul class="result-list">
+                <li>Developing scientific machine-learning methods for high-dimensional dynamical systems and intelligent control.</li>
+                <li>Studying continuous-time optimal control for Neural ODEs and learned models of Burgers and Navier–Stokes systems.</li>
+                <li>Developing GPU-compatible ensemble smoothing methods for spatial and tensor-valued models.</li>
+              </ul>
+            </div>
+          </article>
 
-        <li>
-          <div class="item-header">
-            <h3>Graduate Research Assistant — University of Kansas</h3>
-            <span>2023 – 2025</span>
-          </div>
-          <p class="muted">Lawrence, KS</p>
-        </li>
+          <article class="timeline-item">
+            <div class="timeline-date">2023–2025<br>Lawrence, KS</div>
+            <div class="timeline-content">
+              <h2>Graduate Research Assistant</h2>
+              <p class="timeline-org">University of Kansas</p>
+              <ul class="result-list">
+                <li>Reformulated MPC as Bayesian inference for neural state-space vehicle models; tested configurations solved up to 200× faster than CasADi/IPOPT benchmarks.</li>
+                <li>Designed robust motion planning with Student’s-t distributions, sequential Monte Carlo, and ensemble Kalman smoothing.</li>
+                <li>Trained GRU and ResNet vehicle-dynamics models from real-world driving data and connected them to Bayesian planning and trajectory optimization.</li>
+                <li>Developed matrix-variate ensemble Kalman smoothing with up to 18.6× faster computation and about 11× lower memory use than a vectorized GPU implementation.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <li>
-          <div class="item-header">
-            <h3>Undergraduate Researcher — Sharif University of Technology</h3>
-            <span>2020 – 2022</span>
-          </div>
-          <p class="muted">Tehran, Iran</p>
-        </li>
+    <section class="section shell" aria-labelledby="education-heading">
+      <div class="section-heading"><p class="section-kicker">Background</p><h2 id="education-heading">Education</h2></div>
+      <div class="education-grid">
+        <article class="education-card">
+          <div class="education-meta"><span>2026–present</span><span>Michigan</span></div>
+          <h3>Ph.D., Mechanical Engineering</h3>
+          <p>Michigan State University<br>Scientific machine learning, Bayesian inference, and optimal control</p>
+        </article>
+        <article class="education-card">
+          <div class="education-meta"><span>2023–2025</span><span>Kansas</span></div>
+          <h3>M.S., Mechanical Engineering</h3>
+          <p>University of Kansas · GPA: 4.00/4.00<br><em>Heavy-Tailed Bayesian Motion Planning for Autonomous Vehicles</em></p>
+        </article>
+        <article class="education-card">
+          <div class="education-meta"><span>2023–2025</span><span>Kansas</span></div>
+          <h3>Ph.D. studies, Mechanical Engineering</h3>
+          <p>University of Kansas<br>Transferred to Michigan State University</p>
+        </article>
+        <article class="education-card">
+          <div class="education-meta"><span>2016–2021</span><span>Tehran</span></div>
+          <h3>B.S., Marine Engineering</h3>
+          <p>Sharif University of Technology · GPA: 3.55/4.00<br><em>Collision-Free Marine Waste-Collection Robot</em></p>
+        </article>
+      </div>
+    </section>
 
-        <li>
-          <div class="item-header">
-            <h3>Teaching Assistant — Sharif University of Technology</h3>
-            <span>Spring 2018 – 2019</span>
-          </div>
-          <p class="muted">Tehran, Iran</p>
-        </li>
-      </ul>
+    <section class="section section-tint" aria-labelledby="skills-heading">
+      <div class="shell">
+        <div class="section-heading"><p class="section-kicker">Technical toolkit</p><h2 id="skills-heading">Methods and systems</h2></div>
+        <div class="skill-grid">
+          <article class="skill-card"><h3>Machine learning &amp; modeling</h3><p>Deep learning, multimodal and sequence modeling, CNNs, recurrent networks, Neural ODEs, probabilistic modeling, physics-guided learning, scientific ML, and system identification.</p></article>
+          <article class="skill-card"><h3>Control, planning &amp; estimation</h3><p>Model predictive control, Bayesian inference, trajectory optimization, robust motion planning, Kalman filtering and smoothing, particle filtering, and sequential Monte Carlo.</p></article>
+          <article class="skill-card"><h3>Programming &amp; ML systems</h3><p>Python, C/C++, CUDA, PyTorch, TensorFlow, NumPy, SciPy, DDP, NCCL, mixed precision, distributed GPU computing, profiling, and testing.</p></article>
+          <article class="skill-card"><h3>Simulation, cloud &amp; robotics</h3><p>Autonomous-vehicle simulation and evaluation, Google Cloud Storage, Dataflow, memory-mapped datasets, ROS, MuJoCo, PyBullet, CasADi, IPOPT, MATLAB/Simulink, Bazel, Linux, and Git.</p></article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© <span id="year"></span> Ali Vaziri</div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme handling (matches index.html)
-    const root = document.documentElement;
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (storedTheme) {
-      root.setAttribute('data-theme', storedTheme);
-    } else if (prefersDark) {
-      root.setAttribute('data-theme', 'dark');
-    }
-    document.getElementById('themeToggle')?.addEventListener('click', () => {
-      const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-    });
-
-    // Mobile menu toggle
-    const btn = document.getElementById('menuButton');
-    const nav = document.getElementById('primary-nav');
-    btn?.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
-    });
-  </script>
+  <footer class="site-footer"><div class="shell footer-grid"><p>© <span data-year></span> Ali Vaziri</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="certifications.html">Certification</a></nav><p>Built with semantic HTML, CSS &amp; JavaScript.</p></div></footer>
 </body>
 </html>

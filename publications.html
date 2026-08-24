@@ -1,213 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications | Ali Vaziri</title>
-  <meta name="description" content="Publications by Ali Vaziri." />
-  <link rel="canonical" href="https://alivaziri.github.io/publications.html" />
-  <meta property="og:title" content="Publications | Ali Vaziri" />
-  <meta property="og:description" content="Optimal Control • Bayesian Inference • GPU-accelerated Computing" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/Ali_HS.jpg" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Selected publications by Ali Vaziri in optimal inferential control, Neural ODEs, autonomous-vehicle motion planning, and physics-constrained learning.">
+  <link rel="canonical" href="https://alivaziri.github.io/publications.html">
+  <meta property="og:title" content="Publications | Ali Vaziri">
+  <meta property="og:description" content="Research in machine-learning dynamical models, Bayesian inference, planning, and control.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
+  <meta name="theme-color" content="#163f35">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header (matches site) -->
   <header class="site-header">
-    <div class="wrap mast">
-      <a class="brand" href="index.html" aria-label="Ali Vaziri — Home">Ali Vaziri</a>
-
-      <button id="menuButton" class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-bar" aria-hidden="true"></span>
-        <span class="menu-text">Menu</span>
-      </button>
-
-      <nav id="primary-nav" class="site-nav" aria-label="Primary">
-        <a href="index.html">About</a>
-        <a href="experience.html">Experience</a>
-        <a href="publications.html" aria-current="page" class="active">Publications</a>
-        <a href="projects.html">Projects</a>
-        <a href="certifications.html">Certifications</a>
-        <button id="themeToggle" class="chip" type="button" aria-label="Toggle dark mode">☾</button>
+    <div class="shell nav-shell">
+      <a class="wordmark" href="index.html" aria-label="Ali Vaziri, home"><span class="wordmark-mark" aria-hidden="true">AV</span><span>Ali Vaziri</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="publications.html" aria-current="page">Publications</a><a href="projects.html">Projects</a>
+        <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap">
-    <section class="section" style="border-top:none;padding-top:24px">
-      <h1 class="section-title" style="font-size:1.6rem">Publications</h1>
+  <main id="main">
+    <header class="page-intro shell">
+      <div><p class="section-kicker">Publications</p><h1>Learning, inference, and control.</h1></div>
+      <div><p>Selected peer-reviewed and accepted work on machine-learning dynamical models, Bayesian planning, optimal inferential control, and physics-constrained learning.</p></div>
+    </header>
 
-      <!-- ===== First-Authored ===== -->
-      <h2 class="section-title">First-Authored</h2>
-      <ul class="pub-list">
-
-        
-        <!-- OIC of CNNs (ACC 2025) -->
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/CNN_OIC.png" alt="CNN OIC diagram">
-            <img class="thumb" src="assets/NS2D_controlled.gif" alt="Controlled 2D Navier–Stokes">
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title"><strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Convolutional Neural Networks”</div>
-            <div class="pub-meta">In 2025 <em>American Control Conference (ACC)</em>; <span class="badge">Best Student Paper nominee</span>.</div>
-            <div class="pub-links">
-              <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper</a>
-              <a class="chip" href="https://github.com/Alivaziri/Optimal-Inferential-Control-of-CNNs" target="_blank" rel="noopener">Code</a>
+    <section class="section shell">
+      <div class="pub-section" aria-labelledby="first-authored-heading">
+        <div class="subsection-heading"><h2 id="first-authored-heading">First-authored</h2><span>Selected work</span></div>
+        <div class="publication-list">
+          <article class="publication-card" id="hvac">
+            <div class="pub-thumb"><img src="assets/ASHP_new.png" alt="Air-source heat-pump system diagram" loading="lazy"></div>
+            <div>
+              <p class="pub-year">2026 · Journal article</p>
+              <h3>Modular Deep Learning Framework for Vapor-Compression HVAC Systems: Scalable, Efficient, and Physically Consistent Modeling</h3>
+              <p><strong>Ali Vaziri</strong>, et al. · <em>Applied Thermal Engineering</em></p>
             </div>
-          </div>
-        </li>
+            <div class="pub-actions"><span class="status">Published</span><a class="small-button" href="https://doi.org/10.1016/j.applthermaleng.2026.131100" target="_blank" rel="noopener">Paper ↗</a></div>
+          </article>
 
-        <!-- OIC of ML models (PNAS under review) -->
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/OIC_ML.png" alt="Optimal Inferential Control of Machine Learning Models">
-            <img class="thumb" src="assets/streamlines_2D_page-0001.jpg" alt="2D streamlines">
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title"><strong>Ali Vaziri</strong>, et al. “Optimal Inferential Control of Machine Learning Models”</div>
-            <div class="pub-meta"><span class="badge">In preparation</span></div>
-            <div class="pub-links"></div>
-            <!-- <div class="pub-meta"><span class="badge">Under review</span> <em>Proceedings of the National Academy of Sciences of the United States of America (PNAS)</em>.</div>
-            <div class="pub-links"></div> -->
-          </div>
-        </li>
-        
-        <!-- Neural ODEs (NeurIPS under review) -->
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/SoftRobot_3D.gif" alt="Soft robot 3D animation">
-            <img class="thumb" src="assets/SoftRobot_3DTraj.gif" alt="Soft robot trajectory">
-<!--             <img class="thumb" src="assets/robot_snapshots_strip_page-0001.jpg" alt="Robot snapshots"> -->
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title"><strong>Ali Vaziri</strong>, et al. “Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference”</div>
-            <div class="pub-meta"><span class="badge">In preparation</span></div>
-            <div class="pub-links"></div>
-            <!-- <div class="pub-meta"><span class="badge">Under review</span> <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025.</div>
-            <div class="pub-links"></div> -->
-          </div>
-        </li>
-
-
-        <!-- PDE optimal control (in preparation) -->
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/Burgers1.png" alt="Optimal Control of PDEs 1">
-            <img class="thumb" src="assets/Burgers2.png" alt="Optimal Control of PDEs 2">
-            <img class="thumb" src="assets/Burgers3.png" alt="Optimal Control of PDEs 3">
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title"><strong>Ali Vaziri</strong>, et al. “Robust GPU-Enabled Framework for Optimal Boundary and Distributed Control of PDEs”</div>
-            <div class="pub-meta"><span class="badge">In preparation</span></div>
-            <div class="pub-links"></div>
-          </div>
-        </li>
-
-        <!-- HVAC NODE (ATE under review) -->
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/ASHP_new.png" alt="Air-source heat pump diagram">
-            <img class="thumb" src="assets/GRU.png" alt="GRU diagram">
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title"><strong>Ali Vaziri</strong>, et al. “Physics-Constrained Neural ODEs for HVAC: Scalable, Efficient, and Physically Consistent Modeling”</div>
-            <!-- <div class="pub-meta"><span class="badge">Under review</span> <em>Applied Thermal Engineering</em>.</div>
-            <div class="pub-links"></div> -->
-            <div class="pub-meta"><span class="badge">In preparation</span></div>
-            <div class="pub-links"></div>
-          </div>
-        </li>
-
-        <!-- Heavy-tailed BIMP (ACC 2025) -->
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/OvertakingScenario.gif" alt="AV overtaking scenario">
-            <img class="thumb" src="assets/EnKTS3.png" alt="EnKTS diagram 3">
-            <img class="thumb" src="assets/NN_vehicle.png" alt="Neural network vehicle">
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title"><strong>Ali Vaziri</strong>, et al. “Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions”</div>
-            <div class="pub-meta">In 2025 <em>American Control Conference (ACC)</em>.</div>
-            <div class="pub-links">
-              <a class="chip" href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper</a>
+          <article class="publication-card">
+            <div class="pub-thumb"><img src="assets/robot_trajectory.png" alt="Controlled robot trajectory" loading="lazy"></div>
+            <div>
+              <p class="pub-year">2026 · Conference paper</p>
+              <h3>Continuous-Time Optimal Control of Neural ODEs via Bayesian Inference</h3>
+              <p><strong>Ali Vaziri</strong>, et al. · <em>IEEE Conference on Decision and Control (CDC)</em></p>
             </div>
-          </div>
-        </li>
+            <div class="pub-actions"><span class="status">Accepted</span></div>
+          </article>
 
-        <!-- B.Sc. thesis -->
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/undergrad1.png" alt="Underwater Robot concept 1">
-            <img class="thumb" src="assets/undergrad2.png" alt="Underwater Robot concept 2">
-            <img class="thumb" src="assets/pathplanning.png" alt="Path-planning diagram">
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title"><strong>Ali Vaziri</strong>, et al. “Underwater Robot Design and Control for Plastic Trash Collection in Marine Environment”</div>
-            <div class="pub-meta"><em>B.Sc. Thesis, Sharif University of Technology</em>, 2022 (Best Paper Award).</div>
-            <div class="pub-links"></div>
-          </div>
-        </li>
-      </ul>
+          <article class="publication-card">
+            <div class="pub-thumb"><img src="assets/CNN_OIC.png" alt="Optimal inferential control of a convolutional neural network" loading="lazy"></div>
+            <div>
+              <p class="pub-year">2025 · Conference paper</p>
+              <h3>Optimal Inferential Control of Convolutional Neural Networks</h3>
+              <p><strong>Ali Vaziri</strong>, et al. · <em>American Control Conference (ACC)</em> · Best Student Paper nominee</p>
+            </div>
+            <div class="pub-actions"><a class="small-button" href="https://ieeexplore.ieee.org/abstract/document/11107659" target="_blank" rel="noopener">Paper ↗</a><a class="small-button" href="https://github.com/Alivaziri/Optimal-Inferential-Control-of-CNNs" target="_blank" rel="noopener">Code ↗</a></div>
+          </article>
 
-      <!-- ===== Co-Authored ===== -->
-      <h2 class="section-title" style="margin-top:24px">Co-Authored</h2>
-      <ul class="pub-list">
-        <li class="pub row" style="--media-w: 280px; --thumb-ratio: 4/3;">
-          <aside class="pub-media">
-            <img class="thumb" src="assets/GRU_traj.png" alt="GRU Trajectory">
-            <img class="thumb" src="assets/GRU_TRO.png" alt="GRU architecture">
-          </aside>
-          <div class="pub-body">
-            <div class="pub-title">
-              Iman Askari, <strong>Ali Vaziri</strong>, et al. “Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning”
+          <article class="publication-card">
+            <div class="pub-thumb"><img src="assets/NN_vehicle.png" alt="Neural vehicle model used for motion planning" loading="lazy"></div>
+            <div>
+              <p class="pub-year">2025 · Conference paper</p>
+              <h3>Bayesian Inferential Motion Planning Using Heavy-Tailed Distributions</h3>
+              <p><strong>Ali Vaziri</strong>, et al. · <em>American Control Conference (ACC)</em></p>
             </div>
-            <div class="pub-meta"><em>IEEE Transactions on Robotics (T-RO)</em>, 2025.</div>
-            <div class="pub-links">
-              <a class="chip" href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper</a>
+            <div class="pub-actions"><a class="small-button" href="https://ieeexplore.ieee.org/document/11107971" target="_blank" rel="noopener">Paper ↗</a><a class="small-button" href="https://arxiv.org/abs/2503.22030" target="_blank" rel="noopener">Preprint ↗</a></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="pub-section" aria-labelledby="coauthored-heading">
+        <div class="subsection-heading"><h2 id="coauthored-heading">Co-authored</h2><span>Peer reviewed</span></div>
+        <div class="publication-list">
+          <article class="publication-card">
+            <div class="pub-thumb"><img src="assets/GRU_TRO.png" alt="GRU-based neural state-space model" loading="lazy"></div>
+            <div>
+              <p class="pub-year">2025 · Journal article</p>
+              <h3>Model Predictive Inferential Control of Neural State-Space Models for Autonomous Vehicle Motion Planning</h3>
+              <p>Iman Askari, <strong>Ali Vaziri</strong>, et al. · <em>IEEE Transactions on Robotics</em></p>
             </div>
-          </div>
-        </li>
-      </ul>
+            <div class="pub-actions"><span class="status">Published</span><a class="small-button" href="https://ieeexplore.ieee.org/abstract/document/10981628" target="_blank" rel="noopener">Paper ↗</a></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="pub-section" aria-labelledby="working-heading">
+        <div class="subsection-heading"><h2 id="working-heading">Current manuscripts</h2><span>In preparation</span></div>
+        <div class="publication-list">
+          <article class="publication-card">
+            <div class="pub-thumb"><img src="assets/OIC_ML.png" alt="Optimal inferential control framework for machine-learning models" loading="lazy"></div>
+            <div><p class="pub-year">Manuscript</p><h3>Optimal Inferential Control of Machine Learning Models</h3><p><strong>Ali Vaziri</strong>, et al.</p></div>
+            <div class="pub-actions"><span class="status">In preparation</span></div>
+          </article>
+          <article class="publication-card">
+            <div class="pub-thumb"><img src="assets/Burgers2.png" alt="Controlled Burgers equation field" loading="lazy"></div>
+            <div><p class="pub-year">Manuscript</p><h3>Robust GPU-Enabled Framework for Optimal Boundary and Distributed Control of PDEs</h3><p><strong>Ali Vaziri</strong>, et al.</p></div>
+            <div class="pub-actions"><span class="status">In preparation</span></div>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© <span id="year"></span> Ali Vaziri</div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme handling (same as index)
-    const root = document.documentElement;
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (storedTheme) {
-      root.setAttribute('data-theme', storedTheme);
-    } else if (prefersDark) {
-      root.setAttribute('data-theme', 'dark');
-    }
-    document.getElementById('themeToggle')?.addEventListener('click', () => {
-      const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-    });
-
-    // Mobile menu
-    const btn = document.getElementById('menuButton');
-    const nav = document.getElementById('primary-nav');
-    btn?.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-      btn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
-    });
-  </script>
+  <footer class="site-footer"><div class="shell footer-grid"><p>© <span data-year></span> Ali Vaziri</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="certifications.html">Certification</a></nav><p>Built with semantic HTML, CSS &amp; JavaScript.</p></div></footer>
 </body>
 </html>
