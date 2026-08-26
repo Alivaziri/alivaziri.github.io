@@ -3,10 +3,9 @@
   const themeButton = document.querySelector('[data-theme-toggle]');
   const menuButton = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-nav]');
-  const storedTheme = localStorage.getItem('theme');
-  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  root.dataset.theme = storedTheme || (systemDark ? 'dark' : 'light');
+  // Initial theme (light/dark) is already applied by the inline blocking
+  // script in <head>, before first paint, to avoid a flash of the wrong
+  // theme. This file only needs to handle the toggle interaction from here.
 
   const updateThemeLabel = () => {
     if (!themeButton) return;

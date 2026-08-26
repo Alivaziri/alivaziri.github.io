@@ -12,6 +12,13 @@
   <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
   <meta name="theme-color" content="#163f35">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -26,6 +33,7 @@
         <a href="experience.html" aria-current="page">Experience</a>
         <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certification</a>
         <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
         <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
       </nav>
@@ -44,7 +52,7 @@
         <article class="timeline-item" id="gm">
           <div class="timeline-date">Summer 2026<br>Sunnyvale, CA</div>
           <div class="timeline-content">
-            <h2>AI/ML Software Engineering Intern</h2>
+            <h3>AI/ML Software Engineering Intern</h3>
             <p class="timeline-org">General Motors · Cruise Team</p>
             <ul class="result-list">
               <li>Built an end-to-end multimodal ML system that reconstructs missing vehicle motion in recorded-driving simulations.</li>
@@ -60,7 +68,7 @@
         <article class="timeline-item">
           <div class="timeline-date">Summer 2024<br>Cambridge, MA</div>
           <div class="timeline-content">
-            <h2>Research Intern · Machine Learning Modeling and Optimization</h2>
+            <h3>Research Intern · Machine Learning Modeling and Optimization</h3>
             <p class="timeline-org">Mitsubishi Electric Research Laboratories (MERL)</p>
             <ul class="result-list">
               <li>Developed a physics-constrained Neural ODE–GRU model for vapor-compression HVAC systems.</li>
@@ -80,7 +88,7 @@
           <article class="timeline-item">
             <div class="timeline-date">2026–present<br>Michigan</div>
             <div class="timeline-content">
-              <h2>Graduate Research Assistant</h2>
+              <h3>Graduate Research Assistant</h3>
               <p class="timeline-org">Michigan State University</p>
               <ul class="result-list">
                 <li>Developing machine-learning methods for high-dimensional dynamical systems and intelligent control.</li>
@@ -93,7 +101,7 @@
           <article class="timeline-item">
             <div class="timeline-date">2023–2025<br>Lawrence, KS</div>
             <div class="timeline-content">
-              <h2>Graduate Research Assistant</h2>
+              <h3>Graduate Research Assistant</h3>
               <p class="timeline-org">University of Kansas</p>
               <ul class="result-list">
                 <li>Reformulated MPC as Bayesian inference for neural state-space vehicle models; tested configurations solved up to 200× faster than CasADi/IPOPT benchmarks.</li>

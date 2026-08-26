@@ -12,6 +12,13 @@
   <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
   <meta name="theme-color" content="#163f35">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -23,6 +30,7 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
         <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="projects.html" aria-current="page">Projects</a>
+        <a href="certifications.html">Certification</a>
         <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
         <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
       </nav>

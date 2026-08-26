@@ -13,6 +13,13 @@
   <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
   <meta name="theme-color" content="#163f35">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -33,6 +40,7 @@
         <a href="experience.html">Experience</a>
         <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certification</a>
         <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
         <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
       </nav>
@@ -69,11 +77,12 @@
       </div>
     </section>
 
-    <section class="expertise-band" aria-label="Research areas">
+    <section class="expertise-band" aria-labelledby="research-areas-heading">
+      <h2 id="research-areas-heading" class="sr-only">Research areas</h2>
       <div class="shell expertise-grid">
         <article class="expertise-item">
-          <h2>Machine Learning for Dynamic Systems</h2>
-          <p>Motion reconstruction in scene/world models (Actors)</p>
+          <h3>Generative &amp; Diffusion Models</h3>
+          <p>Stochastic processes and diffusion models for inverse and estimation problems</p>
         </article>
         <article class="expertise-item">
           <h3>Simulations / Physical AI</h3>
