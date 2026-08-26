@@ -196,11 +196,13 @@ h1, h2 {
   letter-spacing: -.045em;
 }
 
+.hero-heading { grid-column: 1 / -1; }
+
 .hero h1 {
-  max-width: 760px;
-  margin-bottom: 28px;
-  font-size: clamp(2.4rem, 4.4vw, 3.75rem);
-  line-height: 1.1;
+  max-width: 980px;
+  margin-bottom: 8px;
+  font-size: clamp(2.6rem, 5vw, 4.25rem);
+  line-height: 1.08;
   letter-spacing: -.02em;
 }
 
