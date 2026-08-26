@@ -169,12 +169,12 @@ p, h1, h2, h3, ul { margin-top: 0; }
 .menu-toggle { display: none; }
 
 .hero {
-  min-height: 720px;
-  padding-block: clamp(64px, 8vw, 112px);
+  padding-block: clamp(48px, 6vw, 88px);
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(340px, .7fr);
-  align-items: center;
-  gap: clamp(48px, 7vw, 100px);
+  align-items: start;
+  column-gap: clamp(48px, 7vw, 100px);
+  row-gap: clamp(20px, 3vw, 36px);
 }
 
 .eyebrow,
@@ -200,7 +200,7 @@ h1, h2 {
 
 .hero h1 {
   max-width: 980px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-size: clamp(2.6rem, 5vw, 4.25rem);
   line-height: 1.08;
   letter-spacing: -.02em;
