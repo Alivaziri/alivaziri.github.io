@@ -553,6 +553,7 @@ h1, h2 {
   .site-nav a, .theme-toggle { padding: 12px; text-align: left; }
   .site-nav .nav-cta { margin-left: 0; }
   .hero { padding-block: 54px 72px; gap: 60px; }
+  .hero h1 { font-size: clamp(3.05rem, 15vw, 5.1rem); }
   .research-focus { font-size: clamp(1.35rem, 6vw, 1.8rem); }
   .expertise-grid { grid-template-columns: 1fr; }
   .expertise-item, .expertise-item:nth-child(2), .expertise-item:last-child { min-height: auto; padding: 28px 12px; border-inline: 0; border-bottom: 1px solid color-mix(in srgb, var(--white) 20%, transparent); }
