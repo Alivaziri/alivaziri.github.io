@@ -75,12 +75,18 @@
         </article>
 
         <article class="project-card" id="neural-ode-control">
-          <div class="project-media"><img src="assets/robot_trajectory.png" alt="Trajectory of a controlled Neural ODE soft-robot model" loading="lazy"></div>
+          <div class="project-media">
+            <div class="media-grid">
+              <img src="assets/robot_trajectory.png" alt="Trajectory of a controlled Neural ODE soft-robot model" loading="lazy">
+              <img src="assets/SoftRobot_3D.gif" alt="3D animation of the controlled soft-robot manipulator" loading="lazy">
+              <img src="assets/SoftRobot_3DTraj.gif" alt="3D trajectory tracking result for the soft-robot manipulator" loading="lazy">
+            </div>
+          </div>
           <div class="project-content">
             <p class="card-index">Neural ODEs · Continuous-time control</p>
             <h2>GPU-accelerated optimal control of Neural ODE systems using Bayesian inference</h2>
             <p> We evaluated continuous-time model predictive inferential control on neural dynamical models, including a soft-robot manipulator. Tested configurations solved up to 200× faster computation than CasADi/IPOPT benchmarks.</p>
-            <div class="tag-row"><span class="tag">Neural ODE</span><span class="tag">PyTorch CUDA</span><span class="tag">Control and Smoothing Duality</span><span class="tag">CasADi</span></div>
+            <div class="tag-row"><span class="tag">Continuous-time ML design</span><span class="tag">PyTorch CUDA</span><span class="tag">Control and Smoothing Duality</span><span class="tag">Optimization</span></div>
             <a class="text-link" href="publications.html">Publication status <span aria-hidden="true">→</span></a>
           </div>
         </article>
@@ -91,14 +97,18 @@
             <p class="card-index">MERL · Energy systems · 2024</p>
             <h2>Physics-constrained ML dynamic model for HVAC systems</h2>
             <p>A modular Neural ODE–GRU model that constrains continuous-time ML models with physical constraints. It improved forecasting accuracy by 14% and ran 5.7× faster than the previous modeling approach.</p>
-            <div class="tag-row"><span class="tag">Neural ODE</span><span class="tag">GRU</span><span class="tag">Physics constraints</span><span class="tag">Digital twins</span></div>
+            <div class="tag-row"><span class="tag">Digital twins</span><span class="tag">Physical AI</span><span class="tag">Training pipelines</span><span class="tag">Scalable simulations</span></div>
             <a class="text-link" href="https://doi.org/10.1016/j.applthermaleng.2026.131100" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
         <article class="project-card" id="vehicle-planning">
-          <div class="pub-thumb"><img src="assets/OvertakingScenario.gif" alt="Autonomous-vehicle overtaking scenario used for heavy-tailed Bayesian motion planning" loading="lazy"></div>
-          <div class="project-media"><img src="assets/Exp_NN_test2_page-0001.jpg" alt="Neural state-space vehicle model used for motion planning" loading="lazy"></div>
+          <div class="project-media">
+            <div class="media-grid">
+              <img src="assets/Exp_NN_test2_page-0001.jpg" alt="Neural state-space vehicle model used for motion planning" loading="lazy">
+              <img src="assets/OvertakingScenario.gif" alt="Autonomous-vehicle overtaking scenario under Bayesian motion planning" loading="lazy">
+            </div>
+          </div>
           <div class="project-content">
             <p class="card-index">Autonomous vehicles · Planning</p>
             <h2>Uncertainty-aware motion planning with learned dynamics</h2>
