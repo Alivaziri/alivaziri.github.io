@@ -470,7 +470,7 @@ h1, h2 {
 @media (max-width: 960px) {
   .hero { min-height: auto; grid-template-columns: 1fr; }
   .hero-copy { max-width: 760px; }
-  .hero-visual { width: min(100%, 480px); }
+  .hero-visual { width: min(100%, 300px); margin-inline: auto; }
   .expertise-grid { grid-template-columns: 1fr 1fr; }
   .expertise-item:nth-child(2) { border-inline-end: 1px solid color-mix(in srgb, var(--white) 20%, transparent); }
   .feature-card:first-child,
