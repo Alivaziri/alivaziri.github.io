@@ -204,6 +204,37 @@ h1, h2 {
   font-size: clamp(2.6rem, 5vw, 4.25rem);
   line-height: 1.08;
   letter-spacing: -.02em;
+
+  .research-focus {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 650;
+  line-height: 1.35;
+
+  color: var(--forest-soft);
+}
+
+.research-focus li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.research-focus li::before {
+  content: "•";
+  color: var(--coral);
+  font-size: 1.25em;
+  line-height: 1;
+}
 }
 
 .hero-lede {
