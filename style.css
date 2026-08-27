@@ -593,3 +593,12 @@ h1, h2 {
   .page-intro { padding-block: 32px; }
   a { text-decoration: none; }
 }
+
+/* Keep inner-page titles typographically identical to the homepage hero title. */
+@media screen {
+  .page-intro h1 {
+    font-size: clamp(2.6rem, 5vw, 4.25rem);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+  }
+}
