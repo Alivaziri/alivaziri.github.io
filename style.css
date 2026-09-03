@@ -369,7 +369,7 @@ h1, h2 {
 .hero-note strong { font-size: .91rem; }
 
 .expertise-band { color: var(--white); background: var(--forest); }
-.expertise-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .expertise-item { min-height: 210px; padding: 32px 20px; border-inline-start: 1px solid color-mix(in srgb, var(--white) 20%, transparent); }
 .expertise-item:last-child { border-inline-end: 1px solid color-mix(in srgb, var(--white) 20%, transparent); }
 .expertise-label { margin-bottom: 16px; opacity: .64; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
