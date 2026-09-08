@@ -5,13 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found | Ali Vaziri</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#163f35">
+  <meta name="description" content="Page not found.">
+  <link rel="canonical" href="https://alivaziri.github.io/404.html">
+  <meta property="og:title" content="Page not found | Ali Vaziri">
+  <meta property="og:description" content="Page not found.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alivaziri.github.io/404.html">
+  <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
+  <meta name="theme-color" content="#1744ce">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');try{const t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="not-found shell">
-    <div><h1>404</h1><p>This page does not exist or has moved.</p><a class="button button-primary" href="index.html">Return home</a></div>
-  </main>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav-shell">
+      <a class="wordmark" href="index.html" aria-label="Ali Vaziri, home"><span class="wordmark-mark" aria-hidden="true">AV<span>.</span></span><span>Ali Vaziri</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a><a href="publications.html">Publications</a>
+        <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="main"><section class="not-found shell"><p class="eyebrow">404</p><h1>Page not found.</h1><p>This page does not exist or has moved.</p><a class="button button-primary" href="index.html">Return home</a></section></main>
+  <footer class="site-footer"><div class="shell footer-grid">
+    <div><a class="footer-name" href="mailto:vazirial@msu.edu">vazirial@msu.edu</a><p>© <span data-year>2026</span> Ali Vaziri</p></div>
+    <nav aria-label="Social links"><a href="https://github.com/Alivaziri" target="_blank" rel="noopener">GitHub</a><a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="https://www.linkedin.com/in/ali-vaziri-63338512a/" target="_blank" rel="noopener">LinkedIn</a><a href="certifications.html">Certification</a></nav>
+  </div></footer>
 </body>
 </html>
