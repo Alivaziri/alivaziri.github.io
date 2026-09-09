@@ -10,7 +10,7 @@
   --navy:#101e3b;
   --radius:8px;
   --shell:1160px;
-  font-family:Inter,"Helvetica Neue",Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   font-synthesis:none
 }
 :root[data-theme="dark"]{
@@ -116,13 +116,13 @@ section[id],article[id]{
 }
 .eyebrow,.card-index,.pub-year{
   font-size:.875rem;
-  letter-spacing:.06em;
+  letter-spacing:normal;
   line-height:1.5;
   color:var(--muted);
   margin-bottom:16px
 }
 .eyebrow{
-  text-transform:uppercase;
+  text-transform:none;
   font-weight:600
 }
 .caption,figcaption{
@@ -1174,4 +1174,34 @@ section[id],article[id]{
     grid-template-columns: 1fr;
     gap: 14px;
   }
+}
+
+/* A single, descending type scale for every page and nested heading. */
+:root {
+  --heading-1: 3.25rem;
+  --heading-2: 2rem;
+  --heading-3: 1.5rem;
+  --heading-4: 1.125rem;
+}
+h1, .hero h1, .page-intro h1 { font-size: var(--heading-1); }
+h2, .section-heading h2, .project-content h2, .subsection-heading h2, .certificate-card h2 { font-size: var(--heading-2); }
+h3, .industry-feature h3, .research-copy h3, .thermal-feature h3, .paper-links h3, .timeline-content h3, .education-list h3, .skill-grid h3, .publication-card h3 { font-size: var(--heading-3); }
+h4 { font-size: var(--heading-4); }
+h1, h2, h3, h4 { letter-spacing: -.02em; line-height: 1.3; }
+.hero h1 { line-height: 1.2; }
+.hero-lede { font-size: 1rem; line-height: 1.8; margin-top: 24px; }
+.hero { grid-template-columns: minmax(0, 1fr) 205px; gap: 70px; }
+.eyebrow, .card-index, .pub-year { text-transform: none; letter-spacing: normal; }
+.abbreviation-note { font-size: .875rem; line-height: 1.6; margin-top: 10px; }
+abbr[title] { text-decoration: underline dotted; text-underline-offset: .18em; cursor: help; }
+.certification-preview { border-top: 1px solid var(--line); }
+.certification-preview h3 + p { margin-top: 14px; }
+@media (max-width: 1000px) {
+  .site-nav { gap: 16px; }
+  .hero { gap: 35px; grid-template-columns: minmax(0,1fr) 175px; }
+}
+@media (max-width: 760px) {
+  :root { --heading-1: 2.5rem; --heading-2: 1.8rem; --heading-3: 1.4rem; --heading-4: 1.125rem; }
+  .hero { grid-template-columns: 1fr; gap: 28px; }
+  .site-nav { gap: 5px 24px; }
 }
