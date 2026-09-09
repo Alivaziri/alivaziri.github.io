@@ -1,159 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Experience | Ali Vaziri</title>
-  <meta name="description" content="Industry and academic research experience in scalable machine learning, stochastic processes, diffusion models, Bayesian inference, and optimal control.">
-  <link rel="canonical" href="https://alivaziri.github.io/experience.html">
-  <meta property="og:title" content="Experience | Ali Vaziri">
-  <meta property="og:description" content="Industry and academic work across ML systems, stochastic modeling, simulation, inference, and control.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://alivaziri.github.io/assets/Ali_HS.jpg">
-  <meta name="theme-color" content="#163f35">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <script>
-    (function () {
-      var stored = localStorage.getItem('theme');
-      var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
-    })();
-  </script>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Experience | Ali Vaziri</title>
+<meta content="Industry and research experience at Cruise, MERL, Michigan State University, and the University of Kansas." name="description"/>
+<link href="https://alivaziri.github.io/experience.html" rel="canonical"/>
+<meta content="Experience | Ali Vaziri" property="og:title"/>
+<meta content="Industry and research experience at Cruise, MERL, Michigan State University, and the University of Kansas." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://alivaziri.github.io/experience.html" property="og:url"/>
+<meta content="https://alivaziri.github.io/assets/Ali_HS.jpg" property="og:image"/>
+<meta content="#1744ce" name="theme-color"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<script>document.documentElement.classList.add('js');try{const t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="shell nav-shell">
-      <a class="wordmark" href="index.html" aria-label="Ali Vaziri, home"><span class="wordmark-mark" aria-hidden="true">AV</span><span>Ali Vaziri</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
-      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
-        <a href="index.html">Home</a>
-        <a href="experience.html" aria-current="page">Experience</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html">Projects</a>
-        <a href="certifications.html">Certification</a>
-        <a class="nav-cta" href="assets/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
-        <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-icon>Dark</span></button>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <header class="page-intro shell">
-      <div><p class="section-kicker">Experience</p><h1>From research prototypes to systems at scale.</h1></div>
-      <div><p>I build learning, simulation, and control software across the full workflow: data preparation, distributed training, evaluation, inference, and deployment-oriented testing.</p></div>
-    </header>
-
-    <section class="section shell" aria-labelledby="industry-heading">
-      <div class="subsection-heading"><h2 id="industry-heading">Industry research</h2><span>2024–2026</span></div>
-      <div class="timeline">
-        <article class="timeline-item" id="gm">
-          <div class="timeline-date">Summer 2026<br>Sunnyvale, CA</div>
-          <div class="timeline-content">
-            <h3>AI/ML Software Engineering Intern</h3>
-            <p class="timeline-org">General Motors · Cruise Team</p>
-            <ul class="result-list">
-              <li>Built an end-to-end multimodal ML system that reconstructs missing vehicle motion in recorded-driving simulations.</li>
-              <li>Created cloud data and featurization pipelines for more than 38,000 highway scenes from approximately 1 TB of raw tracking data.</li>
-              <li>Scaled training across eight H100 GPUs with PyTorch DistributedDataParallel, NCCL, and mixed precision, reducing training time from 12 hours to 3.</li>
-              <li>Reduced best-candidate average position error by 24% relative to the company baseline on about 58,000 held-out trajectories.</li>
-              <li>Reworked streaming evaluation and parallel loading, reducing full-test runtime from more than 60 minutes to approximately 9.</li>
-              <li>Implemented oriented-footprint collision metrics at 10 Hz for ego-to-surrounding and surrounding-to-surrounding vehicle interactions.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-date">Summer 2024<br>Cambridge, MA</div>
-          <div class="timeline-content">
-            <h3>Research Intern · Machine Learning Modeling and Optimization</h3>
-            <p class="timeline-org">Mitsubishi Electric Research Laboratories (MERL)</p>
-            <ul class="result-list">
-              <li>Developed a physics-constrained Neural ODE–GRU model for vapor-compression HVAC systems.</li>
-              <li>Improved forecasting accuracy by 14% and runtime by 5.7× relative to the previous modeling approach.</li>
-              <li>Combined continuous-time dynamics, recurrent modeling, and physical constraints to learn from limited data.</li>
-              <li>Delivered reusable PyTorch software for data processing, training, evaluation, and GPU-accelerated control experiments.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-tint" aria-labelledby="research-heading">
-      <div class="shell">
-        <div class="subsection-heading"><h2 id="research-heading">Academic research</h2><span>2023–present</span></div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">2026–present<br>Michigan</div>
-            <div class="timeline-content">
-              <h3>Graduate Research Assistant</h3>
-              <p class="timeline-org">Michigan State University</p>
-              <ul class="result-list">
-                <li>Developing machine-learning methods for high-dimensional dynamical systems and intelligent control.</li>
-                <li>Studying continuous-time optimal control for Neural ODEs and learned models of Burgers and Navier–Stokes systems.</li>
-                <li>Developing GPU-compatible ensemble smoothing methods for spatial and tensor-valued models.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-date">2023–2025<br>Lawrence, KS</div>
-            <div class="timeline-content">
-              <h3>Graduate Research Assistant</h3>
-              <p class="timeline-org">University of Kansas</p>
-              <ul class="result-list">
-                <li>Reformulated MPC as Bayesian inference for neural state-space vehicle models; tested configurations solved up to 200× faster than CasADi/IPOPT benchmarks.</li>
-                <li>Designed robust motion planning with Student’s-t distributions, sequential Monte Carlo, and ensemble Kalman smoothing.</li>
-                <li>Trained GRU and ResNet vehicle-dynamics models from real-world driving data and connected them to Bayesian planning and trajectory optimization.</li>
-                <li>Developed matrix-variate ensemble Kalman smoothing with up to 18.6× faster computation and about 11× lower memory use than a vectorized GPU implementation.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" aria-labelledby="education-heading">
-      <div class="section-heading"><p class="section-kicker">Background</p><h2 id="education-heading">Education</h2></div>
-      <div class="education-grid">
-        <article class="education-card">
-          <div class="education-meta"><span>2026–present</span><span>Michigan</span></div>
-          <h3>Ph.D., Mechanical Engineering</h3>
-          <p>Michigan State University<br>Machine learning, stochastic processes, Bayesian inference, and optimal control</p>
-        </article>
-        <article class="education-card">
-          <div class="education-meta"><span>2023–2025</span><span>Kansas</span></div>
-          <h3>M.S., Mechanical Engineering</h3>
-          <p>University of Kansas · GPA: 4.00/4.00<br><em>Heavy-Tailed Bayesian Motion Planning for Autonomous Vehicles</em></p>
-        </article>
-        <article class="education-card">
-          <div class="education-meta"><span>2023–2025</span><span>Kansas</span></div>
-          <h3>Ph.D. studies, Mechanical Engineering</h3>
-          <p>University of Kansas<br>Transferred to Michigan State University</p>
-        </article>
-        <article class="education-card">
-          <div class="education-meta"><span>2016–2021</span><span>Tehran</span></div>
-          <h3>B.S., Marine Engineering</h3>
-          <p>Sharif University of Technology · GPA: 3.55/4.00<br><em>Collision-Free Marine Waste-Collection Robot</em></p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-tint" aria-labelledby="skills-heading">
-      <div class="shell">
-        <div class="section-heading"><p class="section-kicker">Technical toolkit</p><h2 id="skills-heading">Methods and systems</h2></div>
-        <div class="skill-grid">
-          <article class="skill-card"><h3>Machine learning &amp; modeling</h3><p>Deep learning, generative and diffusion models, multimodal and sequence modeling, CNNs, recurrent networks, Neural ODEs, probabilistic modeling, physics-guided learning, and system identification.</p></article>
-          <article class="skill-card"><h3>Control, planning &amp; estimation</h3><p>Stochastic processes, model predictive control, Bayesian inference, inverse problems, trajectory optimization, robust motion planning, Kalman filtering and smoothing, particle filtering, and sequential Monte Carlo.</p></article>
-          <article class="skill-card"><h3>Programming &amp; ML systems</h3><p>Python, C/C++, CUDA, PyTorch, TensorFlow, NumPy, SciPy, DDP, NCCL, mixed precision, distributed GPU computing, profiling, and testing.</p></article>
-          <article class="skill-card"><h3>Simulation, cloud &amp; robotics</h3><p>Autonomous-vehicle simulation and evaluation, Google Cloud Storage, Dataflow, memory-mapped datasets, ROS, MuJoCo, PyBullet, CasADi, IPOPT, MATLAB/Simulink, Bazel, Linux, and Git.</p></article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="shell footer-grid"><p>© <span data-year></span> Ali Vaziri</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="certifications.html">Certification</a></nav><p>Built with semantic HTML, CSS &amp; JavaScript.</p></div></footer>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="shell nav-shell">
+<a aria-label="Ali Vaziri, home" class="wordmark" href="index.html"><span aria-hidden="true" class="wordmark-mark">AV<span>.</span></span><span>Ali Vaziri</span></a>
+<button aria-controls="site-nav" aria-expanded="false" class="menu-toggle" data-menu-toggle="" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav" data-nav="" id="site-nav">
+<a href="index.html">Home</a><a href="projects.html">Projects</a><a aria-current="page" href="experience.html">Experience</a><a href="publications.html">Publications</a>
+<a href="certifications.html">Certification</a><a class="nav-cta" href="assets/CV.pdf" rel="noopener" target="_blank">Résumé <span aria-hidden="true">↗</span></a>
+<button class="theme-toggle" data-theme-toggle="" type="button"><span data-theme-icon="">Dark</span></button>
+</nav>
+</div>
+</header>
+<main id="main"><header class="page-intro shell"><p class="eyebrow">Background</p><h1>Experience &amp; education</h1><p class="intro-text">Artificial intelligence (AI), machine learning (<abbr title="Machine learning">ML</abbr>), optimization, and control across industry and academic research.</p></header>
+<section aria-labelledby="industry-heading" class="section shell"><div class="section-heading"><h2 id="industry-heading">Industry</h2></div>
+<div class="timeline">
+<article class="timeline-item" id="gm"><div class="timeline-date">Summer 2026<br/>Sunnyvale, CA</div><div class="timeline-content"><p class="eyebrow">Cruise — General Motors</p><h3>AI/ML software engineering intern</h3><p class="timeline-org">Vehicle fleet motion reconstruction using ML</p><ul class="result-list"><li>Built an ML system to reconstruct missing vehicle motion in recorded-driving simulations; reduced best-candidate average position error by <strong>24%</strong> versus the team’s prior baseline on approximately <strong>58,000 held-out vehicle trajectories</strong>.</li><li>Built a scalable data pipeline for <strong>38,000+ highway scenes</strong>, processing <strong>terabytes (<abbr title="Terabytes">TBs</abbr>) of raw tracking data</strong> with Google Cloud Storage and Dataflow for scene reconstruction.</li><li>Built a large-scale training pipeline across <strong>multiple H100 graphics processing units (<abbr title="Graphics processing units">GPUs</abbr>)</strong> with PyTorch DistributedDataParallel (<abbr title="DistributedDataParallel">DDP</abbr>), the NVIDIA Collective Communications Library (<abbr title="NVIDIA Collective Communications Library">NCCL</abbr>), and mixed precision, reducing wall-clock training time from <strong>12 to 3 hours</strong>.</li></ul></div></article>
+<article class="timeline-item" id="merl"><div class="timeline-date">Summer 2024<br/>Cambridge, MA</div><div class="timeline-content"><p class="eyebrow">Mitsubishi Electric Research Laboratories (MERL)</p><h3>ML and optimization research intern</h3><ul class="result-list"><li>Developed a physics-constrained model combining neural ordinary differential equations (Neural <abbr title="Ordinary differential equations">ODEs</abbr>) and gated recurrent units (<abbr title="Gated recurrent units">GRUs</abbr>) for vapor-compression heating, ventilation, and air conditioning (<abbr title="Heating, ventilation, and air conditioning">HVAC</abbr>) systems, improving forecasting accuracy by <strong>14%</strong> and achieving a <strong>5.7× runtime speedup</strong> versus the prior modeling approach.</li><li>Delivered reusable PyTorch software for data processing, training, evaluation, and <abbr title="Graphics processing unit">GPU</abbr>-accelerated control experiments with limited real-world data.</li></ul><a class="text-link" href="publications.html#hvac">Related publication →</a></div></article>
+</div></section>
+<section aria-labelledby="research-heading" class="section section-tint"><div class="shell"><div class="section-heading"><h2 id="research-heading">Academic research</h2></div><article class="timeline-item"><div class="timeline-date">2023–present</div><div class="timeline-content"><h3>Graduate research assistant</h3><p class="timeline-org">University of Kansas (2023–2025)<br/>Michigan State University (2026–present)</p><ul class="result-list"><li>Developed inferential model predictive control (<abbr title="Model predictive control">MPC</abbr>) for ML-based vehicle dynamics models, high-dimensional fluids, and thermofluid systems; tested configurations ran up to <strong>200× faster than the Interior Point Optimizer (<abbr title="Interior Point Optimizer">IPOPT</abbr>) on GPU</strong> in tested benchmarks.</li><li>Developed GPU-compatible tensor-variate ensemble Kalman smoothing for spatial models, with up to <strong>18.6× faster computation</strong> and approximately <strong>11× lower memory use</strong> than a vectorized GPU baseline.</li><li>Designed motion planning with Student’s-t distributions, sequential Monte Carlo, and ensemble Kalman smoothing for non-Gaussian uncertainty and outliers; trained ML-based vehicle dynamics models on real driving data for Bayesian planning and trajectory optimization.</li><li>Developed continuous-time optimal control of Neural ODEs for soft-robot manipulators.</li></ul><a class="text-link" href="projects.html">View research projects →</a></div></article></div></section>
+<section aria-labelledby="education-heading" class="section shell"><div class="section-heading"><h2 id="education-heading">Education</h2></div><div class="education-list"><article><span>2026–present</span><div><h3>Michigan State University</h3><p><abbr title="Doctor of Philosophy">Ph.D.</abbr> in Mechanical Engineering</p><p class="caption">Prior Ph.D. study: University of Kansas, 2023–2025 (transferred).</p></div></article><article><span>2023–2025</span><div><h3>University of Kansas</h3><p><abbr title="Master of Science">M.S.</abbr> in Mechanical Engineering · Grade point average (GPA): 4.00/4.00</p></div></article><article><span>2016–2021</span><div><h3>Sharif University of Technology</h3><p><abbr title="Bachelor of Science">B.S.</abbr> in Marine Engineering</p></div></article></div></section>
+<section aria-labelledby="skills-heading" class="section shell"><div class="section-heading"><h2 id="skills-heading">Technical skills</h2></div><div class="skill-grid"><article><h3>Programming &amp; ML</h3><p>Python, C/C++, PyTorch, TensorFlow; variational autoencoders (VAEs), diffusion models, large language models (LLMs), large-scale training pipelines.</p></article><article><h3>GPU &amp; data systems</h3><p>DDP, NCCL, mixed precision, Google Cloud Storage, Dataflow, large-scale data pipelines.</p></article><article><h3>Control &amp; simulation</h3><p>MPC, Bayesian inference, Kalman filtering/smoothing, particle filtering, trajectory optimization; Robot Operating System (ROS), MuJoCo (Multi-Joint dynamics with Contact), PyBullet, CasADi/IPOPT, MATLAB/Simulink.</p></article><article><h3>Development</h3><p>Linux, Git, Bazel, performance profiling, unit and integration testing.</p></article></div></section>
+</main>
+<footer class="site-footer"><div class="shell footer-grid">
+<div><a class="footer-name" href="mailto:vazirial@msu.edu">vazirial@msu.edu</a><p>© <span data-year="">2026</span> Ali Vaziri</p></div>
+<nav aria-label="Social links"><a href="https://github.com/Alivaziri" rel="noopener" target="_blank">GitHub</a><a href="https://scholar.google.com/citations?user=qBxWx8AAAAAJ" rel="noopener" target="_blank">Google Scholar</a><a href="https://www.linkedin.com/in/ali-vaziri-63338512a/" rel="noopener" target="_blank">LinkedIn</a><a href="certifications.html">Certification</a></nav>
+</div></footer>
 </body>
 </html>
